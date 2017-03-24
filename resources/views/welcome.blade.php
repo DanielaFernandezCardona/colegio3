@@ -41,7 +41,7 @@
                     <p>Usuario</p>
                     <input type="text" placeholder="usuario" name="nombre" id="nombre" required="">
                     <p>Contraseña</p>
-                    <input type="password" placeholder="Ingresa Password" name="contrasena" id="contrasenia" required="">
+                    <input type="password" placeholder="Ingresa contraseña" name="contrasena" id="contrasenia" required="">
                     <input type="submit" value="Ingresar" id="submit" name="submit" class="boton">
                 </form>
                 
