@@ -97,12 +97,12 @@ a:hover{
     margin: 0 auto;
     border: 1px solid #fff;
     padding: 3em;
-    background: rgba(0, 0, 0, 0.45);
+    background: #acb4c8;
 }
 .login h1, h5.w3ls-title {
     text-align: center;
     font-size:1.7em;
-    color: #d6921e;
+    color: #354c80;
     margin-bottom: 1em;
 	font-weight:100;
 } 
@@ -137,8 +137,8 @@ a:hover{
     border: none;
     margin: 3em auto 0em;
     outline: none;
-    background:#d6921e;
-	border: 1px solid #d6921e;
+    background:#354c80;
+	border: 1px solid #3144b5;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-o-border-radius: 3px;
