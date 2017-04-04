@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('./regitroUsuario',function(){
+	 return view('registroUsuario');
+});
 
 Route::get('/', function () {
     return view('welcome');
 });
+ 

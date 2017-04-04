@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Night Club</title> 
+<title>Colegio Bello Horizonte</title> 
  <meta charset="utf-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -54,7 +54,7 @@
     <!-- //login ends here -->
     <!-- copyrights -->  
     <div class="copy-rights wthree">            
-        <p> Night Club  </p>
+        <p> Colegio Bello Horizonte  </p>
                 
     </div>
     <!-- //copyright -->
