@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('./regitroUsuario',function(){
+Route::get('/registroUsuario',function(){
 	 return view('registroUsuario');
 });
 
