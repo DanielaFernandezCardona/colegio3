@@ -18,7 +18,7 @@
 				<input class="input" type="text" placeholder="&#128100;  Nombre" required autofocus>
             	<input class="input" type="email" placeholder="&#9993;  Email" required>
             	<input class="input" type="text" placeholder="&#128222;  Telefono" required>
-            	<input class="input" type="text" placeholder="&#8962;  Dirección" required>
+            	<input class="input" type="text" placeholder="&#127968;  Dirección" required>
             <div class="btn__form">
             	<input class="btn__submit" type="submit" value="REGISTRAR">
             	<input class="btn__reset" type="reset" value="LIMPIAR">	
