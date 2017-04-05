@@ -127,7 +127,7 @@ a:hover{
     font-family: 'Roboto Condensed', sans-serif;
 }
 .login input[type="text"]:focus ,.login input[type="password"]:focus{
-    border-color: #d6921e;
+    border-color: #1a1446;
 } 
 .login input[type="submit"] {
     font-size: 1em;
