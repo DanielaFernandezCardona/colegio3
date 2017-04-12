@@ -23,6 +23,7 @@
             	<input class="input" type="text" name=  celular    placeholder="&#127968; Celular" required>
             	<input class="input" type="text" name=  telefono   placeholder="&#127968; telefono" required>
             	<input class="input" type="text" name=  direccion  placeholder="&#127968; Dirección" required>
+                  <input class="input" type="text" name=  grado  placeholder="&#127968; Grado" required>
             	<input class="input" type="text" name=  pesoEstu   placeholder="&#127968; PesoEstu" required>
             	<input class="input" type="text" name=  tipoSangre placeholder="&#127968; tipoSangre" required>
             	<input class="input" type="text" name=  añoActual  placeholder="&#127968; AñoActual" required>

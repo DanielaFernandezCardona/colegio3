@@ -13,8 +13,11 @@
 Route::get('/registroUsuario',function(){
 	 return view('registroUsuario');
 });
-Route::get('/RegistroEstudiantes',function(){
-	 return view('RegistroEstudiantes');
+Route::get('/registroEmpleado',function(){
+	 return view('registroEmpleado');
+});
+Route::get('/registroEstudiante',function(){
+	 return view('registroEstudiante');
 });
 
 Route::get('/', function () {
