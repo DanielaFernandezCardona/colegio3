@@ -22,6 +22,9 @@ Route::get('/menu',function(){
 Route::get('/registroEstudiante',function(){
 	 return view('registroEstudiante');
 });
+Route::get('/welcome.blade',function(){
+	 return view('welcome.blade');
+});
 
 Route::get('/', function () {
     return view('welcome');

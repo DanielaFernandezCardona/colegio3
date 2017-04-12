@@ -1,138 +1,109 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Awesome Bubble Navigation with jQuery</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content="Awesome Bubble Navigation with jQuery" />
-        <meta name="keywords" content="jquery, circular menu, navigation, round, bubble"/>
-        <link rel="stylesheet" href="./css/styleMenu.css" type="text/css" media="screen"/>
-        <style>
-            *{
-                margin:0;
-                padding:0;
-            }
-            body{
-                font-family:Arial;
-                background:#fff url(./images/bg.png) no-repeat top left;
-            }
-            .title{
-                width:500px;
-                height:500px;
-                position:absolute;
-                top:30px;
-                left:1250px;
-                background:transparent url(./images/title.png) no-repeat top left;
-            }
-            a.back{
-                background:transparent url(back.png) no-repeat top left;
-                position:fixed;
-                width:150px;
-                height:27px;
-                outline:none;
-                bottom:0px;
-                left:0px;
-            }
-            #content{
-                margin:0 auto;
-            }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colegio Bello Horizonte</title>
+
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/datepicker3.css" rel="stylesheet">
+<link href="./css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="./js/lumino.glyphs.js"></script>
 
 
-        </style>
-    </head>
+</head>
 
-    <body>
-        <div id="content">
-            <a class="back" href="http://tympanus.net/codrops/2010/04/29/awesome-bubble-navigation-with-jquery"></a>
-            <div class="title"></div>
-
-            <div class="navigation" id="nav">
-                <div class="item user">
-                    <img src="./images/bg_user.png" alt="" width="199" height="199" class="circle"/>
-                    <a href="#" class="icon"></a>
-                    <h2>User</h2>
-                    <ul>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Privacy</a></li>
-                    </ul>
-                </div>
-                <div class="item home">
-                    <img src="./images/bg_home.png" alt="" width="199" height="199" class="circle"/>
-                    <a href="#" class="icon"></a>
-                    <h2>Home</h2>
-                    <ul>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="item shop">
-                    <img src="./images/bg_shop.png" alt="" width="199" height="199" class="circle"/>
-                    <a href="#" class="icon"></a>
-                    <h2>Shop</h2>
-                    <ul>
-                        <li><a href="#">Catalogue</a></li>
-                        <li><a href="#">Orders</a></li>
-                        <li><a href="#">Offers</a></li>
-                    </ul>
-                </div>
-                <div class="item camera">
-                    <img src="./images/bg_camera.png" alt="" width="199" height="199" class="circle"/>
-                    <a href="#" class="icon"></a>
-                    <h2>Photos</h2>
-                    <ul>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Prints</a></li>
-                        <li><a href="#">Submit</a></li>
-                    </ul>
-                </div>
-                <div class="item fav">
-                    <img src="./images/bg_fav.png" alt="" width="199" height="199" class="circle"/>
-                    <a href="#" class="icon"></a>
-                    <h2>Love</h2>
-                    <ul>
-                        <li><a href="#">Social</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Comments</a></li>
-                    </ul>
-                </div>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>Colegio Bello Horizonte...</span>..</a>
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Perfil</a></li>
+                            <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> configuración</a></li>
+                            <li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Salir</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <!-- The JavaScript -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                $('#nav > div').hover(
-                function () {
-                    var $this = $(this);
-                    $this.find('img').stop().animate({
-                        'width'     :'199px',
-                        'height'    :'199px',
-                        'top'       :'-25px',
-                        'left'      :'-25px',
-                        'opacity'   :'1.0'
-                    },500,'easeOutBack',function(){
-                        $(this).parent().find('ul').fadeIn(700);
-                    });
+                            
+        </div><!-- /.container-fluid -->
+    </nav>
+        
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <form role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+        </form>
+        <ul class="nav menu">
+            <li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
+            <li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-sound-on"></use></svg> Alertas</a></li>
+            <li><a href="./registroEstudiante"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registro Estudiante</a></li>
+            <li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Registro Empleados</a></li>
+            <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listados</a></li>
+            <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Estudiante</a></li>
+            <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Empleado</a></li>
+            <li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
+          
+            <li role="presentation" class="divider"></li>
+           
+        </ul>
 
-                    $this.find('a:first,h2').addClass('active');
-                },
-                function () {
-                    var $this = $(this);
-                    $this.find('ul').fadeOut(500);
-                    $this.find('img').stop().animate({
-                        'width'     :'52px',
-                        'height'    :'52px',
-                        'top'       :'0px',
-                        'left'      :'0px',
-                        'opacity'   :'0.1'
-                    },5000,'easeOutBack');
+    </div><!--/.sidebar-->
+        
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">           
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+                <li class="active">Inicio</li>
+            </ol>
+        </div><!--/.row-->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Colegio Bello Horizonte</h1>
+            </div>
+        </div><!--/.row-->
+        
+        
+    </div>  <!--/.main-->
 
-                    $this.find('a:first,h2').removeClass('active');
-                }
-            );
-            });
-        </script>
-    </body>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/chart.min.js"></script>
+    <script src="./js/chart-data.js"></script>
+    <script src="./js/easypiechart.js"></script>
+    <script src="./js/easypiechart-data.js"></script>
+    <script src="./js/bootstrap-datepicker.js"></script>
+    <script>
+        
+
+        !function ($) {
+            $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+                $(this).find('em:first').toggleClass("glyphicon-minus");      
+            }); 
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function () {
+          if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function () {
+          if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        })
+    </script>   
+</body>
+
 </html>
