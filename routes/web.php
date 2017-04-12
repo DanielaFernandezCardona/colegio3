@@ -16,6 +16,9 @@ Route::get('/registroUsuario',function(){
 Route::get('/registroEmpleado',function(){
 	 return view('registroEmpleado');
 });
+Route::get('/menu',function(){
+	 return view('menu');
+});
 Route::get('/registroEstudiante',function(){
 	 return view('registroEstudiante');
 });
