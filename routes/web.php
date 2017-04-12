@@ -13,6 +13,9 @@
 Route::get('/registroUsuario',function(){
 	 return view('registroUsuario');
 });
+Route::get('/RegistroEstudiantes',function(){
+	 return view('RegistroEstudiantes');
+});
 
 Route::get('/', function () {
     return view('welcome');
