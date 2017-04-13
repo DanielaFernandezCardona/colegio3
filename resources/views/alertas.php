@@ -53,7 +53,7 @@
             <li><a href="./alertas"><svg class="glyph stroked calendar"><use xlink:href="#stroked-sound-on"></use></svg> Alertas</a></li>
 
             <li><a href="./registroEstudiante"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registro Estudiante</a></li>
-            <li><a href="./registroEmpleado"><svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Registro Empleado</a></li>
+            <li><a href="./registroEmpleado"><svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Registro Empleados</a></li>
 
             <li><a href="./listadoGrado"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listas por Grados</a></li>
 
@@ -81,10 +81,54 @@
         
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Colegio Bello Horizonte</h1>
+                <h1 class="page-header">ALERTAS</h1>
             </div>
         </div><!--/.row-->
-        
+
+
+
+
+        <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><svg class="glyph stroked email"><use xlink:href="#stroked-email"></use></svg> Contactar Acudiente</div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="" method="post">
+                            <fieldset>
+                                <!-- Name input-->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="name">Asunto</label>
+                                    <div class="col-md-9">
+                                    <input id="name" name="Asunto" type="text" placeholder="Asunto" class="form-control">
+                                    </div>
+                                </div>
+                            
+                                <!-- Email input-->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="email">Correo</label>
+                                    <div class="col-md-9">
+                                        <input id="email" name="email" type="text" placeholder="correo" class="form-control">
+                                    </div>
+                                </div>
+                                
+                                <!-- Message body -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="message">Mensaje</label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" id="message" name="message" placeholder="Escriba su mensaje por favor" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 widget-right">
+                                        <button type="submit" class="btn btn-default btn-md pull-right">Enviar</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
         
     </div>  <!--/.main-->
 

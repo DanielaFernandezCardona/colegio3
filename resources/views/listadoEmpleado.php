@@ -81,10 +81,35 @@
         
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Colegio Bello Horizonte</h1>
+                <h1 class="page-header">LISTAS DE EMPLEADOS</h1>
             </div>
         </div><!--/.row-->
-        
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Listas de empleados</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-url="tables/data2.json" >
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-align="right">documento</th>
+                                <th data-field="name">nombre</th>
+                                <th data-field="apellido">apellido</th>
+                                <th data-field="grado"> grado</th>
+                                <th data-field="cargo">cargo</th>
+                                <th data-field="mesesPagos">meses pagos</th>
+                                <th data-field="correo"> correo</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                </div>    
+            </div>
+        </div><!--/.LISTADOS tabla row-->  
+                       
         
     </div>  <!--/.main-->
 
@@ -95,6 +120,7 @@
     <script src="./js/easypiechart.js"></script>
     <script src="./js/easypiechart-data.js"></script>
     <script src="./js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-table.js"></script>
     <script>
         
 

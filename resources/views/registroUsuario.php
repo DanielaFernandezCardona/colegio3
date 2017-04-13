@@ -48,11 +48,12 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li class="active"><a href="./menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
+            <li class="active"><a href="/menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
 
-            <li><a href="./alertas"><svg class="glyph stroked calendar"><use xlink:href="#stroked-sound-on"></use></svg> Alertas</a></li>
+            <li><a href="/alertas"><svg class="glyph stroked calendar"><use xlink:href="#stroked-sound-on"></use></svg> Alertas</a></li>
 
             <li><a href="./registroEstudiante"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registro Estudiante</a></li>
+
             <li><a href="./registroEmpleado"><svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Registro Empleado</a></li>
 
             <li><a href="./listadoGrado"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listas por Grados</a></li>
@@ -62,7 +63,7 @@
             <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Estudiante</a></li>
 
             <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Empleado</a></li>
-
+            
             <li><a href="./registroUsuario"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
           
             <li role="presentation" class="divider"></li>
@@ -81,11 +82,55 @@
         
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Colegio Bello Horizonte</h1>
+                <h1 class="page-header">Registro Usuario</h1>
             </div>
         </div><!--/.row-->
         
-        
+        <div class="row">
+                  <div class="col-lg-12">
+                        <div class="panel panel-default">
+                              <div class="panel-heading">Datos Usuario</div>
+                              <div class="panel-body">
+                                    <div class="col-md-6">
+                                          <form role="form">
+                                          
+                                                <div class="form-group">
+                                                      
+
+                                                      <label>Documento </label>
+                                                      <input class="form-control" type="text" name=  documento  placeholder="documento" required>
+                                                      <label>Nombre</label>
+                                                      <input class="form-control" name=nombre placeholder="Nombre">
+                                                      <label>Apellido</label>
+                                                      <input class="form-control" type="text" name=  apellido   placeholder="apellido" required>
+                                                  
+                                                      <label>contraseña</label>
+                                                      <input class="form-control" type="text" name=  contrasena   placeholder="Contraseña" required>
+                                                   
+                                                      <label>telefono</label>
+                                                      <input class="form-control" type="text" name=  telefono  placeholder="telefono" required>
+                                                      <label>nombre Usuario</label>
+                                                      <input class="form-control" type="text" name=  usuario   placeholder="nombre Usuario" required>
+                                                  
+                                                      <label>Dirección</label>
+                                                      <input class="form-control" type="text" name=  direccion  placeholder="Dirección" required>
+
+                                                      <label>correo</label>
+                                                      <input class="form-control" type="text" name=  correoPadre  placeholder=" Correo Padre" required>
+
+                                                  
+                                                </div>
+                                                                                                
+                                                
+                                                <button type="submit" class="btn btn-primary">Editar</button>
+                                                <button type="reset" class="btn btn-default">Registrar</button>
+                                                <button type="reset" class="btn btn-primary">Borrar</button>
+                                          </div>
+                                    </form>
+                              </div>
+                        </div>
+                  </div><!-- /.col-->
+            </div><!-- /.row registros estudiantes-->
     </div>  <!--/.main-->
 
     <script src="./js/jquery-1.11.1.min.js"></script>

@@ -53,6 +53,7 @@
             <li><a href="./alertas"><svg class="glyph stroked calendar"><use xlink:href="#stroked-sound-on"></use></svg> Alertas</a></li>
 
             <li><a href="./registroEstudiante"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registro Estudiante</a></li>
+
             <li><a href="./registroEmpleado"><svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Registro Empleado</a></li>
 
             <li><a href="./listadoGrado"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listas por Grados</a></li>
@@ -81,10 +82,34 @@
         
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Colegio Bello Horizonte</h1>
+                <h1 class="page-header">LISTADOS POR GRADOS</h1>
             </div>
         </div><!--/.row-->
-        
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Listas por Grados</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-url="tables/data2.json" >
+                            <thead>
+                            <tr>
+                                <th data-field="id" data-align="right">documento</th>
+                                <th data-field="name">nombre</th>
+                                <th data-field="apellido">apellido</th>
+                                <th data-field="grado"> grado</th>
+                                <th data-field="mesesMora"> Meses Mora</th>
+                                <th data-field="correo"> correo</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                </div>    
+            </div>
+        </div><!--/.LISTADOS tabla row-->  
+                       
         
     </div>  <!--/.main-->
 
@@ -95,6 +120,7 @@
     <script src="./js/easypiechart.js"></script>
     <script src="./js/easypiechart-data.js"></script>
     <script src="./js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-table.js"></script>
     <script>
         
 
