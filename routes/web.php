@@ -34,6 +34,15 @@ Route::post('/registrar','Auth\RegisterController@postRegistrar');
 Route::get('/registroUsuario',function(){
 	 return view('registroUsuario');
 });
+Route::get('/registroEmpleado',function(){
+	 return view('registroEmpleado');
+});
+Route::get('/menu',function(){
+	 return view('menu');
+});
+Route::get('/registroEstudiante',function(){
+	 return view('registroEstudiante');
+});
 
 
 //registrar un empleado
