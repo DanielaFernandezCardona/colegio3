@@ -24,6 +24,11 @@ Route::get('/menu',function(){
 	 return view('menu');
 });
 
+Route::get('/alertas',function(){
+	 return view('alertas');
+});
+
+
 
 Route::post('/logear','Auth\LoginController@postLogin');
 
@@ -34,38 +39,25 @@ Route::post('/registrar','Auth\RegisterController@postRegistrar');
 Route::get('/registroUsuario',function(){
 	 return view('registroUsuario');
 });
-Route::get('/registroEmpleado',function(){
-	 return view('registroEmpleado');
-});
-Route::get('/menu',function(){
-	 return view('menu');
-});
-Route::get('/registroEstudiante',function(){
-	 return view('registroEstudiante');
-});
 
 
 //registrar un empleado
-Route::post('/registrarEmpleado','Auth\RegisterController@postRegistrar');
+Route::post('/registrarEmpleado','RegisterEmpleadoController@postRegistrar');
 
 Route::get('/registroEmpleado',function(){
 	 return view('registroEmpleado');
 });
 
-Route::get('/menu',function(){
-	 return view('menu');
-});
+// registra estudiante
+Route::post('/registrarEstudiante','RegisterEstudianteController@postRegistrar');
 
-//registrar un estudiante
 Route::get('/registroEstudiante',function(){
 	 return view('registroEstudiante');
 });
+/////////////////////////////////////////
 
 
 
-Route::get('/alertas',function(){
-	 return view('alertas');
-});
 
 
 

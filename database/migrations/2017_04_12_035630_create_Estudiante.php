@@ -23,10 +23,10 @@ Schema::create('Estudiante', function(Blueprint $table) {
             $table->date('fechaNac');
             $table->string('documento', 45)->nullable();
             $table->string('expedicion', 45)->nullable();
-            $table->integer('telefono')->nullable();
-            $table->integer('celular')->nullable();
+            $table->string('telefono',45)->nullable();
+            $table->string('celular',45)->nullable();
             $table->string('direccion', 100)->nullable();
-            $table->double('peso',2,3)->nullable();
+            $table->double('peso',5,3)->nullable();
             $table->string('tipoSangre', 45)->nullable();
             $table->date('anioActual')->nullable();
             $table->string('condicion', 45)->nullable();

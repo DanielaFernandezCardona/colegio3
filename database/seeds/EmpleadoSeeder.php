@@ -15,7 +15,7 @@ class EmpleadoSeeder extends Seeder
     {  
 	$faker = Faker::create();
 
-
+//insertamos datos en la tabla empleado
 	for ($i=1; $i < 19; $i++) {
 
         DB::table('Empleado')->insert(array(
@@ -25,7 +25,7 @@ class EmpleadoSeeder extends Seeder
             'nacionalidad'=> 'colombia',
             'telefono' => $faker->randomElement(['3162953628','323241234','301241234','320241234','311241234']),
             'correo' => $faker->randomElement(['3162953628','323241234','301241234','320241234','311241234']),
-			'direccion' =>$faker->randomElement(['a 44-81.Cl. 56 #4443, Sevilla','Cra. 49 #5273, Sevilla, Valle del Cauca','#50-43 a, Cra. 50 #50107, Sevilla, Valle del Cauca','Kr 48 50, Sevilla, Valle del Cauca','Cra. 49 #53 - 51, Sevilla, Valle del Cauca']),
+			'direccion' =>$faker->randomElement(['a 44-81.Cl. 56 #4443, Sevilla','Cra. 49 #5273','#50-43 a, Cra. 50','Kr 48 50, Sevilla','Cra. 49 #53 - 51']),
 			'fechaNacimiento'=>$faker->dateTime,
 			'estudiosRealizados' => $faker->randomElement(['pedagogia']),
             'nivel' => 'Universitario pregrado',

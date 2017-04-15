@@ -89,70 +89,99 @@
         <div class="row">
                   <div class="col-lg-12">
                         <div class="panel panel-default">
+                                  @if(Session::has('success'))
+                   <div class="row">
+                <div class="col-md-12">
+                  <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                  </div>
+                  </div> 
+                         </div> 
+                        @endif
+                   
                               <div class="panel-heading">Datos Empleado</div>
                               <div class="panel-body">
                                     <div class="col-md-6">
-                                          <form role="form">
-                                          
+                                          <form role="form"  action="/registrarEmpleado" method="post">
+                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  
                                                 <div class="form-group">
                                                       <label>Documento </label>
-                                                      <input class="form-control" type="text" name=  documento  placeholder="documento" required>
+                                                      <input class="form-control" type="text" name="documento"  placeholder="documento" required>
                                                       <label>Nombre</label>
-                                                      <input class="form-control" name=nombre placeholder="Nombre">
+                                                      <input class="form-control" name="nombre" placeholder="Nombre">
                                                       <label>Apellido</label>
-                                                      <input class="form-control" type="text" name=  apellido   placeholder="apellido" required>
+                                                      <input class="form-control" type="text" name="apellido"   placeholder="apellido" required>
                                                       <label>Nacionalidad</label>
-                                                      <input class="form-control" type="text" name=  nacionalidad   placeholder="Nacionalidad" required>
+                                                      <input class="form-control" type="text" name="nacionalidad"   placeholder="Nacionalidad" required>
                                                       <label>Celular</label>
-                                                      <input class="form-control" type="text" name=  celular  placeholder="celular" required>
-                                                     
+                                                      <input class="form-control" type="text" name="celular"  placeholder="celular" required>
+                                                 
+                                                     <label>Telefono</label>
+                                                      <input class="form-control" type="text" name="telefono"  placeholder="telefono" required>
+                                                      
+                                                      <label>Correo</label>
+                                                      <input class="form-control" type="text" name="correo"  placeholder="Correo" required>
+                                                                                        
                 
                                                       <label>Dirección</label>
-                                                      <input class="form-control" type="text" name=  direccion  placeholder="Dirección" required>
+                                                      <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
 
                                                       <label>Fecha Nacimiento</label>
-                                                      <input class="form-control" type="text" name=  fechaNac   placeholder="AAAA/MM/DD" required>
+                                                      <input class="form-control" type="text" name="fechaNacimiento"   placeholder="AAAA/MM/DD" required>
 
                                                       <label>Estudios Universitarios</label>
-                                                      <input class="form-control" type="text" name=  Estudios   placeholder="Estudios" required>
+                                                      <input class="form-control" type="text" name="estudiosRealizados"   placeholder="Estudios" required>
 
                                                       <label>Nivel Estudios </label>
-                                                      <input class="form-control" type="text" name=  nivel   placeholder="nivel" required>
-
+                                                      <input class="form-control" type="text" name="nivel"   placeholder="nivel" required>
+                                                      
+                                                     
                                                       <label>Lugar Estudios </label>
-                                                      <input class="form-control" type="text" name=  lugarEstu  placeholder="lugar Estudios" required>
+                                                      <input class="form-control" type="text" name="lugarEstudios"  placeholder="lugar Estudios" required>
 
                                                       <label>Cargo</label>
-                                                      <input class="form-control" type="text" name=  cargo  placeholder="cargo" required>
+                                                      <input class="form-control" type="text" name="cargo"  placeholder="cargo" required>
                                                       
 
                                                       <label>Grado</label>
-                                                      <input class="form-control" type="text" name=  grado  placeholder="Grado" required>
+                                                      <input class="form-control" type="text" name="grado"  placeholder="Grado" required>
                                                       
-                                                      
+                                                      <label>Tiempo trabajo</label>
+                                                      <input class="form-control" type="text" name="tiempoTrabajo"  placeholder="tiempoTrabajo" required>
+
+
                                                       <label>Fecha Ingreso</label>
-                                                      <input class="form-control" type="text" name=  fechaIngre  placeholder="AAAA/MM/DD" required>
+                                                      <input class="form-control" type="text" name="fechaIngresoTrabajo"  placeholder="AAAA/MM/DD" required>
+
+                                                      <label>Valor Nomina</label>
+                                                      <input class="form-control" type="text" name="valorNomina"  placeholder="Valor Nomina" required>
 
                                                        <div class="form-group">
-                                                        <label>Estado Civil de los Padres</label>
+                                                        <label>Estado Civil </label>
                                                         <div class="radio">
                                                             <label>
-                                                             <input type="radio" name="estadoCivil" id="optionsRadios1" value="option1" checked>Madre Soltera
+                                                             <input type="radio" name="estadoCivil" id="optionsRadios1" value="madre_soltera" checked>Madre Soltera
                                                            </label>
                                                         </div>
                                                         <div class="radio">
                                                           <label>
-                                                           <input type="radio" name="estadoCivil" id="optionsRadios2" value="option2">Divorciados
+                                                           <input type="radio" name="estadoCivil" id="optionsRadios2" value="Divorciado">Divorciado
                                                          </label>
                                                         </div>
                                                         <div class="radio">
                                                           <label>
-                                                            <input type="radio" name="estadoCivil" id="optionsRadios3" value="option3">Casados
+                                                            <input type="radio" name="estadoCivil" id="optionsRadios3" value="casado">Casado
                                                           </label>
                                                         </div>
                                                         <div class="radio">
                                                           <label>
-                                                            <input type="radio" name="estadoCivil" id="optionsRadios3" value="option3">Viudo
+                                                            <input type="radio" name="estadoCivil" id="optionsRadios4" value="viudo">Viudo
+                                                          </label>
+                                                        </div>
+                                                      <div class="radio">
+                                                          <label>
+                                                            <input type="radio" name="estadoCivil" id="optionsRadios5" value="soltero">Solter@
                                                           </label>
                                                         </div>
                                                       </div>
@@ -162,9 +191,9 @@
                                                 </div>
                                                                                                 
                                                 
-                                                <button type="submit" class="btn btn-primary">Editar</button>
-                                                <button type="reset" class="btn btn-default">Registrar</button>
-                                                <button type="reset" class="btn btn-primary">Borrar</button>
+                                                <button type="button" class="btn btn-primary">Editar</button>
+                                                <button type="submit" class="btn btn-default">Registrar</button>
+                                                <button type="button" class="btn btn-primary">Borrar</button>
                                           </div>
                                     </form>
                               </div>

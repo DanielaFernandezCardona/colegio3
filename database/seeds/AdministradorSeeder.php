@@ -13,7 +13,7 @@ class AdministradorSeeder extends Seeder
      */
     public function run()
     {
-    	
+    	//insertamos un administrador
 DB::table('Administrador')->insert(array(
           'documento'=>'12345',
           'nombre'=> 'elmer',
