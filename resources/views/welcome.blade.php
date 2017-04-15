@@ -37,11 +37,16 @@
             <h2>COLEGIO BELLO HORIZONTE</h2>
             <div class="login-main login-agileits"> 
                 <h1>Bienvenido</h1> 
-                <form action="#" method="post">
-                    <p>Usuario</p>
-                    <input type="text" placeholder="usuario" name="nombre" id="nombre" required="">
+                <form action="/logear" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    @if(Session::has('mensaje_error'))
+                    {{ Session::get('mensaje_error') }}
+                        @endif
+        
+                   <p>Usuario</p>
+                    <input type="text" placeholder="usuario" name="nombre" id="nombre" required>
                     <p>Contraseña</p>
-                    <input type="password" placeholder="Ingresa contraseña" name="contrasena" id="contrasenia" required="">
+                    <input type="password" placeholder="Ingresa contraseña" name="contrasena" id="contrasena" required>
                     <input type="submit" value="Ingresar" id="submit" name="submit" class="boton">
                 </form>
                 

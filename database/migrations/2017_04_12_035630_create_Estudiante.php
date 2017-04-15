@@ -13,27 +13,26 @@ class CreateEstudiante extends Migration
      */
     public function up()
     {
-      Schema::create('Estudiante', function(Blueprint $table) {
+Schema::create('Estudiante', function(Blueprint $table) {
             $table->engine = 'InnoDB';
         
-            $table->increments('idEstudiantes');
+            $table->increments('idEstudiante');
             $table->integer('idGrado')->unsigned();
-            $table->integer('idDireccion');
-            $table->integer('Acudiente_idAcudiente')->unsigned();
             $table->string('nombre', 45)->nullable();
             $table->string('apellido', 45)->nullable();
             $table->date('fechaNac');
-            $table->integer('numDocumento')->nullable();
+            $table->string('documento', 45)->nullable();
             $table->string('expedicion', 45)->nullable();
             $table->integer('telefono')->nullable();
             $table->integer('celular')->nullable();
             $table->string('direccion', 45)->nullable();
             $table->integer('peso')->nullable();
             $table->string('tipoSangre', 45)->nullable();
-            $table->date('oActual')->nullable();
+            $table->date('anioActual')->nullable();
             $table->string('condicion', 45)->nullable();
             $table->string('religion', 45)->nullable();
             $table->string('foto', 45)->nullable();
+            $table->integer('Acudiente_idAcudiente')->unsigned();
         
             $table->index('idGrado','fk_Estudiante_Grado1_idx');
             $table->index('Acudiente_idAcudiente','fk_Estudiante_Acudiente1_idx');
@@ -47,6 +46,7 @@ class CreateEstudiante extends Migration
             $table->timestamps();
         
         });
+
     }
 
     /**

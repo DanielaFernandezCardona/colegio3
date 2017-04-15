@@ -13,7 +13,7 @@ class CreateAcudiente extends Migration
      */
     public function up()
     {
-        Schema::create('Acudiente', function(Blueprint $table) {
+       Schema::create('Acudiente', function(Blueprint $table) {
             $table->engine = 'InnoDB';
         
             $table->increments('idAcudiente');
@@ -38,7 +38,6 @@ class CreateAcudiente extends Migration
             $table->timestamps();
         
         });
-
 
     }
 

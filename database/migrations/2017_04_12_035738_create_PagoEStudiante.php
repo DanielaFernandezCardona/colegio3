@@ -17,7 +17,7 @@ class CreatePagoEStudiante extends Migration
             $table->engine = 'InnoDB';
         
             $table->increments('idPago');
-            $table->integer('idEstudiantes')->unsigned();
+            $table->integer('idEstudiante')->unsigned();
             $table->string('Enero', 45)->nullable();
             $table->string('Febrero', 45)->nullable();
             $table->string('Marzo', 45)->nullable();
@@ -32,10 +32,10 @@ class CreatePagoEStudiante extends Migration
             $table->string('Diciembre', 45)->nullable();
             $table->string('Matricula', 45)->nullable();
         
-            $table->index('idEstudiantes','fk_PagoEStudiante_Estudiante1_idx');
+            $table->index('idEstudiante','fk_PagoEStudiante_Estudiante1_idx');
         
-            $table->foreign('idEstudiantes')
-                ->references('idEstudiantes')->on('Estudiante');
+            $table->foreign('idEstudiante')
+                ->references('idEstudiante')->on('Estudiante');
         
             $table->timestamps();
         

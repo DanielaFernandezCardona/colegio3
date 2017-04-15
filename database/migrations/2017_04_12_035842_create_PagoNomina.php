@@ -17,7 +17,7 @@ class CreatePagoNomina extends Migration
             $table->engine = 'InnoDB';
         
             $table->increments('idPagoNomina');
-            $table->integer('Docente_idDocentes')->unsigned();
+            $table->integer('idEmpleado')->unsigned();
             $table->integer('ReciboNomina_idReciboNomina')->unsigned();
             $table->string('Enero', 45)->nullable();
             $table->string('Febreo', 45)->nullable();
@@ -32,10 +32,10 @@ class CreatePagoNomina extends Migration
             $table->string('Noviembre', 45)->nullable();
             $table->string('Diciembre', 45)->nullable();
         
-            $table->index('Docente_idDocentes','fk_PagoNomina_Docente1_idx');
+            $table->index('idEmpleado','fk_PagoNomina_Empleado1_idx');
             $table->index('ReciboNomina_idReciboNomina','fk_PagoNomina_ReciboNomina1_idx');
         
-            $table->foreign('Docente_idDocentes')
+            $table->foreign('idEmpleado')
                 ->references('idEmpleado')->on('Empleado');
         
             $table->foreign('ReciboNomina_idReciboNomina')

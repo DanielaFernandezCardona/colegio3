@@ -13,7 +13,8 @@ class CreateAdministrador extends Migration
      */
     public function up()
     {
-     Schema::create('Administrador', function(Blueprint $table) {
+   
+Schema::create('Administrador', function(Blueprint $table) {
             $table->engine = 'InnoDB';
         
             $table->increments('idAdministrador');
@@ -24,10 +25,13 @@ class CreateAdministrador extends Migration
             $table->string('correo', 45)->nullable();
             $table->string('nombreUsuario', 45)->nullable();
             $table->string('direccion', 45)->nullable();
-        
+            $table->string('documento', 45)->nullable();
+            
+           
             $table->timestamps();
         
         });
+
    
     }
 

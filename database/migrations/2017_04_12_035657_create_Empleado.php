@@ -13,11 +13,11 @@ class CreateEmpleado extends Migration
      */
     public function up()
     {
-        Schema::create('Empleado', function(Blueprint $table) {
+     Schema::create('Empleado', function(Blueprint $table) {
             $table->engine = 'InnoDB';
         
             $table->increments('idEmpleado');
-            $table->integer('idDireccion');
+            $table->string('documento', 45)->nullable();
             $table->string('nombre', 45)->nullable();
             $table->string('apellido', 45)->nullable();
             $table->string('nacionalidad', 45)->nullable();
@@ -34,6 +34,7 @@ class CreateEmpleado extends Migration
             $table->double('valorNomina',15,8)->nullable();
             $table->string('estadoCivil', 45)->nullable();
             $table->string('foto', 45)->nullable();
+            
         
             $table->timestamps();
         

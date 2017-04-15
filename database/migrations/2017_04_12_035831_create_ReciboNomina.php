@@ -17,7 +17,7 @@ class CreateReciboNomina extends Migration
             $table->engine = 'InnoDB';
         
             $table->increments('idReciboNomina');
-            $table->integer('idDocentes')->unsigned();
+            $table->integer('idDocente')->unsigned();
             $table->dateTime('fecha')->nullable();
             $table->integer('mes_a_Pagar')->nullable();
             $table->double('totalPago',15,8)->nullable();
@@ -25,9 +25,9 @@ class CreateReciboNomina extends Migration
             $table->integer('bonos')->nullable();
             $table->string('observaciones', 45)->nullable();
         
-            $table->index('idDocentes','fk_ReciboNomina_Docente1_idx');
+            $table->index('idDocente','fk_ReciboNomina_Docente1_idx');
         
-            $table->foreign('idDocentes')
+            $table->foreign('idDocente')
                 ->references('idEmpleado')->on('Empleado');
         
             $table->timestamps();

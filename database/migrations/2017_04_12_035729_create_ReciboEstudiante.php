@@ -18,7 +18,7 @@ class CreateReciboEstudiante extends Migration
         
             $table->increments('idREcibo');
             $table->integer('TipoPago_idTipoPago')->unsigned();
-            $table->integer('idEstudiantes')->unsigned();
+            $table->integer('idEstudiante')->unsigned();
             $table->integer('idGrado')->unsigned();
             $table->integer('valorPago');
             $table->integer('pagoAdicional')->nullable();
@@ -28,14 +28,14 @@ class CreateReciboEstudiante extends Migration
             $table->dateTime('fecha')->nullable();
         
             $table->index('TipoPago_idTipoPago','fk_Recibo_TipoPago1_idx');
-            $table->index('idEstudiantes','fk_Recibo_Estudiante1_idx');
+            $table->index('idEstudiante','fk_Recibo_Estudiante1_idx');
             $table->index('idGrado','fk_ReciboEstudiante_Grado1_idx');
         
             $table->foreign('TipoPago_idTipoPago')
                 ->references('idTipoPago')->on('TipoPago');
         
-            $table->foreign('idEstudiantes')
-                ->references('idEstudiantes')->on('Estudiante');
+            $table->foreign('idEstudiante')
+                ->references('idEstudiante')->on('Estudiante');
         
             $table->foreign('idGrado')
                 ->references('idGrado')->on('Grado');

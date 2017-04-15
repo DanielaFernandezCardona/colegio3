@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\Administrador;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Redirect;
+use Input;
 
 class RegisterController extends Controller
 {
@@ -20,7 +22,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+ 
 
     /**
      * Where to redirect users after registration.
@@ -39,33 +41,23 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
-    }
+//toma los datos del formulario   
+public function postRegistrar()
+{
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
+  $userdata = array(
+            'documento' => Input::get('documento'),
+            'nombre'=> Input::get('nombre'),
+         'apellido' => Input::get('apellido'),
+            'contrasena'=> Input::get('contrasena'),
+        'telefono' => Input::get('telefono'),
+            'usuario'=> Input::get('usuario'),
+        'direccion' => Input::get('direccion'),
+            'correo'=> Input::get('correo')       
+        );
+Administrador::crearAdministrador($userdata);
+return Redirect::to('registroUsuario')->with('success','Registro Exitoso');
+}
+
+
 }

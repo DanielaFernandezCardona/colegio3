@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <title>Colegio Bello Horizonte</title>
 
 <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -89,42 +92,52 @@
         <div class="row">
                   <div class="col-lg-12">
                         <div class="panel panel-default">
-                              <div class="panel-heading">Datos Usuario</div>
+                           @if(Session::has('success'))
+                   <div class="row">
+                <div class="col-md-12">
+                  <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                  </div>
+                  </div> 
+                         </div> 
+                        @endif
+                   
+                              <div class="panel-heading" >Datos Usuario</div>
                               <div class="panel-body">
                                     <div class="col-md-6">
-                                          <form role="form">
-                                          
-                                                <div class="form-group">
-                                                      
-
+                                          <form role="form"  action="/registrar" method="post">
+              
+                                                <div class="form-group" style="border:1px;">
+                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  
                                                       <label>Documento </label>
-                                                      <input class="form-control" type="text" name=  documento  placeholder="documento" required>
+                                                      <input class="form-control" type="text" name="documento"  placeholder="Documento" required>
                                                       <label>Nombre</label>
-                                                      <input class="form-control" name=nombre placeholder="Nombre">
+                                                      <input class="form-control" name="nombre" placeholder="Nombre">
                                                       <label>Apellido</label>
-                                                      <input class="form-control" type="text" name=  apellido   placeholder="apellido" required>
+                                                      <input class="form-control" type="text" name="apellido"   placeholder="Apellido" required>
                                                   
-                                                      <label>contraseña</label>
-                                                      <input class="form-control" type="text" name=  contrasena   placeholder="Contraseña" required>
+                                                      <label>Contraseña</label>
+                                                      <input class="form-control" type="text" name="contrasena"   placeholder="Contraseña" required>
                                                    
-                                                      <label>telefono</label>
-                                                      <input class="form-control" type="text" name=  telefono  placeholder="telefono" required>
-                                                      <label>nombre Usuario</label>
-                                                      <input class="form-control" type="text" name=  usuario   placeholder="nombre Usuario" required>
+                                                      <label>Telefono</label>
+                                                      <input class="form-control" type="text" name="telefono"  placeholder="Telefono" required>
+                                                      <label>Nombre Usuario</label>
+                                                      <input class="form-control" type="text" name="usuario"   placeholder="Nombre Usuario" required>
                                                   
                                                       <label>Dirección</label>
-                                                      <input class="form-control" type="text" name=  direccion  placeholder="Dirección" required>
+                                                      <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
 
-                                                      <label>correo</label>
-                                                      <input class="form-control" type="text" name=  correoPadre  placeholder=" Correo Padre" required>
+                                                      <label>Correo</label>
+                                                      <input class="form-control" type="text" name="correo"  placeholder=" Correo" required>
 
                                                   
                                                 </div>
                                                                                                 
                                                 
-                                                <button type="submit" class="btn btn-primary">Editar</button>
-                                                <button type="reset" class="btn btn-default">Registrar</button>
-                                                <button type="reset" class="btn btn-primary">Borrar</button>
+                                                <button type="button" class="btn btn-primary">Editar</button>
+                                                <button type="submit" class="btn btn-default">Registrar</button>
+                                                <button type="button" class="btn btn-primary">Borrar</button>
                                           </div>
                                     </form>
                               </div>
