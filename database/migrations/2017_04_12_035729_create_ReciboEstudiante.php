@@ -22,8 +22,8 @@ class CreateReciboEstudiante extends Migration
             $table->integer('idGrado')->unsigned();
             $table->integer('valorPago');
             $table->integer('pagoAdicional')->nullable();
-            $table->string('descripcion', 45)->nullable();
-            $table->double('totalPago',15,8)->nullable();
+            $table->string('descripcion', 200)->nullable();
+            $table->double('totalPago',10,6)->nullable();
             $table->string('mes_a_pagar', 45)->nullable();
             $table->dateTime('fecha')->nullable();
         

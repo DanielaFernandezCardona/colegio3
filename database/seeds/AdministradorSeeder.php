@@ -15,7 +15,7 @@ class AdministradorSeeder extends Seeder
     {
     	
 DB::table('Administrador')->insert(array(
-          'idAdministrador'=>'12345',
+          'documento'=>'12345',
           'nombre'=> 'elmer',
             'apellidos'=> 'alarcon',
             'contrasena'=> '12345',

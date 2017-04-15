@@ -20,7 +20,7 @@ class CreateTotalMes extends Migration
             $table->string('mes', 45)->nullable();
             $table->integer('idAdministrador')->unsigned();
             $table->string('fechaGenercion',45)->nullable();
-            $table->double('totalMescol',15,8)->nullable();
+            $table->double('totalMescol',10,6)->nullable();
         
             $table->index('idAdministrador','fk_totalMes_Administrador1_idx');
         

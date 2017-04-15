@@ -25,13 +25,13 @@ Schema::create('Estudiante', function(Blueprint $table) {
             $table->string('expedicion', 45)->nullable();
             $table->integer('telefono')->nullable();
             $table->integer('celular')->nullable();
-            $table->string('direccion', 45)->nullable();
-            $table->integer('peso')->nullable();
+            $table->string('direccion', 100)->nullable();
+            $table->double('peso',2,3)->nullable();
             $table->string('tipoSangre', 45)->nullable();
             $table->date('anioActual')->nullable();
             $table->string('condicion', 45)->nullable();
             $table->string('religion', 45)->nullable();
-            $table->string('foto', 45)->nullable();
+            $table->string('foto', 100)->nullable();
             $table->integer('Acudiente_idAcudiente')->unsigned();
         
             $table->index('idGrado','fk_Estudiante_Grado1_idx');

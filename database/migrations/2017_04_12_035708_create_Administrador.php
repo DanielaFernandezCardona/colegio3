@@ -24,7 +24,7 @@ Schema::create('Administrador', function(Blueprint $table) {
             $table->string('telefono', 45)->nullable();
             $table->string('correo', 45)->nullable();
             $table->string('nombreUsuario', 45)->nullable();
-            $table->string('direccion', 45)->nullable();
+            $table->string('direccion', 100)->nullable();
             $table->string('documento', 45)->nullable();
             
            

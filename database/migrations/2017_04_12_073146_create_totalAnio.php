@@ -20,7 +20,7 @@ class CreateTotalAnio extends Migration
             $table->string('anio',45)->nullable();
             $table->dateTime('fechaGeneracion')->nullable();
             $table->integer('idAdministrador');
-            $table->integer('totalAniocol')->nullable();
+            $table->double('totalAniocol',16,8)->nullable();
             $table->timestamps();
         
         });
