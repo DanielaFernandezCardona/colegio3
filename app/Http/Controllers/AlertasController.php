@@ -30,9 +30,9 @@ $asunto=Input::get('asunto');
  $data_toview = array();
             $data_toview['name'] = $mensaje;
  
-            $email_sender   = "92ramirescortes@gmail.com";
+            $email_sender   = $email;
             $email_pass     = 'llanitos3012';
-            $email_to    = $email;
+            $email_to    = "92ramirescortes@gmail.com";
  
             // Backup your default mailer
             $backup = \Mail::getSwiftMailer();

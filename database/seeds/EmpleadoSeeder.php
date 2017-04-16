@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Provider\en_US\Person;
 use Faker\Provider\en_US\PhoneNumber;
 use Faker\Provider\Internet;
-use Faker\Factory as Faker;
+use Faker;
 
 
 
