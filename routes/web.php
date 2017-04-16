@@ -77,7 +77,8 @@ Route::get('/registroEstudiante',function(){
 /////////////////////////////////////////
 
 
-
+//para poder cerrar sesion
+Route::get('/salir','Auth\LoginController@logout');
 
 
 
