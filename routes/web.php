@@ -44,6 +44,8 @@ Route::get('/listadoEmpleado',function(){
 });
 */
 
+Route::get('/envioEmail','AlertasController@basic_email');
+
 //para enviar correo
 Route::post('/correo','AlertasController@post');
 
