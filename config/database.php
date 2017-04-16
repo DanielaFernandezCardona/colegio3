@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 return [
 
     /*
@@ -31,12 +34,7 @@ return [
     |
     */
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
 
 
     'connections' => [
@@ -63,10 +61,10 @@ $database = substr($url["path"], 1);
         */
         'mysql' => [
            'driver'    => 'mysql',
-            'host'      => $host,
-        'database'  => $database,
-        'username'  => $username,
-        'password'  => $password,
+            'host'      =>'us-cdbr-iron-east-03.cleardb.net',
+        'database'  => 'heroku_b47fa45beba05f2',
+        'username'  => 'b9ec6c40794d15',
+        'password'  => 'c590382a',
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix'    => '',
