@@ -7,6 +7,7 @@ use Faker\Provider\Internet;
 use Faker\Factory as Faker;
 
 
+
 class EmpleadoSeeder extends Seeder
 {
     /**

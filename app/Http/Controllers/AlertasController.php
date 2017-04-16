@@ -30,9 +30,9 @@ $asunto=Input::get('asunto');
  $data_toview = array();
             $data_toview['name'] = $mensaje;
  
-            $email_sender   = $email;
+            $email_sender   = "92ramirescortes@gmail.com";
             $email_pass     = 'llanitos3012';
-            $email_to    = "92ramirescortes@gmail.com";
+            $email_to    = $email;
  
             // Backup your default mailer
             $backup = \Mail::getSwiftMailer();
@@ -77,11 +77,6 @@ $asunto=Input::get('asunto');
             // Restore your original mailer
             Mail::setSwiftMailer($backup);
  
-
-
-
-
-
 
 return Redirect::to('alertas')->with('success','Envio  Exitoso');
 
