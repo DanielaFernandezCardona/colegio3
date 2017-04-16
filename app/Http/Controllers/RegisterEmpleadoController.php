@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Input;
 use Redirect;
 use DB;
-use Faker\Factory as Faker;
+
 
 use Illuminate\Support\Collection;
 //toma los datos del empleado
@@ -16,7 +16,7 @@ class RegisterEmpleadoController extends Controller
 //devuelve una coleccion a la de lista empleado para mostrar tabla con el foreach
 function index()
     {
-        $faker = Faker::create();
+    
         // $empleados = DB::table('Empleado')->get();
          //$empleados->put('mes',$faker->randomElement(['ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO']));
 

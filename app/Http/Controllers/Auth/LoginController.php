@@ -88,17 +88,13 @@ foreach ($users as $user) {
 }
 
 
-public function logout(Request $request)
-{
-    $this->guard()->logout();
 
-    $request->session()->flush();
+//cerrar sesion
+public function logout(){
+ //   Session::flush();
+     return Redirect::to('/login');
+} 
 
-    $request->session()->regenerate();
-
-
-    return redirect('/');
-}
 
 
 }

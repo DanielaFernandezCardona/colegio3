@@ -1,1 +1,1 @@
-<b>{!! $bodymessage !!}</b>
+<b>{!! $name !!}</b>
