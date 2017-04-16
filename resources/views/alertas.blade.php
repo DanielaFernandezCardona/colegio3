@@ -92,13 +92,24 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><svg class="glyph stroked email"><use xlink:href="#stroked-email"></use></svg> Contactar Acudiente</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" action="" method="post">
+                  @if(Session::has('success'))
+                   <div class="row">
+                <div class="col-md-12">
+                  <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                  </div>
+                  </div> 
+                         </div> 
+                        @endif
+                        <form class="form-horizontal" action="/correo" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  
                             <fieldset>
                                 <!-- Name input-->
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="name">Asunto</label>
                                     <div class="col-md-9">
-                                    <input id="name" name="Asunto" type="text" placeholder="Asunto" class="form-control">
+                                    <input id="name" name="asunto" type="text" placeholder="Asunto" class="form-control">
                                     </div>
                                 </div>
                             
@@ -114,7 +125,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="message">Mensaje</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Escriba su mensaje por favor" rows="5"></textarea>
+                                        <textarea class="form-control" id="message" name="mensaje" placeholder="Escriba su mensaje por favor" rows="5"></textarea>
                                     </div>
                                 </div>
                                 

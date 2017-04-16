@@ -6,10 +6,26 @@ use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use Input;
 use Redirect;
+use DB;
 
 class RegisterEstudianteController extends Controller
 {
     
+
+function index()
+    {
+
+ $estudiantes=DB::table('Estudiante')
+            ->join('grado', 'grado.idGrado', '=', 'estudiante.idEstudiante')
+            ->select('estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+            ->get();
+
+      //   $estudiantes = DB::table('Estudiante')->get();
+        return view('listadoGrado',['estudiantes' => $estudiantes]);
+    }
+
+
+
     //toma los datos del formulario estudiante  
 public function postRegistrar()
 {

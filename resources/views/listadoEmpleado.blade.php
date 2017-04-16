@@ -90,19 +90,29 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Listas de empleados</div>
                     <div class="panel-body">
-                        <table data-toggle="table" data-url="tables/data2.json" >
+                        <table data-toggle="table" >
                             <thead>
                             <tr>
-                                <th data-field="id" data-align="right">documento</th>
-                                <th data-field="name">nombre</th>
-                                <th data-field="apellido">apellido</th>
-                                <th data-field="grado"> grado</th>
-                                <th data-field="cargo">cargo</th>
-                                <th data-field="mesesPagos">meses pagos</th>
-                                <th data-field="correo"> correo</th>
-                            </tr>
+                                <th data-field="id" data-align="right">Documento</th>
+                                <th data-field="name">Nombre</th>
+                                <th data-field="apellido">Apellido</th>
+                                <th data-field="grado"> Grado</th>
+                                <th data-field="cargo">Cargo</th>
+                                <th data-field="correo"> Correo</th>
+                             </tr>
                             </thead>
+                             <tr>
+    @foreach($empleados as $empleado)
+     <td>{{$empleado->documento}}</td>
+    <td>{{$empleado->nombre}}</td>
+    <td>{{$empleado->apellido}}</td>
+    <td>{{$empleado->grado}}</td>
+    <td>{{$empleado->cargo}}</td>
+    <td>{{$empleado->correo}}</td>
+        </tr>
+             @endforeach
                         </table>
+                    
                     </div>
                 </div>
 
@@ -121,23 +131,7 @@
     <script src="./js/easypiechart-data.js"></script>
     <script src="./js/bootstrap-datepicker.js"></script>
     <script src="js/bootstrap-table.js"></script>
-    <script>
-        
-
-        !function ($) {
-            $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
-                $(this).find('em:first').toggleClass("glyphicon-minus");      
-            }); 
-            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-        }(window.jQuery);
-
-        $(window).on('resize', function () {
-          if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-        })
-        $(window).on('resize', function () {
-          if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-        })
-    </script>   
+     
 </body>
 
 </html>

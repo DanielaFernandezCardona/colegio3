@@ -91,17 +91,26 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Listas por Grados</div>
                     <div class="panel-body">
-                        <table data-toggle="table" data-url="tables/data2.json" >
+                        <table data-toggle="table" >
                             <thead>
                             <tr>
                                 <th data-field="id" data-align="right">documento</th>
                                 <th data-field="name">nombre</th>
                                 <th data-field="apellido">apellido</th>
                                 <th data-field="grado"> grado</th>
-                                <th data-field="mesesMora"> Meses Mora</th>
-                                <th data-field="correo"> correo</th>
+                                <th data-field="correo"> celular</th>
                             </tr>
                             </thead>
+
+    <tr>
+    @foreach($estudiantes as $estudiante)
+     <td>{{$estudiante->documento}}</td>
+     <td>{{$estudiante->nombre}}</td>
+    <td>{{$estudiante->apellido}}</td>
+    <td>{{$estudiante->grado}}</td>
+    <td>{{$estudiante->celular}}</td>
+        </tr>
+             @endforeach
                         </table>
                     </div>
                 </div>

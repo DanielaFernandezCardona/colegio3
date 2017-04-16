@@ -20,7 +20,7 @@ class CreatePagoNomina extends Migration
             $table->integer('idEmpleado')->unsigned();
             $table->integer('ReciboNomina_idReciboNomina')->unsigned();
             $table->string('Enero', 45)->nullable();
-            $table->string('Febreo', 45)->nullable();
+            $table->string('Febrero', 45)->nullable();
             $table->string('Marzo', 45)->nullable();
             $table->string('Abril', 45)->nullable();
             $table->string('Mayo', 45)->nullable();

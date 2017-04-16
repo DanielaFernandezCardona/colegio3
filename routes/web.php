@@ -28,8 +28,26 @@ Route::get('/alertas',function(){
 	 return view('alertas');
 });
 
+Route::get('/listadoGrado',function(){
+	 return view('listadoGrado');
+});
 
+//lista empleado
+Route::get('/listadoEmpleado', ['as' => 'listadoEmpleado', 'uses' => 'RegisterEmpleadoController@index']);
 
+//lista Grado
+Route::get('/listadoGrado', ['as' => 'listadoGrado', 'uses' => 'RegisterEstudianteController@index']);
+
+/*
+Route::get('/listadoEmpleado',function(){
+	 return view('listadoEmpleado');
+});
+*/
+
+//para enviar correo
+Route::post('/correo','AlertasController@post');
+
+//para poder logearse
 Route::post('/logear','Auth\LoginController@postLogin');
 
 

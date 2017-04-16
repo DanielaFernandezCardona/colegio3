@@ -5,10 +5,33 @@ use App\Models\Empleado;
 use Illuminate\Http\Request;
 use Input;
 use Redirect;
+use DB;
+use Faker\Factory as Faker;
 
+use Illuminate\Support\Collection;
 //toma los datos del empleado
 class RegisterEmpleadoController extends Controller
 {
+
+//devuelve una coleccion a la de lista empleado para mostrar tabla con el foreach
+function index()
+    {
+        $faker = Faker::create();
+        // $empleados = DB::table('Empleado')->get();
+         //$empleados->put('mes',$faker->randomElement(['ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO']));
+
+
+ $empleados=DB::table('Empleado')
+            ->join('grado', 'grado.idGrado', '=', 'empleado.idEmpleado')
+            ->select('empleado.documento','empleado.nombre', 'empleado.apellido', 'empleado.cargo','empleado.correo','grado.grado')
+            ->get();
+
+
+
+        return view('listadoEmpleado',['empleados' => $empleados]);
+    }
+
+
     //toma los datos del formulario   
 public function postRegistrar()
 {

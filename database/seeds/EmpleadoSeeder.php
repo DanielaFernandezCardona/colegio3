@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Provider\en_US\Person;
+use Faker\Provider\en_US\PhoneNumber;
+use Faker\Provider\Internet;
 use Faker\Factory as Faker;
 
 
@@ -24,7 +27,7 @@ class EmpleadoSeeder extends Seeder
             'apellido'=> $faker->randomElement(['ramirez','gaona','alarcon','rodriguez','romero']) ,
             'nacionalidad'=> 'colombia',
             'telefono' => $faker->randomElement(['3162953628','323241234','301241234','320241234','311241234']),
-            'correo' => $faker->randomElement(['3162953628','323241234','301241234','320241234','311241234']),
+            'correo' => $faker->email,
 			'direccion' =>$faker->randomElement(['a 44-81.Cl. 56 #4443, Sevilla','Cra. 49 #5273','#50-43 a, Cra. 50','Kr 48 50, Sevilla','Cra. 49 #53 - 51']),
 			'fechaNacimiento'=>$faker->dateTime,
 			'estudiosRealizados' => $faker->randomElement(['pedagogia']),

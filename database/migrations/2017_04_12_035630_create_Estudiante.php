@@ -22,6 +22,7 @@ Schema::create('Estudiante', function(Blueprint $table) {
             $table->string('apellido', 45)->nullable();
             $table->date('fechaNac');
             $table->string('documento', 45)->nullable();
+            //$table->string('correo', 45)->nullable();
             $table->string('expedicion', 45)->nullable();
             $table->string('telefono',45)->nullable();
             $table->string('celular',45)->nullable();
