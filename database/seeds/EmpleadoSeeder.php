@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Provider\en_US\Person;
 use Faker\Provider\en_US\PhoneNumber;
 use Faker\Provider\Internet;
-use Faker;
+
 
 
 
@@ -17,7 +17,7 @@ class EmpleadoSeeder extends Seeder
      */
     public function run()
     {  
-	$faker = Faker::create();
+	$faker = Faker\Factory::create();
 
 //insertamos datos en la tabla empleado
 	for ($i=1; $i < 19; $i++) {
