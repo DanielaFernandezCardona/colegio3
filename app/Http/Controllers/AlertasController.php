@@ -88,4 +88,18 @@ return Redirect::to('alertas')->with('success','Envio  Exitoso');
 }
 
 
+//  funcion
+
+public  function basic_email()
+{
+    $data=['name'=>'Colegio Bello Horizonte'];
+    Mail::send(['text'->'mail'],$data,function($message){
+        $message->to('ramirescortes@hotmail.com','Colegio Bello horizonte')->subject('envio correo laravel');
+        $message->from('92ramirescortes@hotmail.com','Colegio Bello Horizonte');       
+    });
+    echo 'email enviado';
+
+}
+
+
 }
