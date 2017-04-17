@@ -17,7 +17,7 @@ class AlertasController extends Controller
 {
     
 
-// para enviar email
+// para enviar email 
 public function post()
 {
 	
