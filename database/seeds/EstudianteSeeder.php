@@ -25,6 +25,7 @@ class EstudianteSeeder extends Seeder
 
 
 //insertamos datos en la tabla de acudiente
+/*
         DB::table('Acudiente')->insert(array(
           'documentoPadre'=>$faker->randomElement(['789','1234','31245','1345','1335']),
           'nombrePadre'=>$faker->name,
@@ -48,6 +49,7 @@ class EstudianteSeeder extends Seeder
           ));
 
 }
+*/
   for ($i=0; $i < 5; $i++) {
 //insertamos datos en la tabla estudiante
         DB::table('Estudiante')->insert(array(
@@ -65,7 +67,7 @@ class EstudianteSeeder extends Seeder
           'condicion'=>'ninguna',
           'religion'=>$faker->randomElement(['catolico','cristiano']),
           'idGrado'=>$i+2,
-          'Acudiente_idAcudiente'=>3   		
+          'Acudiente_idAcudiente'=>32   		
           ));
 
 }//for
