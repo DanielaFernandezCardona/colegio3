@@ -21,11 +21,13 @@ class EstudianteSeeder extends Seeder
 
 
       $faker = Faker::create();
+
+/*
       for ($i=0; $i < 5; $i++) {
 
 
 //insertamos datos en la tabla de acudiente
-/*
+
         DB::table('Acudiente')->insert(array(
           'documentoPadre'=>$faker->randomElement(['789','1234','31245','1345','1335']),
           'nombrePadre'=>$faker->name,
