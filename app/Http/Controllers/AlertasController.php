@@ -30,9 +30,9 @@ $asunto=Input::get('asunto');
  $data_toview = array();
             $data_toview['name'] = $mensaje;
  
-            $email_sender   = $email;
+            $email_sender   = "92ramirescortes@gmail.com";
             $email_pass     = 'llanitos3012';
-            $email_to    = "92ramirescortes@gmail.com";
+            $email_to    = $email;
  
             // Backup your default mailer
             $backup = \Mail::getSwiftMailer();
@@ -51,8 +51,8 @@ $asunto=Input::get('asunto');
                         // Set the mailer as gmail
                         \Mail::setSwiftMailer($gmail);
  
-                        $data['emailto'] = $email_sender;
-                        $data['sender'] = $email_to;
+                        $data['emailto'] =$email_to;  
+                        $data['sender'] = $email_sender;
                         $data['asunto']=$asunto;
                         //Sender dan Reply harus sama
  
