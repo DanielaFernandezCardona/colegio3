@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 use Faker\Provider\en_US\Person;
 use Faker\Provider\en_US\PhoneNumber;
 use Faker\Provider\Internet;
@@ -20,6 +21,8 @@ class EmpleadoSeeder extends Seeder
 	 $faker = Faker::create();
 
 //insertamos datos en la tabla empleado
+
+
 	for ($i=1; $i < 19; $i++) {
 
         DB::table('Empleado')->insert(array(
@@ -43,5 +46,9 @@ class EmpleadoSeeder extends Seeder
         )); 
     }//for
 
-}
+
+
+
+}//run
+
 }
