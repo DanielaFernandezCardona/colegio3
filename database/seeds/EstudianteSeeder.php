@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Provider\en_US\Person;
 use Faker\Provider\en_US\PhoneNumber;
 use Faker\Provider\Internet;
-//use Faker\Factory as Faker;
+use Faker\Factory as Faker;
 
 
 class EstudianteSeeder extends Seeder
@@ -20,7 +20,7 @@ class EstudianteSeeder extends Seeder
       $date = new DateTime('2017-04-14');
 
 
-      $faker = Faker\Factory::create();
+      $faker = Faker::create();
       for ($i=0; $i < 5; $i++) {
 
 
