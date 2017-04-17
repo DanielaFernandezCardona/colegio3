@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
   	  Model::unguard();
-       //$this->call('AdministradorSeeder');
-       //$this->call('GradoSeeder');    
+       $this->call('AdministradorSeeder');
+       $this->call('GradoSeeder');    
       $this->call('EmpleadoSeeder');    
        $this->call('EstudianteSeeder');    
        
