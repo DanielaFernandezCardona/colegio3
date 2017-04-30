@@ -44,7 +44,7 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
-        /*
+        
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -58,7 +58,8 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-        */
+        
+         /*   
         'mysql' => [
            'driver'    => 'mysql',
             'host'      =>'us-cdbr-iron-east-03.cleardb.net',
@@ -71,6 +72,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+        */
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

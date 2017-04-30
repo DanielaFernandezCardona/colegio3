@@ -135,7 +135,7 @@
                                                                                                 
                                                 
                                                 <button type="button" class="btn btn-primary">Editar</button>
-                                                <button type="submit" class="btn btn-default">Registrar</button>
+                                                <button type="submit" value="Registrar" class="btn btn-default">Registrar</button>
                                                 <button type="button" class="btn btn-primary">Borrar</button>
                                           </div>
                                     </form>

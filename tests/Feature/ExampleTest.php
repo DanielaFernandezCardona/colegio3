@@ -16,8 +16,22 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/login');
 
-        $response->assertStatus(200);
+       // $response->assertStatus(200);
     }
+
+        /*
+        $user = array(
+             'usuario' => 'elmer', 
+             'contrasena' => '12345'
+        );
+
+        $this->visit(route('login'))
+            ->type($user->usuario, 'usuario')
+            ->type('12345', 'contrasena')
+            ->press('submit')
+            ->see('Successfully logged in')
+            ->onPage('/menu');
+    */
 }

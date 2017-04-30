@@ -10,6 +10,16 @@ use DB;
 
 class Empleado extends Model
 {
+
+// consulta tabla empleado para traer los valores
+ protected $table = 'empleado';
+ protected $primaryKey='idEmpleado';
+
+      public function empleado()
+      {
+        return $this->hasOne('App\Models\Empleado');
+      }
+
 	public static function crearEmpleado($data)
 	{ 
 
@@ -86,7 +96,20 @@ DB::table('Empleado')->insert(array(
 
 	}//function
 
+public static function updateEmpleado($request)
+{
+$empleado = Empleado::find($request->id);
+ /*
+ $empleado=DB::table('empleado')->where('idEmpleado', $request->id)->first();
+       
+ */
+ 
+         $empleado->nombre = $request->nombre;
+         $empleado->correo = $request->correo;
+ $empleado->save();
 
+}
 
+   
 
 }

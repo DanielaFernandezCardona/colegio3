@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class UserTest extends TestCase
+class ListarAlumnosGradoTest extends TestCase
 {
     /**
      * A basic test example.
@@ -16,6 +16,10 @@ class UserTest extends TestCase
      */
     public function testExample()
     {
-        //$this->assertTrue(true);
+       // $this->assertTrue(true);
+
+         $response = $this->get('/listadoGrado');
+
+       // $response->assertStatus(200);
     }
 }

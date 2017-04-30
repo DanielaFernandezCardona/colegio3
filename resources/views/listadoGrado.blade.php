@@ -41,11 +41,6 @@
     </nav>
         
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-            </div>
-        </form>
         <ul class="nav menu">
             <li class="active"><a href="./menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
 
@@ -90,6 +85,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Listas por Grados</div>
                     <div class="panel-body">
+                     <form role="search">
+             <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar">
+                 </div>
+                 <button type="submit" class="btn btn-default">Buscar</button>
+                     </form>
+       
+
                         <table data-toggle="table" >
                             <thead>
                             <tr>

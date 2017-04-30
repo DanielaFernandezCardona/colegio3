@@ -12,18 +12,19 @@ use Illuminate\Support\Collection;
 //toma los datos del empleado
 class RegisterEmpleadoController extends Controller
 {
+protected $table = 'Empleado';
+   
+protected $primaryKey = 'idEmpleado';
 
 //devuelve una coleccion a la de lista empleado para mostrar tabla con el foreach
 function index()
     {
     
-        // $empleados = DB::table('Empleado')->get();
-         //$empleados->put('mes',$faker->randomElement(['ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO']));
-
+       
 
  $empleados=DB::table('Empleado')
             ->join('grado', 'grado.idGrado', '=', 'empleado.idEmpleado')
-            ->select('empleado.documento','empleado.nombre', 'empleado.apellido', 'empleado.cargo','empleado.correo','grado.grado')
+            ->select('empleado.idEmpleado','empleado.documento','empleado.nombre', 'empleado.apellido', 'empleado.cargo','empleado.correo','grado.grado')
             ->get();
 
 
@@ -59,7 +60,51 @@ public function postRegistrar()
 Empleado::crearEmpleado($userdata);
 return Redirect::to('registroEmpleado')->with('success','Registro Exitoso');
 
+}
+
+// para eliminar un empleado
+public function destroy()
+{
 
 }
+// para buscar un empleado
+public function search()
+{
+
+}
+
+
+
+ public function edit($id)
+ {
+
+$empleado=DB::table('Empleado')
+->join('grado', 'grado.idGrado', '=', 'empleado.idEmpleado')
+->select('empleado.idEmpleado','empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado')
+->where('idEmpleado',$id)
+->first();
+
+
+ //$empleado = Empleado::find(['idEmpleado' => $id]);
+                return \View::make('updateEmpleado',compact('empleado'));
+ }
+
+public function update(Request $request)
+ {
+    
+   //     $empleado = Empleado::find($request->id);
+ /*
+ $empleado=DB::table('empleado')->where('idEmpleado', $request->id)->first();
+                $empleado->nombre = $request->nombre;
+                $empleado->correo = $request->correo;
+ */
+ //$empleado->save();
+
+                Empleado::updateEmpleado($request);
+
+                return redirect('listadoEmpleado');
+ 
+ //  var_dump($request);             
+ }
 
 }

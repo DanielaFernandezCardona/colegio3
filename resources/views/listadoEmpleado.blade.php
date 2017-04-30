@@ -30,7 +30,6 @@
                     <li class="dropdown pull-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Perfil</a></li>
                             <li><a href="/salir"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Salir</a></li>
                         </ul>
                     </li>
@@ -41,11 +40,7 @@
     </nav>
         
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-            </div>
-        </form>
+        
         <ul class="nav menu">
             <li class="active"><a href="./menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
 
@@ -98,6 +93,9 @@
                                 <th data-field="grado"> Grado</th>
                                 <th data-field="cargo">Cargo</th>
                                 <th data-field="correo"> Correo</th>
+                                <th data-field="ver"> Ver Información</th>
+                                <th data-field="accion">Acción</th> 
+                                
                              </tr>
                             </thead>
                              <tr>
@@ -108,6 +106,15 @@
     <td>{{$empleado->grado}}</td>
     <td>{{$empleado->cargo}}</td>
     <td>{{$empleado->correo}}</td>
+  <!--  <td><button style="border-radius: 5px;" id="{{$empleado->idEmpleado}}">Ver</button></td>-->
+  <td><a href="/hojavida/{{$empleado->idEmpleado}}"><button style="border-radius: 5px;" id="{{$empleado->idEmpleado}}">Ver</button></a></td>
+    
+     <td>
+                        <a class="btn btn-primary btn-xs" href="{{ route('empleado/edit',['id' =>$empleado->idEmpleado ] )}}" >Edit</a> 
+                        <a class="btn btn-danger btn-xs" href="{{ route('empleado/destroy',['id' =>$empleado->idEmpleado] )}}" >Delete</a>
+                    </td>   
+
+
         </tr>
              @endforeach
                         </table>

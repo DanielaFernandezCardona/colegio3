@@ -80,6 +80,19 @@ Route::get('/registroEstudiante',function(){
 //para poder cerrar sesion
 Route::get('/salir','Auth\LoginController@logout');
 
+//para generar el pdf
+Route::get('htmltopdfview',array('as'=>'htmltopdfview','uses'=>'PdfController@htmltopdfview'));
+
+// generar el pdf de un empleado
+Route::get('/hojavida/{id}','PdfController@pdf_empleado');
+
+
+/*rutas que permitiran el manejo de gestion de los empleados*/
+Route::post('empleado/update', ['as' => 'empleado/update', 'uses'=>'RegisterEmpleadoController@update']);
+Route::get('empleado/edit/{id}', ['as' => 'empleado/edit', 'uses'=>'RegisterEmpleadoController@edit']);
+Route::get('empleado/destroy/{id}', ['as' => 'empleado/destroy', 'uses'=>'RegisterEmpleadoController@destroy']);
+Route::post('empleado/search', ['as' => 'empleado/search', 'uses'=>'RegisterEmpleadoController@search']);
+
 
 
 /*

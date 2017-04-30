@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class UserTest extends TestCase
+class LoginTest extends TestCase
 {
     /**
      * A basic test example.
@@ -17,5 +17,16 @@ class UserTest extends TestCase
     public function testExample()
     {
         //$this->assertTrue(true);
+
+         //$this->visit('welcome')
+             //->see('Bienvenido');
+        /*
+    				$this->visit('/login')
+                     ->type('elmer', 'usuario')
+            		->type('12345', 'contrasena')
+            		->press('Ingresar')
+           			 ->assertSee('Successfully logged in')
+           			 ->onPage('/menu');
+    */
     }
 }
