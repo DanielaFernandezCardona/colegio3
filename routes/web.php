@@ -23,7 +23,9 @@ Route::get('/login', function () {
 Route::get('/menu',function(){
 	 return view('menu');
 });
-
+Route::get('/reciboEstudiante',function(){
+	 return view('reciboEstudiante');
+});
 Route::get('/alertas',function(){
 	 return view('alertas');
 });
