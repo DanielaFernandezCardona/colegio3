@@ -103,7 +103,7 @@
      <td>{{$empleado->documento}}</td>
     <td>{{$empleado->nombre}}</td>
     <td>{{$empleado->apellido}}</td>
-    <td>{{$empleado->grado}}</td>
+    <td>{{$empleado->grado}}</td>    
     <td>{{$empleado->cargo}}</td>
     <td>{{$empleado->correo}}</td>
   <!--  <td><button style="border-radius: 5px;" id="{{$empleado->idEmpleado}}">Ver</button></td>-->

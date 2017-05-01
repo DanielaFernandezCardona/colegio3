@@ -122,7 +122,30 @@
                                                       <label>Dirección</label>
                                                       <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
                                                       <label>Grado</label>
-                                                      <input class="form-control" type="text" name="grado"  placeholder="Grado" required>
+                                                      <div class="form-group">
+                                                      <select class="form-control" id="grado" name="grado" >
+                                                          <option value="1" >PREJARDIN</option>
+                                                          <option value="2" >JARDIN</option>
+                                                          <option value="3" >TRANSICION</option>
+                                                          <option value="4" >1A</option>
+                                                          <option value="5" >1B</option>
+                                                          <option value="6" >1C</option>
+                                                          <option value="7" >2A</option>
+                                                          <option value="8" >2B</option>
+                                                          <option value="9" >2C</option>
+                                                          <option value="10" >3A</option>
+                                                          <option value="11" >3B</option>
+                                                          <option value="12" >3C</option>
+                                                          <option value="13" >4A</option>
+                                                          <option value="14" >4B</option>
+                                                          <option value="15" >4C</option>
+                                                          <option value="16" >5A</option>
+                                                          <option value="17" >5B</option>
+                                                          <option value="18" >5C</option>
+                                                        </select> 
+                                                         </div> 
+
+
                                                       <label>Peso Estudiante</label>
                                                       <input class="form-control" type="text" name="peso"   placeholder="Peso Estudiante" required>
                                                       <label>Tipo sangre</label>
@@ -224,7 +247,6 @@
                                                 </div>
                                                                                                 
                                                 
-                                                <button type="reset" class="btn btn-primary">Editar</button>
                                                 <button type="submit" class="btn btn-default">Registrar</button>
                                                 <button type="reset" class="btn btn-primary">Borrar</button>
                                           </div>

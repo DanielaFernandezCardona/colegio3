@@ -101,9 +101,11 @@
                                 <th data-field="apellido">apellido</th>
                                 <th data-field="grado"> grado</th>
                                 <th data-field="correo"> celular</th>
+                                <th data-field="ver"> Ver información</th>
+                                <th data-field="accion">Acción</th>
+                                
                             </tr>
                             </thead>
-
     <tr>
     @foreach($estudiantes as $estudiante)
      <td>{{$estudiante->documento}}</td>
@@ -111,6 +113,14 @@
     <td>{{$estudiante->apellido}}</td>
     <td>{{$estudiante->grado}}</td>
     <td>{{$estudiante->celular}}</td>
+      <td><a href="/hojaEstudiante/{{$estudiante->idEstudiante}}"><button style="border-radius: 5px;" id="{{$estudiante->idEstudiante}}">Ver</button></a></td>
+    
+       <td>
+                        <a class="btn btn-primary btn-xs" href="{{ route('estudiante/edit',['id' =>$estudiante->idEstudiante ] )}}" >Edit</a> 
+                        <a class="btn btn-danger btn-xs" href="{{ route('estudiante/destroy',['id' =>$estudiante->idEstudiante] )}}" >Delete</a>
+                    </td>   
+
+
         </tr>
              @endforeach
                         </table>

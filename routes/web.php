@@ -93,6 +93,12 @@ Route::get('empleado/edit/{id}', ['as' => 'empleado/edit', 'uses'=>'RegisterEmpl
 Route::get('empleado/destroy/{id}', ['as' => 'empleado/destroy', 'uses'=>'RegisterEmpleadoController@destroy']);
 Route::post('empleado/search', ['as' => 'empleado/search', 'uses'=>'RegisterEmpleadoController@search']);
 
+/*rutas que permitiran el manejo de gestion de los estudiantes*/
+Route::get('/hojaEstudiante/{id}','PdfController@pdf_estudiante');
+Route::put('estudiante/update', ['as' => 'estudiante/update', 'uses'=>'RegisterEstudianteController@update']);
+Route::get('estudiante/edit/{id}', ['as' => 'estudiante/edit', 'uses'=>'RegisterEstudianteController@edit']);
+Route::get('estudiante/destroy/{id}', ['as' => 'estudiante/destroy', 'uses'=>'RegisterEstudianteController@destroy']);
+
 
 
 /*

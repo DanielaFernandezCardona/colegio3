@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Acudiente;
 use DateTime;
 use Input;
 use DB;
@@ -10,6 +11,16 @@ use DB;
 
 class Estudiante extends Model
 {
+
+  protected $table = 'Estudiante';
+   
+protected $primaryKey = 'idEstudiante';    
+
+public function estudiante()
+      {
+        return $this->hasOne('App\Models\Estudiante');
+      }
+
 	//crea un estudiante
     public static function crearEstudiante($data,$acudiente)
 	{ 
@@ -47,15 +58,6 @@ foreach ($acudientes as $acu) {
         $posicion=$acu->idAcudiente; 
 }
 
-//realizamos una consulta a la tabla para sacar el id del grado
-$grados=DB::table('Grado')->get();
-$posicion2=2;
-foreach ($grados as $grado) {  
-
-if($grado->grado==$data['Grado'])
-$posicion2=$grado->idGrado;
-
-}
 
 //convertimos  a tipo date
 $date = new DateTime($data['fechaNac']);
@@ -76,7 +78,7 @@ DB::table('Estudiante')->insert(array(
         	'anioActual' => $data['anioActual'],
             'condicion'=> $data['condicion'],
 			'religion' => $data['religion'],
-            'idGrado'=> $posicion2,
+            'idGrado'=> $data['Grado'],
             'Acudiente_idAcudiente'=>$posicion 
         )); 
 
@@ -85,5 +87,43 @@ DB::table('Estudiante')->insert(array(
 
 
 	}//clase
+
+//update el Estudiante
+public static function updateEstudiante($request)
+{  
+
+Acudiente::updateAcudiente($request);
+
+$estudiante = Estudiante::find($request->idEstudiante);
+
+$estudiante->idGrado =(int) $request->grado+1;
+$estudiante->nombre = $request->nombre;
+$estudiante->apellido =$request->apellido;
+$estudiante->fechaNac =$request->fechaNac;
+$estudiante->documento =$request->documento;
+$estudiante->expedicion =$request->expedicion;
+$estudiante->telefono =$request->telefono;
+$estudiante->celular =$request->celular;
+$estudiante->direccion =$request->direccion;
+$estudiante->peso =$request->peso;
+$estudiante->tipoSangre =$request->tipoSangre;
+$estudiante->anioActual =$request->anioActual;
+$estudiante->condicion =$request->condicion;
+$estudiante->religion =$request->religion;
+
+$estudiante->save();
+
+
+
+
+}
+
+//elimina un Estudiante
+public static function destroyEstudiante($id)
+{
+ $estudiante =  Estudiante::find($id);
+        $estudiante->delete();
+}
+
 
 }

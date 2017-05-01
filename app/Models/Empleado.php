@@ -23,8 +23,6 @@ class Empleado extends Model
 	public static function crearEmpleado($data)
 	{ 
 
-
-
 $documento=$data['documento'];
 $nombre=$data['nombre'];
 $apellido=$data['apellido'];
@@ -99,15 +97,38 @@ DB::table('Empleado')->insert(array(
 public static function updateEmpleado($request)
 {
 $empleado = Empleado::find($request->id);
- /*
- $empleado=DB::table('empleado')->where('idEmpleado', $request->id)->first();
-       
- */
  
-         $empleado->nombre = $request->nombre;
-         $empleado->correo = $request->correo;
+$empleado->documento = $request->documento;
+$empleado->nombre = $request->nombre;
+$empleado->apellido = $request->apellido;
+$empleado->nacionalidad = $request->nacionalidad;
+$empleado->telefono = $request->telefono;
+$empleado->correo = $request->correo;
+$empleado->direccion = $request->direccion;
+$empleado->fechaNacimiento = $request->fechaNacimiento;
+$empleado->estudiosRealizados = $request->estudiosRealizados;
+$empleado->nivel = $request->nivel;
+$empleado->lugarEstudios = $request->lugarEstudios;
+$empleado->cargo = $request->cargo;
+
+if($request->grado!="no_tiene")
+$empleado->Grado_idGrado = $request->grado+1;
+
+$empleado->tiempoTrabajo = $request->tiempoTrabajo;
+$empleado->fechaIngresoTrabajo = $request->fechaIngresoTrabajo;
+$empleado->valorNomina = $request->valorNomina;
+$empleado->estadoCivil = $request->estadoCivil;
+ 
  $empleado->save();
 
+}
+
+public static  function destroyEmpleado($id)
+{
+
+  $empleado =  Empleado::find($id);
+        $empleado->delete();
+   
 }
 
    

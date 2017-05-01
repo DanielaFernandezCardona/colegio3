@@ -21,13 +21,10 @@ function index()
     {
     
        
-
  $empleados=DB::table('Empleado')
-            ->join('grado', 'grado.idGrado', '=', 'empleado.idEmpleado')
+            ->join('grado', 'grado.idGrado', '=', 'empleado.Grado_idGrado')
             ->select('empleado.idEmpleado','empleado.documento','empleado.nombre', 'empleado.apellido', 'empleado.cargo','empleado.correo','grado.grado')
             ->get();
-
-
 
         return view('listadoEmpleado',['empleados' => $empleados]);
     }
@@ -63,9 +60,12 @@ return Redirect::to('registroEmpleado')->with('success','Registro Exitoso');
 }
 
 // para eliminar un empleado
-public function destroy()
+public function destroy($id)
 {
+  Empleado::destroyEmpleado($id);
 
+                return redirect('listadoEmpleado');
+ 
 }
 // para buscar un empleado
 public function search()
@@ -79,8 +79,8 @@ public function search()
  {
 
 $empleado=DB::table('Empleado')
-->join('grado', 'grado.idGrado', '=', 'empleado.idEmpleado')
-->select('empleado.idEmpleado','empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado')
+->join('grado', 'grado.idGrado', '=', 'empleado.Grado_idGrado')
+->select('empleado.idEmpleado','empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado','grado.idGrado')
 ->where('idEmpleado',$id)
 ->first();
 
@@ -91,20 +91,10 @@ $empleado=DB::table('Empleado')
 
 public function update(Request $request)
  {
-    
-   //     $empleado = Empleado::find($request->id);
- /*
- $empleado=DB::table('empleado')->where('idEmpleado', $request->id)->first();
-                $empleado->nombre = $request->nombre;
-                $empleado->correo = $request->correo;
- */
- //$empleado->save();
-
-                Empleado::updateEmpleado($request);
+               Empleado::updateEmpleado($request);
 
                 return redirect('listadoEmpleado');
  
- //  var_dump($request);             
  }
 
 }
