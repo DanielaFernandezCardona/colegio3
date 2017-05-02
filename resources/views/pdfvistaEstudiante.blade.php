@@ -98,13 +98,13 @@ table td.grand {
 
 </style>
 
-<body>
+<body >
 
 <header class="clearfix">
   <div id="logo">
   <img src="images/logo.png">
   </div>
-  <h1 style="text-align:center"> Resumen  Información Estudiante </h1>
+  <h1 style="text-align:center"> Información Estudiante </h1>
   </header>
   
 

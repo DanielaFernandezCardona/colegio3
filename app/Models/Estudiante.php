@@ -125,5 +125,42 @@ public static function destroyEstudiante($id)
         $estudiante->delete();
 }
 
+//buscar un estudiante
+public static function  name($userdata)
+{
+
+$nombre=$userdata['nombre'];
+$grado=(int)$userdata['documento']+1;
+
+
+  if(trim($nombre)!="")
+{
+$estudiantes = DB::table('Estudiante')
+      ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')            
+      ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+      ->Where('estudiante.idGrado',$grado)
+      ->Where(DB::raw("CONCAT(estudiante.nombre,' ', estudiante.apellido)"),'LIKE' ,"%".$nombre."%")  
+      ->get();
+
+            }
+else
+{
+   $estudiantes=DB::table('Estudiante')
+            ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
+            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+            ->get();
+}
+if($estudiantes->isEmpty())
+{
+   $estudiantes=DB::table('Estudiante')
+            ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
+            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+            ->get();
+}
+
+return $estudiantes;
+
+}
+
 
 }

@@ -107,5 +107,19 @@ Estudiante::destroyEstudiante($id);
                 return redirect('listadoGrado');
 }
 
+//buscar un usuario
+public function search()
+{
+  $userdata = array(
+            'documento' => Input::get('grado'),
+            'nombre'=> Input::get('nombre'),
+            );
+ $estudiantes=Estudiante::name($userdata);
+
+
+    return view('listadoGrado',['estudiantes' => $estudiantes]);
+         
+
+}
 
 }

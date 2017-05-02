@@ -65,7 +65,7 @@
         </ul>
 
     </div><!--/.sidebar-->
-        
+             
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">           
         <div class="row">
             <ol class="breadcrumb">
@@ -85,9 +85,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Listas por Grados</div>
                     <div class="panel-body">
-                     <form role="search">
+                     <form role="search" method="post" action="/buscarEstudiante">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
              <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Buscar">
+                    <input  name="nombre" type="text" class="form-control" style="width:30%" placeholder="Nombre Alumno">
+                 {{ Form::select('grado', ['PREJARDIN','JARDIN','TRANSICION','1A','1B','1C','2A','2B','2C','3A','3B','3C','4A','4B','4C','5A','5B','5C'],null, ['id' => 'grado','class' => 'form-control','style'=>'width:40%;margin-top:-35px;margin-left:320px']) }}
                  </div>
                  <button type="submit" class="btn btn-default">Buscar</button>
                      </form>

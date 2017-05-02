@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/pdf', function () {
+    return view('probarPDf');
+});
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -100,7 +104,8 @@ Route::get('/hojaEstudiante/{id}','PdfController@pdf_estudiante');
 Route::put('estudiante/update', ['as' => 'estudiante/update', 'uses'=>'RegisterEstudianteController@update']);
 Route::get('estudiante/edit/{id}', ['as' => 'estudiante/edit', 'uses'=>'RegisterEstudianteController@edit']);
 Route::get('estudiante/destroy/{id}', ['as' => 'estudiante/destroy', 'uses'=>'RegisterEstudianteController@destroy']);
-
+//para buscar un estudiante
+Route::post('/buscarEstudiante','RegisterEstudianteController@search');
 
 
 /*
