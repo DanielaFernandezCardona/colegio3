@@ -220,8 +220,12 @@ document.getElementById('mitext').readOnly=false;
                                                         <input class="form-control" name="valorMens" placeholder="Valor a Pagar Mes"   onchange=" sumar(this.value);" onkeypress="return valida(event);"required>
                                                       </div>
 
+                                                      <div class="form-group">
+                                                        <label>Observaciones</label>
+                                                        <input class="form-control" type="text" name="Observaciones"  placeholder="Observaciones"  >
+                                                      </div>
 
-                                                        <input type="button" value="Activar pago Adicionales" onclick="desactivar()" class="btn btn-primary"/>
+                                                      <input type="button" value="Activar pago Adicionales" onclick="desactivar()" class="btn btn-primary"/>
 
                                                         <div class="form-group has-success"> 
                                                           <label>Valor a Pagar Adicionales</label>

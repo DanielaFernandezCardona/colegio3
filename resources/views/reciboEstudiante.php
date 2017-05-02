@@ -224,7 +224,7 @@ document.getElementById('mitext').readOnly=false;
 
                                                       <div class="form-group has-success">
                                                         <label>Total a pagar</label>
-                                                       <span>$: </span> <span id="spTotal"></span>
+                                                       <span>$: </span> <span id="spTotal" name="total"></span>
                                                       </div>
 
                                                   
