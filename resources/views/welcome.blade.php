@@ -34,9 +34,9 @@
     <!-- login starts here -->
     <div class="login agile">
         <div class="w3agile-border">
-            <h2>COLEGIO BELLO HORIZONTE</h2>
+            <h2></h2>
             <div class="login-main login-agileits"> 
-                <h1>Bienvenido</h1> 
+                <h1><IMG  SRC="./images/logo1.png"  ></h1> 
                    @if(Session::has('mensaje_error'))
                     {{ Session::get('mensaje_error') }}
                         @endif
@@ -46,6 +46,7 @@
                     <input type="text" placeholder="usuario" name="nombre" id="nombre" required>
                     <p>Contraseña</p>
                     <input type="password" placeholder="Ingresa contraseña" name="contrasena" id="contrasena" required>
+                    <div    class="g-recaptcha" data-sitekey="6LfUOCkTAAAAALyLfBCkPxYysKKH5ncjsXVdMdF_" data-theme="dark" ></div>
                     <input type="submit" value="Ingresar" id="submit" name="submit" class="boton">
                 </form>
                 
@@ -57,27 +58,25 @@
     </div>
     <!-- //login ends here -->
     <!-- copyrights -->  
-    <div class="copy-rights wthree">            
-        <p> Colegio Bello Horizonte  </p>
-                
+   
     </div>
     <!-- //copyright -->
     <script src="./js/jquery.magnific-popup.js" type="text/javascript"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
   
 
 
 
 </body>
+         
+     
 
 <footer class="copy-rights wthree">
-            
-        <p>Contacto. carrera 52 # 49- 61 Sevilla (Valle del Cauca) | Telefono: (2)219-6787  </p>     
+           
+  
+        <p>Ubicado en la carrera 52 # 49- 61 Sevilla (Valle del Cauca) | Telefono: (2)219-6787  </p>     
 
-    <br >
-    <div class="social-btns w3l w3-agileits">
-    <a class="fa" href="#"> Facebook <a/>   
-    </div>
-    </br>
+    
 
 </footer>
 

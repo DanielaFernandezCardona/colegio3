@@ -97,7 +97,7 @@ a:hover{
     margin: 0 auto;
     border: 1px solid #fff;
     padding: 3em;
-    background: #acb4c8;
+    background: rgba(120, 145, 205, 0.72);
 }
 .login h1, h5.w3ls-title {
     text-align: center;
@@ -113,7 +113,7 @@ a:hover{
     border-bottom: 1px solid #ffffff;
     width: 100%;  
     outline: none;
-    font-size: 0.95em;
+    font-size: 0.9em;
     color: #ffffff;
     font-weight: 400;
     -webkit-border-radius: 3px;
@@ -135,7 +135,7 @@ a:hover{
     padding: 0.6em 1em 0.6em 1em;
     display: block;
     border: none;
-    margin: 3em auto 0em;
+    margin: 1.3em auto 0em;
     outline: none;
     background:#1a1446;
 	border: 1px solid #3144b5;
@@ -158,7 +158,7 @@ a:hover{
     color: #1a1446;
 }
 .login p {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #fff;
 }
 ::-webkit-input-placeholder{
@@ -176,6 +176,7 @@ a:hover{
     display: inline-block;
     text-align: center;
 }
+/*
 .social-btns a.fa {
     background: url(../images/face.png)no-repeat 30px center #354c80;
 }
@@ -185,6 +186,7 @@ a:hover{
 .social-btns a.g {
     background: url(../images/google.png)no-repeat 67px center #b53f31;
 }
+--*/
 .social-btns a.g:hover {
 	background-color:#9a372b; 
 }
@@ -192,7 +194,7 @@ a:hover{
 /*-- copyrights --*/
 .copy-rights {
     text-align: center;
-    padding: 3em 0;
+    padding: 2em 0;
 }
 .copy-rights p {
     font-size: 1em;
@@ -572,8 +574,8 @@ button.mfp-arrow {
 
 footer{
    width: 100%;
-   height: 8px;
-   background: #1a1446 ;
+   height: 0px;
+   background: rgba(26, 20, 70, 0.93);
    position: fixed;
    bottom: 0;
 }
