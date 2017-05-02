@@ -30,6 +30,9 @@ Route::get('/menu',function(){
 Route::get('/reciboEstudiante',function(){
 	 return view('reciboEstudiante');
 });
+Route::get('/reciboEmpleado',function(){
+	 return view('reciboEmpleado');
+});
 Route::get('/alertas',function(){
 	 return view('alertas');
 });

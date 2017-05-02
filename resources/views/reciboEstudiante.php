@@ -103,7 +103,7 @@ document.getElementById('mitext').readOnly=false;
 
             <li><a href="./reciboEstudiante"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Estudiante</a></li>
 
-            <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Empleado</a></li>
+            <li><a href="./reciboEmpleado"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Empleado</a></li>
             
             <li><a href="./registroUsuario"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
           
@@ -148,7 +148,7 @@ document.getElementById('mitext').readOnly=false;
                                                 <div class="form-group" style="border:1px;">
                                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
-                                                      <label># Recibo </label>
+                                                      <label>N° Recibo </label>
                                                       <input class="form-control" type="text" name="fecha "  placeholder="000"  readonly="readonly" >
 
                                                       <label>Fecha </label>
@@ -207,7 +207,7 @@ document.getElementById('mitext').readOnly=false;
                                                       </div>
 
                                                       <div class="form-group has-success">
-                                                        <label>Valor a Pagar Mensualidad</label>
+                                                        <label>Valor a Pagar Mensualidad $</label>
                                                         <input class="form-control" name="valorMensualidad" placeholder="Valor a Pagar Mensualidad" onkeypress="return valida(event);"  onchange="sumar(this.value);" required>
                                                       </div>
 
@@ -215,7 +215,7 @@ document.getElementById('mitext').readOnly=false;
                                                         <input type="button" value="Activar pago Extraordinario" onclick="desactivar()" class="btn btn-primary"/>
 
                                                         <div class="form-group has-success"> 
-                                                         <label>Valor a Pagar Extraordinario</label>
+                                                         <label>Valor a Pagar Extraordinario $</label>
                                                           <input type="text"onkeypress="return valida(event);"  onchange="sumar(this.value);" id="mitext" readonly="readonly" name="valorExtraordinario" />
 
                                                         </div>
@@ -224,7 +224,7 @@ document.getElementById('mitext').readOnly=false;
 
                                                       <div class="form-group has-success">
                                                         <label>Total a pagar</label>
-                                                       <span>: </span> <span id="spTotal"></span>
+                                                       <span>$: </span> <span id="spTotal"></span>
                                                       </div>
 
                                                   
