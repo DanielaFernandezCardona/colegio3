@@ -201,6 +201,10 @@ document.getElementById('mitext').readOnly=false;
                                                         </select>
                                                       </div>
 
+                                                      <div class="form-group">
+                                                        <label>Observaciones</label>
+                                                        <input class="form-control" type="text" name="Observaciones"  placeholder="Observaciones"  >
+                                                      </div>
 
                                                       <div class="form-group has-success">
                                                         <label>Valor a Pagar Mensualidad</label>
