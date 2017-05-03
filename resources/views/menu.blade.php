@@ -30,7 +30,7 @@
                 </a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
+                        
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/salir"><svg class="glyph stroked cancel"><use xlink:href="/salir"></use></svg> Salir</a></li>
                         </ul>
