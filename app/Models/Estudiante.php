@@ -163,4 +163,23 @@ return $estudiantes;
 }
 
 
+public static function nameRecibo($userdata)
+{
+$nombre=$userdata['nombre'];
+
+
+ if(trim($nombre)!="")
+{
+$estudiantes = DB::table('Estudiante')
+      ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')            
+      ->select('grado.grado')
+      ->Where(DB::raw("CONCAT(estudiante.nombre,' ', estudiante.apellido)"),'LIKE' ,"%".$nombre."%")  
+      ->get();
+            }
+
+            
+return $estudiantes;
+
+}//funcion recibo
+
 }

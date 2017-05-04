@@ -11,16 +11,22 @@ class PdfController extends Controller
 {
     
 
-
-
 //permite crear la vista 
  public function htmltopdfview(Request $request)
     {
         $empleados = Empleado::all();
         view()->share('empleados',$empleados);
         if($request->has('download')){
+          // (Optional) Setup the paper size and orientation
             $pdf = PDF::loadView('htmltopdfview');
-            return $pdf->download('htmltopdfview.pdf');
+
+$pdf->setPaper('A4', 'landscape');
+
+// Render the HTML as PDF
+$pdf->render();
+
+return $pdf->stream();
+            //return $pdf->download('htmltopdfview.pdf');
         }
         return view('htmltopdfview');
     }
@@ -45,6 +51,13 @@ $user=DB::table('Empleado')
             );
 
      $pdf = PDF::loadView('pdfvista',['user' => $user]);
+$paper_size = array(0,0,450,450);
+
+$pdf->setPaper('A4', 'portrait');
+//$pdf->render();
+
+//$pdf->stream();
+
 return $pdf->download('ResumenInformacion.pdf',$headers);
 
 }

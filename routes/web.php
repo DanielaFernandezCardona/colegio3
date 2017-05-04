@@ -27,9 +27,7 @@ Route::get('/login', function () {
 Route::get('/menu',function(){
 	 return view('menu');
 });
-Route::get('/reciboEstudiante',function(){
-	 return view('reciboEstudiante');
-});
+
 Route::get('/reciboEmpleado',function(){
 	 return view('reciboEmpleado');
 });
@@ -109,6 +107,20 @@ Route::get('estudiante/edit/{id}', ['as' => 'estudiante/edit', 'uses'=>'Register
 Route::get('estudiante/destroy/{id}', ['as' => 'estudiante/destroy', 'uses'=>'RegisterEstudianteController@destroy']);
 //para buscar un estudiante
 Route::post('/buscarEstudiante','RegisterEstudianteController@search');
+
+
+/*rutas para manejas la gestion de recibo del estudiante*/
+Route::post('/registrarReciboEstudiante','reciboEstudianteController@registrar');
+Route::get('/reciboEstudiante',['as'=>'reciboEstudiante','uses'=>'reciboEstudianteController@index']);
+//para buscar un estudiante para el recibo
+Route::post('/buscarEstudianteRecibo','reciboEstudianteController@search');
+
+
+/*Route::get('/reciboEstudiante',function(){
+	 return view('reciboEstudiante');
+});
+*/
+
 
 
 /*

@@ -130,7 +130,7 @@ document.getElementById('mitext').readOnly=false;
         <div class="row">
                   <div class="col-lg-12">
                         <div class="panel panel-default">
-                           @if(Session::has('success'))
+                 <!--          @if(Session::has('success'))
                    <div class="row">
                 <div class="col-md-12">
                   <div class="alert alert-success">
@@ -139,36 +139,49 @@ document.getElementById('mitext').readOnly=false;
                   </div> 
                          </div> 
                         @endif
-                   
+                   -->
                               <div class="panel-heading" >Generar Recibo</div>
                               <div class="panel-body">
                                     <div class="col-md-6">
-                                          <form role="form"  action="/registrar" method="post">
+
+  <form role="search" method="post" action="/buscarEstudianteRecibo">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+             <div class="form-group">
+                  <label>Nombre Estudiante</label>
+                 <input class="form-control" name="nomEstudiante" placeholder="nombre Estudiante" required>
+            <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
+                     </form>
+
+
+                                          <form role="form"  action="/registrarReciboEstudiante" method="post">
               
                                                 <div class="form-group" style="border:1px;">
                                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
-                                                      <label>N° Recibo </label>
-                                                      <input class="form-control" type="text" name="fecha "  placeholder="000"  readonly="readonly" >
+                                                     
+                                                {!! Form::label('N° Recibo') !!}
+                                                    {!! Form::text('recibo',$sistemas['recibo'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
-                                                      <label>Fecha </label>
-                                                      <input class="form-control" type="text" name="fecha "  placeholder="dd/mm/aa"  readonly="readonly" >
+                                                  {!! Form::label('Fecha') !!}
+                                                    {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                                       <div class="form-group" required>
                                                         <label>Tipo Recibo</label>
                                                         <div class="checkbox">
                                                           <label>
-                                                            <input type="checkbox" value="" name="matricula "  placeholder="matricula" > Matrícula
+                                                            <input type="checkbox" value="matricula" name="matricula "  placeholder="matricula" > Matrícula
                                                           </label>
                                                         </div>
                                                           <div class="checkbox">
                                                           <label>
-                                                            <input type="checkbox" value="" name="mensualidad"  placeholder="mensualidad"> Mensualidad
+                                                            <input type="checkbox" value="mensualidad" name="mensualidad"  placeholder="mensualidad"> Mensualidad
                                                           </label>
                                                         </div>
                                                       </div>
 
 
+       
+<!--
 
                                                       <label>Nombre Estudiante</label>
                                                       <input class="form-control" name="nomEstudiante" placeholder="nombre Estudiante" required>
@@ -177,10 +190,21 @@ document.getElementById('mitext').readOnly=false;
                                                       <input class="form-control" type="text" name="apellido"   placeholder="Apellido" required>
 
                                                       <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
+-->
+
 
                                                       <div class="form-group">
-                                                        <label>Grado</label>
-                                                        <input class="form-control" type="text" name="grado"  placeholder="Grado" readonly="readonly" >
+                                        
+                                                    
+                                                  {!! Form::label('Nombre Estudiante') !!}
+                                                    {!! Form::text('nomEstudiante',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+
+
+                                                  {!! Form::label('Grado') !!}
+                                                    {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+
+
+
                                                       </div>
                                                       
                                                       <div class="form-group">
@@ -200,6 +224,22 @@ document.getElementById('mitext').readOnly=false;
                                                           <option>Diciembre</option>
                                                         </select>
                                                       </div>
+
+
+                                                        <div class="form-group" required>
+                                                        <label>Tipo Pago</label>
+                                                        <div class="checkbox">
+                                                          <label>
+                                                            <input type="checkbox" value="1" name="credito"  placeholder="credito" > Credito
+                                                          </label>
+                                                        </div>
+                                                          <div class="checkbox">
+                                                          <label>
+                                                            <input type="checkbox" value="2" name="contado"  placeholder="contado"> Contado
+                                                          </label>
+                                                        </div>
+                                                      </div>
+
 
                                                       <div class="form-group">
                                                         <label>Observaciones</label>
