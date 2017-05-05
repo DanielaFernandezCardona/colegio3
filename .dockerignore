@@ -1,4 +1,4 @@
-# comment
-    */temp*
-    */*/temp*
-    temp?
+.git
+.gitignore
+LICENSE
+Dockerfile
