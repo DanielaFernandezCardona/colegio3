@@ -11,8 +11,6 @@ dependencies:
     - sudo mv phpunit-5.7.phar /usr/local/bin/phpunit
     - phpunit --version
     - mkdir -p vendor\phpunit\phpunit\phpunit
-    - cd vendor\phpunit\phpunit\phpunit
-    - ls 
     - phpunit
     # phpunit --log-junit vendor\phpunit\phpunit\phpunit/phpunit/junit.xml tests
 
