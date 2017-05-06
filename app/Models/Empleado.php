@@ -123,10 +123,10 @@ $empleado->estadoCivil = $request->estadoCivil;
 
 }
 
-public static  function destroyEmpleado($id)
+public function destroyEmpleado($idEmple)
 {
 
-  $empleado =  Empleado::find($id);
+  $empleado =  Empleado::find($idEmple);
         $empleado->delete();
    
 }
