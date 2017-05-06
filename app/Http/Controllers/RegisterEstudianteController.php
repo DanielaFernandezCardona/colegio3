@@ -90,6 +90,7 @@ $estudiante=DB::table('estudiante')
                 return \View::make('updateEstudiante',compact('estudiante'));
 
 }
+
 //update estudiante
 public function update(Request $request)
 {
@@ -100,9 +101,9 @@ public function update(Request $request)
              return redirect('listadoGrado');
 }
 //elimina registro de estudiante
-public function destroy($id)
+public function destroy($idEstu)
 {
-Estudiante::destroyEstudiante($id);
+Estudiante::destroyEstudiante($idEstu);
 
                 return redirect('listadoGrado');
 }
