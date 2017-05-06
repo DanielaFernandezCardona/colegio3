@@ -1,4 +1,7 @@
 machine:
   php:
     version: 5.6.17
+test:
+  override:
+    - phpunit test/unit-tests # use PHPunit for testing
 
