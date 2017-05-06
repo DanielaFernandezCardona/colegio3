@@ -84,7 +84,7 @@ $estudiante=DB::table('estudiante')
 ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
 ->join('acudiente', 'idAcudiente', '=', 'estudiante.Acudiente_idAcudiente')
 ->select('estudiante.idEstudiante','estudiante.nombre','estudiante.apellido','estudiante.fechaNac', 'estudiante.documento', 'estudiante.expedicion','estudiante.telefono','estudiante.celular','estudiante.direccion','estudiante.peso','estudiante.tipoSangre','estudiante.anioActual','estudiante.condicion','estudiante.religion','grado.grado','acudiente.idAcudiente','acudiente.documentoPadre','acudiente.nombrePadre','acudiente.nombremadre','acudiente.apellidoMadre','acudiente.apellidoPadre','acudiente.documentoMadre','acudiente.ocupacionPadre','acudiente.ocupacionMadre','acudiente.celularPadre','acudiente.celularMadre','acudiente.correoMadre','acudiente.correoPadre','acudiente.estadoCivil','acudiente.nombreAcu','acudiente.documentoAcu','acudiente.celularAcu','acudiente.ocupacion','acudiente.correoAcu','acudiente.parentesco')
-->where('idEstudiante',$id)
+->where('idEstudiante',$idEstu)
 ->first();
 
                 return \View::make('updateEstudiante',compact('estudiante'));
