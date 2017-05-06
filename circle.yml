@@ -5,9 +5,10 @@ machine:
     version: 5.6.17
 dependencies:
   pre:
-    - wget https://phar.phpunit.de/phpunit-5.7.19.phar
-    - chmod +x phpunit-5.7.19.phar
-    - sudo mv phpunit-5.7.19.phar /usr/local/bin/phpunit
+    - wget https://phar.phpunit.de/phpunit-5.7.phar
+    - chmod +x phpunit-5.7.phar
+    - sudo mv phpunit-5.7.phar /usr/local/bin/phpunit
+    - phpunit --version
 
 
 
