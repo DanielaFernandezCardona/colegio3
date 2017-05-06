@@ -60,9 +60,9 @@ return Redirect::to('registroEmpleado')->with('success','Registro Exitoso');
 }
 
 // para eliminar un empleado
-public function destroy($id)
+public function destroy($idEmple)
 {
-  Empleado::destroyEmpleado($id);
+  Empleado::destroyEmpleado($idEmple);
 
                 return redirect('listadoEmpleado');
  
@@ -75,13 +75,13 @@ public function search()
 
 
 
- public function edit($id)
+ public function edit($idEmple)
  {
 
 $empleado=DB::table('Empleado')
 ->join('grado', 'grado.idGrado', '=', 'empleado.Grado_idGrado')
 ->select('empleado.idEmpleado','empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado','grado.idGrado')
-->where('idEmpleado',$id)
+->where('idEmpleado',$idEmple)
 ->first();
 
 
