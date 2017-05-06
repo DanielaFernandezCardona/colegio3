@@ -1,20 +1,29 @@
 machine:
   php:
-    # php version is specified to make it possible to change php settings
-    # see below php.ini is updated
     version: 5.6.17
+
+  environment:
+    APP_ENV: testing
+    APP_KEY: base64:or42Gh8bxQIr3hfW2oMgVBv1CM/wAccQsTKOw7lCZV0=
+
+general:
+  artifacts:
+    - "reports"
+
 dependencies:
   pre:
-     - composer install 
-   # - wget https://phar.phpunit.de/phpunit-5.7.phar
-   # - chmod +x phpunit-5.7.phar
-   # - sudo mv phpunit-5.7.phar /usr/local/bin/phpunit
-  #  - mkdir -p vendor\phpunit\phpunit\phpunit
-  #  - phpunit
-    # phpunit --log-junit vendor\phpunit\phpunit\phpunit/phpunit/junit.xml tests
+    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enables xdebug needed for code coverage
+  override:
+    # Checks all php files within /app for syntax errors
+    - tests/commands/phplint.sh
+    - composer install --prefer-dist --no-interaction
+    # Run the CS fixer and error if it finds files to update
+    - tests/commands/php-cs-fixer-check.sh
+  cache_directories:
+    - "~/.composer/cache"
+    - "reports/phplint/.cache"
+    - "vendor"
 
 test:
   override:
-    - phpunit --version
-    - php -v
-    - php vendor\phpunit\phpunit\phpunit
+   - vendor/bin/phpunit -d memory_limit=1024M --coverage-clover build/logs/clover.xml
