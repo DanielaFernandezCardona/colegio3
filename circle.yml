@@ -9,12 +9,12 @@ dependencies:
     - wget https://phar.phpunit.de/phpunit-5.7.phar
     - chmod +x phpunit-5.7.phar
     - sudo mv phpunit-5.7.phar /usr/local/bin/phpunit
-    - phpunit --version
-    - mkdir -p vendor\phpunit\phpunit\phpunit
-    - phpunit
+  #  - mkdir -p vendor\phpunit\phpunit\phpunit
+  #  - phpunit
     # phpunit --log-junit vendor\phpunit\phpunit\phpunit/phpunit/junit.xml tests
 
 test:
   override:
-    phpunit --log-junit vendor\phpunit\phpunit\phpunit/phpunit/junit.xml tests
-
+    - mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+    - phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
+    - phpunit --version
