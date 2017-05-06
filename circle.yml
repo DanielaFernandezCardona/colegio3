@@ -23,3 +23,9 @@ test:
   - vendor/bin/phpunit -d memory_limit=1024M 
    #- mkdir -p $CIRCLE_TEST_REPORTS/phpunit
    #-  phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml tests
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: colegiosoftware
