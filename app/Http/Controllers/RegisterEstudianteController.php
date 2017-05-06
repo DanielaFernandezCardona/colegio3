@@ -77,7 +77,7 @@ return Redirect::to('registroEstudiante')->with('success','Registro Exitoso');
 }
 
 //edit estudiante
-public function edit($id)
+public function edit($idEstu)
 {
 
 $estudiante=DB::table('estudiante')
