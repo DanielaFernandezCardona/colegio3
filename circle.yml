@@ -12,13 +12,7 @@ general:
 
 dependencies:
   pre:
-    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini # enables xdebug needed for code coverage
-  override:
-    # Checks all php files within /app for syntax errors
-    - tests/commands/phplint.sh
-    - composer install --prefer-dist --no-interaction
-    # Run the CS fixer and error if it finds files to update
-    - tests/commands/php-cs-fixer-check.sh
+    
   cache_directories:
     - "~/.composer/cache"
     - "reports/phplint/.cache"
