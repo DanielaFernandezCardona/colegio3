@@ -111,9 +111,9 @@ $empleado->nivel = $request->nivel;
 $empleado->lugarEstudios = $request->lugarEstudios;
 $empleado->cargo = $request->cargo;
 
-if($request->grado!="no_tiene")
+if($request->grado!="no_tiene"){
 $empleado->Grado_idGrado = $request->grado+1;
-
+}
 $empleado->tiempoTrabajo = $request->tiempoTrabajo;
 $empleado->fechaIngresoTrabajo = $request->fechaIngresoTrabajo;
 $empleado->valorNomina = $request->valorNomina;
