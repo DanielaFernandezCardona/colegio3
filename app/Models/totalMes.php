@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use DateTime;
 use DB;
 
+
 /**
 *clase totalMes
 *@autor jhon jaime ramirez cortes -lucerito Alarcon

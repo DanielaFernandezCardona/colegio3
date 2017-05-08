@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Input;
 use DB;
 
+
 /**
 *clase Administrador
 *@autor jhon jaime ramirez cortes -lucerito Alarcon

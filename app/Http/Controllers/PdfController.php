@@ -7,6 +7,7 @@ use App\Models\Empleado;
 use PDF;
 use DB;
 
+
 /**
 *clase PdfController
 *@autor jhon jaime ramirez cortes -lucerito Alarcon

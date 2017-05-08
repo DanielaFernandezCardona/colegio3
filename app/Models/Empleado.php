@@ -8,6 +8,7 @@ use Input;
 use DB;
 
 
+
 /**
 *clase Empleado
 *@autor jhon jaime ramirez cortes -lucerito Alarcon

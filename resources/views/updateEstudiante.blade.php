@@ -1,5 +1,4 @@
    
-
 <head>
   {!! Html::style('css/bootstrap.min.css') !!}
   {!! Html::style('css/datepicker3.css') !!}

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Input;
 use DB;
 
+
 /**
 *clase ReciboNominaController
 *@autor jhon jaime ramirez cortes -lucerito Alarcon

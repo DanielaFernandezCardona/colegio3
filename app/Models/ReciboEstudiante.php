@@ -7,6 +7,8 @@ use DateTime;
 
 use Illuminate\Database\Eloquent\Model;
 
+
+
 /**
 *clase ReciboNomina
 *@autor jhon jaime ramirez cortes -lucerito Alarcon

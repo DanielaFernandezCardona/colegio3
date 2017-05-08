@@ -8,6 +8,7 @@ use Redirect;
 use DB;
 
 
+
 use Illuminate\Support\Collection;
 /**
 *clase RegisterEmpleadoController

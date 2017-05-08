@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 *clase Acudiente
 *@autor jhon jaime ramirez cortes -lucerito Alarcon
 */
+
 class Acudiente extends Model
 {
    

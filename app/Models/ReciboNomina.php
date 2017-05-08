@@ -5,13 +5,13 @@ use DateTime;
 use DB;
 use Illuminate\Database\Eloquent\Model;
 
+
 /**
 *clase ReciboNomina
 *@autor jhon jaime ramirez cortes -lucerito Alarcon
 */
 class ReciboNomina extends Model
 {
- 
 protected $table = 'recibonomina';
 protected $primaryKey='idReciboNomina';
 
