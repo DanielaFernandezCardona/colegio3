@@ -46,8 +46,9 @@
                     <input type="text" placeholder="usuario" name="nombre" id="nombre" required>
                     <p>Contraseña</p>
                     <input type="password" placeholder="Ingresa contraseña" name="contrasena" id="contrasena" required>
-                    <div    class="g-recaptcha" data-sitekey="6LdYhSAUAAAAAEe7miTpZ0vP6HMJjHnY2oNt89uw
-" data-theme="dark" ></div>
+                    <div class="g-recaptcha" data-sitekey="6LddhSAUAAAAAPxEhmsVzDy7-hmZZ3rJjJyYdeiQ" data-theme="dark"></div>
+                   
+            
                     <input type="submit" value="Ingresar" id="submit" name="submit" class="boton">
                 </form>
                 
@@ -63,7 +64,7 @@
     </div>
     <!-- //copyright -->
     <script src="./js/jquery.magnific-popup.js" type="text/javascript"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+  
   
 
 
