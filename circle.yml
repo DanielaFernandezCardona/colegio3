@@ -4,7 +4,7 @@ machine:
 
   environment:
     APP_ENV: testing
-    APP_KEY: base64:or42Gh8bxQIr3hfW2oMgVBv1CM/wAccQsTKOw7lCZV0=
+    APP_KEY: base64:kaLfQGqEEb5Wf0yYw0Yqhk0UaGnL6VXgSD9nCc9lzMs=
 
 general:
   artifacts:
@@ -28,4 +28,5 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: colegiosoftware
+      appname: colegiobellohorizonte
+
