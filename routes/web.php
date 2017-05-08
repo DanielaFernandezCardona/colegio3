@@ -110,19 +110,19 @@ Route::post('/buscarEstudiante','RegisterEstudianteController@search');
 
 
 /*rutas para manejas la gestion de recibo del estudiante*/
-Route::post('/registrarReciboEstudiante','reciboEstudianteController@registrar');
-Route::get('/reciboEstudiante',['as'=>'reciboEstudiante','uses'=>'reciboEstudianteController@index']);
+Route::post('/registrarReciboEstudiante','ReciboEstudianteController@registrar');
+Route::get('/reciboEstudiante',['as'=>'ReciboEstudiante','uses'=>'ReciboEstudianteController@index']);
 //para buscar un estudiante para el recibo
-Route::post('/buscarEstudianteRecibo','reciboEstudianteController@search');
+Route::post('/buscarEstudianteRecibo','ReciboEstudianteController@search');
 //para el pdf del estudiante via online o descargar
 Route::post('vistaEstudiante/{tipo}', 'PdfController@crear_reporteEstudiante');
 
 
 /*rutas para manejar la gestion de recibo empleado*/
-Route::post('/registrarNominaEmpleado','reciboNominaController@registrar');
-Route::get('/reciboEmpleado',['as'=>'reciboEmpleado','uses'=>'reciboNominaController@index']);
+Route::post('/registrarNominaEmpleado','ReciboNominaController@registrar');
+Route::get('/reciboEmpleado',['as'=>'reciboEmpleado','uses'=>'ReciboNominaController@index']);
 //para buscar un empleado para el recibo
-Route::post('/buscarEmpleadoRecibo','reciboNominaController@search');
+Route::post('/buscarEmpleadoRecibo','ReciboNominaController@search');
 //para el pdf del empleado via online o descargar
 Route::post('vista/{tipo}', 'PdfController@crear_reporte');
 
