@@ -41,7 +41,7 @@ public function pdf_empleado($idEmple)
 $user=DB::table('Empleado')
 ->join('grado', 'grado.idGrado', '=', 'empleado.Grado_idGrado')
 ->select('empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado')
-->where('idEmpleado',$idEmpleado)
+->where('idEmpleado',$idEmple)
 ->first();
 
 //var_dump($user);
