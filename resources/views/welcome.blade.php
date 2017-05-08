@@ -9,6 +9,7 @@
 <!-- Custom Theme files -->
 <link href="./css/stylelog.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- //Custom Theme files -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <!-- pop-up-box -->
 <script src="./js/jquery-2.2.3.min.js"></script> 

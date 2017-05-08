@@ -43,7 +43,7 @@ $suma=$recibo+1;
 
 $sistemas['recibo']=$suma;
  
-return View::make('reciboestudiante')
+return View::make('reciboEstudiante')
           ->with('sistemas',$sistemas);
 
 
@@ -95,7 +95,7 @@ $sistemas['recibo']=$suma;
 
 
  
-return View::make('reciboestudiante')
+return View::make('reciboEstudiante')
           ->with('sistemas',$sistemas);
 
      // return view('reciboEstudiante',['sistemas' => $sistemas]);
@@ -150,7 +150,7 @@ $sistemas['nombre']="registrado";
 
 
  
-return View::make('reciboestudiante')
+return View::make('reciboEstudiante')
           ->with('sistemas',$sistemas);
 
 //return view('/reciboEstudiante',['sistemas' => $sistemas]);
