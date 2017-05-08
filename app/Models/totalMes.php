@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use DateTime;
 use DB;
 
+/**
+*clase totalMes
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class totalMes extends Model
 {
 protected $table = 'totalanio';
@@ -14,6 +18,11 @@ protected $primaryKey = 'idtotalAnio';
 
 
 
+/**
+*crea un registro segun la informacion del mes
+*@param array $data  de datos del registroEmpleado
+*@return void
+*/
     public static function registrarDatos($datos)
     {  
 

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use DateTime;
 use DB;
 
+/**
+*clase totalAnio
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class totalAnio extends Model
 {
 
@@ -15,6 +19,11 @@ protected $primaryKey = 'idtotalAnio';
 
 
 
+/**
+*Crea un registro total anio en la bd
+*@param array $data  de datos del anio
+*
+*/
     public static function registrarDatos($datos)
     {  
 

@@ -13,32 +13,12 @@ use DB;
 */
 class PdfController extends Controller
 {
-    
-//permite crear la vista 
- /*
- public function htmltopdfview(Request $request)
-    {
-        $empleados = Empleado::all();
-       view()->share('empleados',$empleados);
-        if($request->has('download')){
-          // (Optional) Setup the paper size and orientation
-            $pdf = PDF::loadView('htmltopdfview');
-//$pdf = PDF::loadView('probarPDF');
-//$pdf->setPaper('A4', 'landscape');
 
-// Render the HTML as PDF
-$pdf->render();
-
-
-return $pdf->stream();
-         //   return $pdf->download('htmltopdfview.pdf');
-            //return $pdf->download('probarPDF.pdf');
-       
-        }
-        return view('htmltopdfview');
-    }
+/**
+*permite crear una vista
+*@param object $request 
+*@return pdf
 */
-
 public function htmltopdfview(Request $request)
     {
       $empleados = Empleado::all();
@@ -55,16 +35,12 @@ public function htmltopdfview(Request $request)
 *@param integer $idEmpleado
 *@return String vista de informacion
 */
-public function pdf_empleado($idEmpleado)
-// ver informacion empleado
 public function pdf_empleado($idEmple)
-
 {
 $user=DB::table('Empleado')
 ->join('grado', 'grado.idGrado', '=', 'empleado.Grado_idGrado')
 ->select('empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado')
 ->where('idEmpleado',$idEmpleado)
-->where('idEmpleado',$idEmple)
 ->first();
 
 //var_dump($user);
@@ -93,15 +69,13 @@ return $pdf->download('ResumenInformacion.pdf',$headers);
 *@param integer $idEstudiante
 *@return String vista de informacion del Estudiante
 */
-public function pdf_estudiante($idEstudiante)
-//imprime un pdf con informacion del estudiante
+
 public function pdf_estudiante($idEstu)
 {
 $user=DB::table('estudiante')
 ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
 ->join('acudiente', 'idAcudiente', '=', 'estudiante.Acudiente_idAcudiente')
 ->select('estudiante.nombre','estudiante.apellido','estudiante.fechaNac', 'estudiante.documento', 'estudiante.expedicion','estudiante.telefono','estudiante.celular','estudiante.direccion','estudiante.peso','estudiante.tipoSangre','estudiante.anioActual','estudiante.condicion','estudiante.religion','grado.grado','acudiente.documentoPadre','acudiente.nombrePadre','acudiente.nombremadre','acudiente.apellidoMadre','acudiente.apellidoPadre','acudiente.documentoMadre','acudiente.ocupacionPadre','acudiente.ocupacionMadre','acudiente.celularPadre','acudiente.celularMadre','acudiente.correoMadre','acudiente.correoPadre','acudiente.estadoCivil','acudiente.nombreAcu','acudiente.documentoAcu','acudiente.celularAcu','acudiente.ocupacion','acudiente.correoAcu','acudiente.parentesco')
-->where('idEstudiante',$idEstudiante)
 ->where('idEstudiante',$idEstu)
 ->first();
 
@@ -151,7 +125,6 @@ return $pdf->stream();
 else
 {
 return $pdf->download('Recibo.pdf',$headers);
-
 }
 }
 

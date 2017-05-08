@@ -3,7 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+/**
+*clase Acudiente
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class Acudiente extends Model
 {
    
@@ -12,7 +15,12 @@ class Acudiente extends Model
 protected $primaryKey = 'idAcudiente'; 
 
 
-//update un acudiente
+/**
+*Actualiza datos en la bd del empleado
+*@param  object $acudiente datos del acudiente
+*@return void
+*
+*/
 public static function updateAcudiente($acudiente)
 {
 $acudienteModificar=Acudiente::find($acudiente->idAcudiente);

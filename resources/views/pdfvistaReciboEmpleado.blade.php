@@ -22,7 +22,7 @@
   <table style="margin-top:-20px;margin-left:0px; height:0px;width:0px;">
         <tr>
             <th style="padding: 7px 3px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->recibo}}</th>
-            <th style="padding: 7px 143px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->fecha}}</th>
+            <th style="padding: 7px 163px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->fecha}}</th>
 
         </tr>
         <tr>
@@ -33,7 +33,7 @@
   <table style="margin-top:-150px;margin-left:300px; height:64px;width:383px;">
         <tr>
             <th style="padding: 7px 3px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->recibo}}</th>
-            <th style="padding: 7px 120px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->fecha}}</th>
+            <th style="padding: 7px 150px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->fecha}}</th>
             
         </tr>
         <tr>

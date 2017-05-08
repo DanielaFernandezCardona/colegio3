@@ -20,9 +20,11 @@ class ReciboEstudiante extends Model
 *@param  object $request contiene los datos a registrar.
 *@param int $idEstudiante id del empleado que se le hizo el recibo
 *@param int $idGrado id del grado al que pertenece el estdudiante que se le hizo el recibo
+*@return void
 */
    public static function  registrar($request,$idEstudiante,$idGrado)
     {
+    
     
     //convertimos  a tipo date
 $date = new DateTime($request->fecha);

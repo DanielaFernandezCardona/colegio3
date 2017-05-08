@@ -57,12 +57,47 @@ document.getElementById('mitext').readOnly=false;
 
 //envio datos al controller de pdf
 function envia(pag){ 
+  if(pag=="vistaEstudiante/1")
+  { 
     document.form.setAttribute("target", "_blank");
+  
+   }
     document.form.action= pag 
     document.form.submit() 
 
-  } 
+  }
 
+function myFunction()
+{
+var grado=document.getElementById("grado").value;
+var  valorMes=document.getElementById("valorMens").value; 
+var valor=grado=="no encontrado";
+
+var valor2=valorMes=="0";
+
+if(valor2)
+{
+ alert("INGRESE UN VALOR VALIDO EN PAGO A LA MENSUALIDAD")
+ return false;
+}
+
+
+if(valor)
+{
+  alert("NO PUEDE REGISTRAR  GRADO ERRONEO")
+
+return false;
+}
+else
+{
+document.form.action= "/registrarReciboEstudiante" 
+document.form.submit() 
+return true;
+
+}
+
+
+}
 
 </script>
 
@@ -82,7 +117,7 @@ function envia(pag){
                 <a class="navbar-brand" href="#"><IMG style="position:absolute; left:0px; top:0px" SRC="./images/RECIBO2.png"  ><span>.......  Colegio Bello Horizonte...</span></a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Elmer <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/salir"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Salir</a></li>
                         </ul>
@@ -114,6 +149,9 @@ function envia(pag){
             
             <li><a href="./registroUsuario"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
           
+           <li><a href="./totalColegio"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio</a></li>
+   <li><a href="./totalColegioMes"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio Mes</a></li>
+ 
             <li role="presentation" class="divider"></li>
            
         </ul>
@@ -151,7 +189,7 @@ function envia(pag){
                                         </form>
 
 
-                                          <form role="form" name="form"  action="/registrarReciboEstudiante" method="post">
+                                          <form role="form" name="form"  action="/registrarReciboEstudiante" method="post" onsubmit="return myFunction()">
               
                                                 <div class="form-group" style="border:1px;">
                                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -177,11 +215,11 @@ function envia(pag){
                                         
                                                     
                                                   {!! Form::label('Nombre Estudiante') !!}
-                                                    {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+                                                    {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Nombre')) !!}
 
 
                                                   {!! Form::label('Grado') !!}
-                                                    {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+                                                    {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','id'=>'grado')) !!}
 
 
 
@@ -216,7 +254,7 @@ function envia(pag){
 
                                                       <div class="form-group has-success">
                                                         <label>Valor a Pagar Mensualidad $</label>
-                                                        <input class="form-control" name="valorMens" placeholder="Valor a Pagar Mensualidad" onkeypress="return valida(event);"  onchange="sumar(this.value);" value="0" required>
+                                                        <input class="form-control" name="valorMens" id="valorMens" placeholder="Valor a Pagar Mensualidad" onkeypress="return valida(event);"  onchange="sumar(this.value);" value="0" required>
                                                       </div>
 
 
@@ -239,15 +277,18 @@ function envia(pag){
                                                   
                                                 </div>
                                                                                                 
-                                                
-                                             <input type="button" onClick="envia('vistaEstudiante/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
-                                                <input type="button" onClick="envia('vistaEstudiante/2')" class="btn btn-primary btn-xs" value="Descargar"> 
-                                       
+                                                   <input type="button" onClick="envia('vistaEstudiante/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
+                                                  <input type="button" onClick="envia('vistaEstudiante/2')" class="btn btn-primary btn-xs"  value="Descargar" id="descarga"> 
+                                  
+                        
                                                 <button type="submit" value="generarRecibo" class="btn btn-default">Registrar Pago</button>
+  
+                                               
 
-                                                
                                           </div>
                                     </form>
+
+                                       
                               </div>
                         </div>
                   </div><!-- /.col-->

@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Input;
 use DB;
 
+/**
+*clase Administrador
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class Administrador extends Model
 {
    
@@ -29,7 +33,12 @@ protected $table="Administrador";
         return $this->hasOne(totalAnio::class);
     }
 
-
+/**
+*crea un administrador
+*@param  object $data datos del administrador
+*@return void
+*
+*/
 public static function crearAdministrador($data)
 { 
 $documento=$data['documento'];

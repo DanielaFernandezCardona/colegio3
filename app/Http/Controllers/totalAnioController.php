@@ -7,6 +7,10 @@ use App\Models\totalAnio;
 use DB;
 
 
+/**
+*clase totalAnioController
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class totalAnioController extends Controller
 {
 
@@ -22,11 +26,16 @@ $now = new \DateTime();
 
 $sistemas['fecha']= $now->format('d-m-Y');
 $sistemas['totalAnio']='vacio';
+$sistemas['totalEstudiante']='vacio';
+$sistemas['totalEmpleado']='vacio';
                                 
       return view('totalColegio',['sistemas' => $sistemas]);
     }
 
-
+/**
+*clase que permite calcular el anio
+*@return string totalanio
+*/
 public function calcularTotalAnio()
 {
 
@@ -53,29 +62,35 @@ $sumapagoEmpleado+=$valor2->totalPago;
 
 
 
-
-
 $resultado=$sumapagoEstudiante-$sumapagoEmpleado;
 
 $now = new\DateTime();
 
 $sistemas['fecha']= $now->format('d-m-Y');
 $sistemas['totalAnio']=$resultado;
+$sistemas['totalEstudiante']=$sumapagoEstudiante;
+$sistemas['totalEmpleado']=$sumapagoEmpleado;
                                 
       return view('totalColegio',['sistemas' => $sistemas]);
 
 
 }
 
+/**
+*clase que permite calcular el anio
+*@param object $request datos
+*@return string total
+*/
     public function registrarAnioTotal(Request $request)
     {
     
-
-    totalAnio::registrarDatos($request);
+totalAnio::registrarDatos($request);
 $now = new \DateTime();
 
 $sistemas['fecha']= $now->format('d-m-Y');
 $sistemas['totalAnio']="registrado";
+$sistemas['totalEstudiante']='registrado';
+$sistemas['totalEmpleado']='registrado';
                                 
       return view('totalColegio',['sistemas' => $sistemas]);
 

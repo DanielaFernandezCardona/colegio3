@@ -37,7 +37,7 @@ document.form.action= pag
                 </a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Elmer <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                            
                             
@@ -51,11 +51,7 @@ document.form.action= pag
     </nav>
         
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-            </div>
-        </form>
+      
         <ul class="nav menu">
             <li class="active"><a href="./menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
 
@@ -74,6 +70,10 @@ document.form.action= pag
 
             <li><a href="./registroUsuario"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
           
+           <li><a href="./totalColegio"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio</a></li>
+   <li><a href="./totalColegioMes"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio Mes</a></li>
+ 
+ 
             <li role="presentation" class="divider"></li>
            
         </ul>
@@ -113,9 +113,16 @@ document.form.action= pag
                                  {!! Form::label('Fecha') !!}
                                  {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
+                                  {!! Form::label('Entrada Estudiante:') !!}
+                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+
+                                  {!! Form::label('Salida Empleado:') !!}
+                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+
                                 
                                   {!! Form::label('Total Anio:') !!}
                                   {!! Form::text('total',$sistemas['totalAnio'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+
 
                                  <input type="button" onClick="envio('calcularAnioColegio')" class="btn btn-primary btn-xs" value="Calcular"> 
                                             

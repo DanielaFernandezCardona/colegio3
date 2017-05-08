@@ -28,7 +28,7 @@ class Empleado extends Model
 /**
 *Crea un empleado en la bd
 *@param array $data  de datos del registroEmpleado
-*
+*@return void
 */
 	public static function crearEmpleado($data)
 	{ 
@@ -107,7 +107,7 @@ DB::table('Empleado')->insert(array(
 /**
 *Crea un empleado en la bd
 *@param object $request array de datos del Empleado
-*
+*@return void
 */
 public static function updateEmpleado($request)
 {
@@ -126,17 +126,12 @@ $empleado->nivel = $request->nivel;
 $empleado->lugarEstudios = $request->lugarEstudios;
 $empleado->cargo = $request->cargo;
 
-<<<<<<< HEAD
+
 if($request->grado!="no_tiene")
 {
   $empleado->Grado_idGrado = $request->grado+1;
 }
 
-=======
-if($request->grado!="no_tiene"){
-$empleado->Grado_idGrado = $request->grado+1;
-}
->>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 $empleado->tiempoTrabajo = $request->tiempoTrabajo;
 $empleado->fechaIngresoTrabajo = $request->fechaIngresoTrabajo;
 $empleado->valorNomina = $request->valorNomina;
@@ -146,22 +141,15 @@ $empleado->estadoCivil = $request->estadoCivil;
 
 }
 
-<<<<<<< HEAD
 /**
 *Elimina un empleado de la bd
 *@param integer $idEmpleado id del empleado a eliminar
-*
+*@return void
 */
-public static  function destroyEmpleado($idEmpleado)
-{
-
-  $empleado =  Empleado::find($idEmpleado);
-=======
 public static function destroyEmpleado($idEmple)
 {
 
   $empleado =  Empleado::find($idEmple);
->>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
         $empleado->delete();
    
 }

@@ -124,8 +124,8 @@ $suma=$recibo+1;
 }
 
 $sistemas['recibo']=$suma;
-$sistemas['grado']="sin asignar";
-$sistemas['nombre']="sin asignar";
+$sistemas['grado']="registrado";
+$sistemas['nombre']="registrado";
 
 
 

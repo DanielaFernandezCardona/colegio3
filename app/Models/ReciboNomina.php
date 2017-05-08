@@ -20,6 +20,7 @@ protected $primaryKey='idReciboNomina';
 *funcion que permite registrar un recibo en la bd
 *@param  object $datos contiene los datos a registrar.
 *@param int $idEmpleado id del empleado que se le hizo el recibo
+*@return void
 */
     public static function registrar($datos,$idEmpleado)
     {

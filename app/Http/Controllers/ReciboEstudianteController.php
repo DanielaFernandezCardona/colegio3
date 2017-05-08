@@ -9,6 +9,7 @@ use Input;
 use Redirect;
 use DB;
 use PDF;
+use View;
 
 /**
 *clase ReciboEstudianteController
@@ -42,8 +43,13 @@ $suma=$recibo+1;
 
 $sistemas['recibo']=$suma;
  
+return View::make('reciboestudiante')
+          ->with('sistemas',$sistemas);
 
-      return view('reciboEstudiante',['sistemas' => $sistemas]);
+
+
+
+     // return view('reciboEstudiante',['sistemas' => $sistemas]);
 }//funcion index
 
 
@@ -88,7 +94,12 @@ $suma=$recibo+1;
 $sistemas['recibo']=$suma;
 
 
-      return view('reciboEstudiante',['sistemas' => $sistemas]);
+ 
+return View::make('reciboestudiante')
+          ->with('sistemas',$sistemas);
+
+     // return view('reciboEstudiante',['sistemas' => $sistemas]);
+
 
 
 }//buscar
@@ -133,12 +144,16 @@ $suma=$recibo+1;
 
 $sistemas['recibo']=$suma;
 $sistemas['fecha']= $now->format('d-m-Y');
-$sistemas['grado']="sin asignar";
-$sistemas['nombre']="sin asignar";
+$sistemas['grado']="registrado";
+$sistemas['nombre']="registrado";
 
 
 
-return view('/reciboEstudiante',['sistemas' => $sistemas]);
+ 
+return View::make('reciboestudiante')
+          ->with('sistemas',$sistemas);
+
+//return view('/reciboEstudiante',['sistemas' => $sistemas]);
 
 }
 

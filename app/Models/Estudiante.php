@@ -8,7 +8,10 @@ use DateTime;
 use Input;
 use DB;
 
-
+/**
+*clase Estudiante
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class Estudiante extends Model
 {
 
@@ -16,12 +19,22 @@ class Estudiante extends Model
    
 protected $primaryKey = 'idEstudiante';    
 
+/*
+ *get estudiante
+ *
+ */
+
 public function estudiante()
       {
         return $this->hasOne('App\Models\Estudiante');
       }
 
-	//crea un estudiante
+	/**
+*Crea un estudiante en la bd
+*@param array $data  de datos del registroEstudiante
+*@param array $acudiente datos del acudiente
+*@return void
+*/
     public static function crearEstudiante($data,$acudiente)
 	{ 
 
@@ -88,7 +101,11 @@ DB::table('Estudiante')->insert(array(
 
 	}//clase
 
-//update el Estudiante
+/**
+*actualiza los datos de un empleado
+*@param object $request array de datos del Estudiante
+*@return void
+*/
 public static function updateEstudiante($request)
 {  
 
@@ -118,26 +135,50 @@ $estudiante->save();
 
 }
 
-//elimina un Estudiante
-public static function destroyEstudiante($id)
+/**
+*Elimina un estudiante de la bd
+*@param integer $idEstu id del empleado a eliminar
+*@return void
+*/
+public static function destroyEstudiante($idEstu)
 {
- $estudiante =  Estudiante::find($id);
+ $estudiante =  Estudiante::find($idEstu);
         $estudiante->delete();
 }
 
-//buscar un estudiante
+/**
+*busca un estudiante de la bd
+*@param string $userdata nombre a buscar
+*@return object $estudiantes
+*/
 public static function  name($userdata)
 {
 
 $nombre=$userdata['nombre'];
 $grado=(int)$userdata['documento']+1;
 
+/*
+//add
+ $estudiantes=DB::table('Estudiante')
+            ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
+            ->join('reciboestudiante', 'reciboestudiante.idEstudiante', '=', 'estudiante.idEstudiante')
+            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','reciboestudiante.mes_a_pagar')
+            ->get();
+//add
+$array = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
+//add
+foreach ($estudiantes as $valor)
+{
+$valor->mes_a_pagar=$array[$valor->mes_a_pagar];
+}
+*/
 
   if(trim($nombre)!="")
 {
 $estudiantes = DB::table('Estudiante')
       ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')            
-      ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+       ->join('reciboestudiante', 'reciboestudiante.idEstudiante', '=', 'estudiante.idEstudiante')
+      ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','reciboestudiante.mes_a_pagar')
       ->Where('estudiante.idGrado',$grado)
       ->Where(DB::raw("CONCAT(estudiante.nombre,' ', estudiante.apellido)"),'LIKE' ,"%".$nombre."%")  
       ->get();
@@ -147,22 +188,37 @@ else
 {
    $estudiantes=DB::table('Estudiante')
             ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
-            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+              ->join('reciboestudiante', 'reciboestudiante.idEstudiante', '=', 'estudiante.idEstudiante')
+            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','reciboestudiante.mes_a_pagar')
             ->get();
 }
 if($estudiantes->isEmpty())
 {
-   $estudiantes=DB::table('Estudiante')
+  $estudiantes=DB::table('Estudiante')
             ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
-            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
+            ->join('reciboestudiante', 'reciboestudiante.idEstudiante', '=', 'estudiante.idEstudiante')
+            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','reciboestudiante.mes_a_pagar')
             ->get();
 }
+
+//add
+$array = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
+//add
+foreach ($estudiantes as $valor)
+{
+$valor->mes_a_pagar=$array[$valor->mes_a_pagar];
+}
+
 
 return $estudiantes;
 
 }
 
-
+/**
+*busca un estudiante de la bd
+*@param string $userdata nombre a buscar
+*@return object $estudiantes
+*/
 public static function nameRecibo($userdata)
 {
 $nombre=$userdata['nombre'];

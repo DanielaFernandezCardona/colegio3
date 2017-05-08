@@ -31,9 +31,12 @@
 }
 // suma los resultados de las casillas donde se ingresa el valor a pagar
 function sumar (valor) {
+  
+
     var total = 0;  
     valor = parseInt(valor); // Convertir el valor a un entero (número).
   
+
     total = document.getElementById('total').value;
   
     // Aquí valido si hay un valor previo, si no hay datos, le pongo un cero "0".
@@ -41,6 +44,7 @@ function sumar (valor) {
   
     /* Esta es la suma. */
     total = (parseInt(total) + parseInt(valor));
+  
   
     // Colocar el resultado de la suma en el control "span".
     document.getElementById('total').value = total;
@@ -82,33 +86,46 @@ document.getElementById('mitext').readOnly=false;
 }
 
 //envio datos al controller de pdf
-function envia(pag){ 
+function envio(pag){ 
     document.form.setAttribute("target", "_blank");
     document.form.action= pag 
     document.form.submit() 
 
   } 
  
- function calcular()
- {
- alert("hola");
- //alert(document.getElementById('mitext').readOnly)
-  
-  /*
-   var valorMens = 0;  
-    valor = parseInt(valor); // Convertir el valor a un entero (número).
-  
-    valorMens = document.getElementById('valorMens').value;
 
-  
-  //alert(document.getElementById('mitext').readOnly)
+function myFunction()
+{
+
+var grado=document.getElementById("grado").value;
+var  valorMes=document.getElementById("valorMens").value; 
+var valor=grado=="no encontrado";
+
+var valor2=valorMes=="0";
+
+if(valor2)
+{
+ alert("INGRESE UN VALOR VALIDO EN Valor a Pagar Mes")
+ return false;
+}
 
 
 
-      document.getElementById('total').value= valorMens;
-*/
+if(valor||grado=="vacio")
+{
+  alert("NO PUEDE REGISTRAR  GRADO ERRONEO")
 
- }
+return false;
+}
+else
+{
+document.form.action= "/registrarNominaEmpleado" 
+document.form.submit() 
+return true;
+
+}
+}
+
 
 </script>
 
@@ -158,6 +175,10 @@ function envia(pag){
 
             <li><a href="./reciboEmpleado"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Empleado</a></li>
             
+             <li><a href="./totalColegio"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio</a></li>
+   <li><a href="./totalColegioMes"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio Mes</a></li>
+ 
+ 
             <li><a href="./registroUsuario"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
           
             <li role="presentation" class="divider"></li>
@@ -199,7 +220,7 @@ function envia(pag){
    
                                           
 
-                                          <form role="form" name="form" action="/registrarNominaEmpleado" method="post">
+                                          <form role="form" name="form" action="/registrarNominaEmpleado" method="post"  onsubmit="return myFunction()">
               
                                                 <div class="form-group" style="border:1px;">
                                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -215,7 +236,7 @@ function envia(pag){
 
 
                                                      {!! Form::label('Grado') !!}
-                                                     {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+                                                     {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','id'=>'grado')) !!}
 
 
                                                       
@@ -240,7 +261,7 @@ function envia(pag){
 
                                                       <div class="form-group has-success">
                                                         <label>Valor a Pagar Mes</label>
-                                                        <input class="form-control" name="valorMens" id="valorMens" placeholder="Valor a Pagar Mes"   onchange=" sumar(this.value);" onkeypress="return valida(event);" value="0" required>
+                                                        <input class="form-control" name="valorMens" id="valorMens" placeholder="Valor a Pagar Mes"   onchange="sumar(this.value);" onkeypress="return valida(event);" value="0" required>
                                                       </div>
 
                                                       <div class="form-group">
@@ -252,7 +273,7 @@ function envia(pag){
 
                                                         <div class="form-group has-success"> 
                                                           <label>Valor a Pagar Adicionales</label>
-                                                          <input type="text"onkeypress="return valida(event);"  onchange="sumar(this.value);" id="mitext" readonly="readonly" name="valorAdicional" value="0" />
+                                                          <input type="text"onkeypress="return valida(event);"  onchange="sumar(this.value);" id="mitext"  name="valorAdicional" value="0" />
 
                                                         </div>
                                                          
@@ -265,7 +286,7 @@ function envia(pag){
 
                                                       <div class="form-group has-success">
                                                         <label>Total a pagar</label>
-                                                      <input type="text" onkeypress="return valida(event);"  onchange="restar(this.value);"  id="total" name="total" value="0" readonly />
+                                                      <input type="text" onkeypress="return valida(event);"    id="total" name="total" value="0" readonly />
                                                        
                                                       <!-- <span>: </span> <span  onchange="restar(this.value);"  id="total" name="total" value="0"></span>-->
 
@@ -273,15 +294,17 @@ function envia(pag){
 
                                                 
                                                 </div>
-                                                
-                                                <input type="button" onClick="envia('vista/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
-                                                <input type="button" onClick="envia('vista/2')" class="btn btn-primary btn-xs" value="Descargar"> 
-                                       
+                             
+                                               
                                                 <button type="submit" value="generarRecibo" class="btn btn-default">Registrar Pago</button>
 
                                                 
                                           </div>
                                     </form>
+                                       
+                                                <input type="button" onClick="envio('vista/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
+                                      <input type="button" onClick="envio('vista/2')" class="btn btn-primary btn-xs" value="Descargar"> 
+                            
                               </div>
                         </div>
                   </div><!-- /.col-->

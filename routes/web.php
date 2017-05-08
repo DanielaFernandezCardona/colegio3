@@ -135,7 +135,7 @@ Route::post('calcularAnioColegio', 'totalAnioController@calcularTotalAnio');
 
 /*rutas para calcular el total en el mes*/
 Route::get('/totalColegioMes',['as'=>'totalColegioMes','uses'=>'totalMesController@index']);
-Route::post('/registarTotalMesColegio', 'totalAnioController@registrarMesTotal');
+Route::post('/registarTotalMesColegio', 'totalMesController@registrarMesTotal');
 Route::post('calcularMesColegio', 'totalMesController@calcularTotalMes');
 
 

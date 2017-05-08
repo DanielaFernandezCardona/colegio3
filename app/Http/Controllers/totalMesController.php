@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\totalMes;
 use DB;
 
+/**
+*clase totalMesController
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class totalMesController extends Controller
 {
    
@@ -13,7 +17,11 @@ protected $table = 'totalmes';
    
 protected $primaryKey = 'idtotalMes';
 
-
+/**
+*devuelve datos a la vista totalcolegiomes
+*@return  object $sistema lista colegiomes 
+*
+*/
     public function index()
     {
 $now = new \DateTime();
@@ -27,6 +35,12 @@ $sistemas['totalEmpleado']='vacio';
     }
 
 
+/**
+*devuelve datos a la vista totalcolegio mes
+*@param object $request datos para calcular el mes
+*@return  object $sistema lista colegiomes 
+*
+*/
 public function calcularTotalMes(Request $request)
 {
 
@@ -68,8 +82,13 @@ $sistemas['totalEmpleado']=$sumapagoEmpleado;
 
 
 }
-
-    public function registrarMesTotal(Request $request)
+/**
+*devuelve datos a la vista totalcolegiomes
+*@param  object $request datos para registrar
+*@return  object $sistema lista colegiomes 
+*
+*/
+  public function registrarMesTotal(Request $request)
     {
     
  totalMes::registrarDatos($request);
