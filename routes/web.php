@@ -114,6 +114,30 @@ Route::post('/registrarReciboEstudiante','reciboEstudianteController@registrar')
 Route::get('/reciboEstudiante',['as'=>'reciboEstudiante','uses'=>'reciboEstudianteController@index']);
 //para buscar un estudiante para el recibo
 Route::post('/buscarEstudianteRecibo','reciboEstudianteController@search');
+//para el pdf del estudiante via online o descargar
+Route::post('vistaEstudiante/{tipo}', 'PdfController@crear_reporteEstudiante');
+
+
+/*rutas para manejar la gestion de recibo empleado*/
+Route::post('/registrarNominaEmpleado','reciboNominaController@registrar');
+Route::get('/reciboEmpleado',['as'=>'reciboEmpleado','uses'=>'reciboNominaController@index']);
+//para buscar un empleado para el recibo
+Route::post('/buscarEmpleadoRecibo','reciboNominaController@search');
+//para el pdf del empleado via online o descargar
+Route::post('vista/{tipo}', 'PdfController@crear_reporte');
+
+
+/*rutas para calcular el total en el anio*/
+Route::get('/totalColegio',['as'=>'totalColegio','uses'=>'totalAnioController@index']);
+Route::post('/registarTotalAnioColegio', 'totalAnioController@registrarAnioTotal');
+Route::post('calcularAnioColegio', 'totalAnioController@calcularTotalAnio');
+
+
+/*rutas para calcular el total en el mes*/
+Route::get('/totalColegioMes',['as'=>'totalColegioMes','uses'=>'totalMesController@index']);
+Route::post('/registarTotalMesColegio', 'totalAnioController@registrarMesTotal');
+Route::post('calcularMesColegio', 'totalMesController@calcularTotalMes');
+
 
 
 /*Route::get('/reciboEstudiante',function(){

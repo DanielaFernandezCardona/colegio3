@@ -8,11 +8,19 @@ use App\Models\ReciboEstudiante;
 use Input;
 use Redirect;
 use DB;
+use PDF;
 
-
+/**
+*clase ReciboEstudianteController
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class ReciboEstudianteController extends Controller
 {
 
+/**
+*funcion que permite enviar valores a la pagina reciboEstudiante
+*@return array $sistemas datos extraidos de la bd
+*/
 function index()
 {
 $now = new \DateTime();
@@ -21,49 +29,44 @@ $recibo=DB::table('reciboEstudiante')
 		->max('idREcibo');
 
 
-
-if(is_null($recibo))
-{
 $sistemas['fecha']= $now->format('d-m-Y');
-
-$sistemas['recibo']=1;
-
 $sistemas['grado']='vacio';
-
 $sistemas['nombre']='vacio';
 
-}
-else
+$suma=1;
+
+if(!is_null($recibo))
 {
-$sistemas['fecha']= $now->format('d-m-Y');
-
-$sistemas['recibo']=$recibo+1;
-
-$sistemas['grado']='vacio';
-
-$sistemas['nombre']='vacio';
-
+$suma=$recibo+1;
 }
+
+$sistemas['recibo']=$suma;
  
 
       return view('reciboEstudiante',['sistemas' => $sistemas]);
 }//funcion index
 
+
+
+/**
+*busca un estudiante en la bd
+*@return array $sistemas datos de la bd del empleado grado
+*/
 function search()
 {
 $userdata = array(
             'nombre' => Input::get('nomEstudiante'),
             );
+ 
+ 
 
- $var=Estudiante::nameRecibo($userdata);
+ $resultado=Estudiante::nameRecibo($userdata);
 
 
-
-foreach ($var as $valor) {
-$sistemas['grado']=$valor->grado;
+$grado='no encontrado';
+foreach ($resultado as $valor) {
+$grado=$valor->grado;
 }
-
-$sistemas['nombre']=$userdata['nombre'];
 
 
 $now = new \DateTime();
@@ -71,43 +74,71 @@ $recibo=DB::table('reciboEstudiante')
 		->select('idREcibo')
 		->max('idREcibo');
 
-
-if(is_null($recibo))
-{
 $sistemas['fecha']= $now->format('d-m-Y');
+$sistemas['grado']=$grado;
+$sistemas['nombre']=$userdata['nombre'];
 
-$sistemas['recibo']=1;
+$suma=1;
 
-}
-else
+if(!is_null($recibo))
 {
-$sistemas['fecha']= $now->format('d-m-Y');
-
-$sistemas['recibo']=$recibo+1;
-
-
+$suma=$recibo+1;
 }
 
-if(empty($sistemas))
-{
+$sistemas['recibo']=$suma;
+
+
       return view('reciboEstudiante',['sistemas' => $sistemas]);
 
-}
-else
-{
-      return view('reciboEstudiante',['sistemas' => $sistemas]);
-}
 
 }//buscar
 
 
-//registrar
+/**
+*funcion que permite registrar un recibo en la bd
+*@return  string ruta de la vista reciboEstudiante
+*/
 function registrar(Request $request)
 {
 
-reciboEstudiante::registrar($request);
+ $estudiantes = DB::table('Estudiante')
+      ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')            
+      ->select('grado.idGrado','estudiante.idEstudiante')
+      ->Where(DB::raw("CONCAT(estudiante.nombre,' ', estudiante.apellido)"),'LIKE' ,"%".$request->nombre."%")  
+      ->get();
+
+$idEstudiante=0;
+$idGrado=0;
+
+foreach ($estudiantes as $valor) {
+$idEstudiante=$valor->idEstudiante;
+$idGrado=$valor->idGrado;
+}
+
+ReciboEstudiante::registrar($request,$idEstudiante,$idGrado);
 
 
+$now = new \DateTime();
+$recibo=DB::table('reciboestudiante')
+    ->select('idREcibo')
+    ->max('idREcibo');
+
+
+$suma=1;
+
+if(!is_null($recibo))
+{
+$suma=$recibo+1;
+}
+
+$sistemas['recibo']=$suma;
+$sistemas['fecha']= $now->format('d-m-Y');
+$sistemas['grado']="sin asignar";
+$sistemas['nombre']="sin asignar";
+
+
+
+return view('/reciboEstudiante',['sistemas' => $sistemas]);
 
 }
 

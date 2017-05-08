@@ -3,11 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
 use DateTime;
 use Input;
 use DB;
 
+
+/**
+*clase Empleado
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class Empleado extends Model
 {
 
@@ -15,11 +19,17 @@ class Empleado extends Model
  protected $table = 'empleado';
  protected $primaryKey='idEmpleado';
 
+
       public function empleado()
       {
         return $this->hasOne('App\Models\Empleado');
       }
 
+/**
+*Crea un empleado en la bd
+*@param array $data  de datos del registroEmpleado
+*
+*/
 	public static function crearEmpleado($data)
 	{ 
 
@@ -94,6 +104,11 @@ DB::table('Empleado')->insert(array(
 
 	}//function
 
+/**
+*Crea un empleado en la bd
+*@param object $request array de datos del Empleado
+*
+*/
 public static function updateEmpleado($request)
 {
 $empleado = Empleado::find($request->id);
@@ -112,7 +127,9 @@ $empleado->lugarEstudios = $request->lugarEstudios;
 $empleado->cargo = $request->cargo;
 
 if($request->grado!="no_tiene")
-$empleado->Grado_idGrado = $request->grado+1;
+{
+  $empleado->Grado_idGrado = $request->grado+1;
+}
 
 $empleado->tiempoTrabajo = $request->tiempoTrabajo;
 $empleado->fechaIngresoTrabajo = $request->fechaIngresoTrabajo;
@@ -123,12 +140,40 @@ $empleado->estadoCivil = $request->estadoCivil;
 
 }
 
-public static  function destroyEmpleado($id)
+/**
+*Elimina un empleado de la bd
+*@param integer $idEmpleado id del empleado a eliminar
+*
+*/
+public static  function destroyEmpleado($idEmpleado)
 {
 
-  $empleado =  Empleado::find($id);
+  $empleado =  Empleado::find($idEmpleado);
         $empleado->delete();
    
+}
+
+/**
+*Busca un empleado de la bd
+*@param array $userdata del empleado a buscar
+*@return object $empleado devulve el grado al que pertenece el empleado
+*/
+public static function nameRecibo($userdata)
+{
+
+$nombre=$userdata['nombre'];
+
+
+ if(trim($nombre)!="")
+{
+$empleado = DB::table('Empleado')
+      ->join('grado', 'grado.idGrado', '=', 'Empleado.Grado_idGrado')            
+      ->select('grado.grado')
+      ->Where(DB::raw("CONCAT(empleado.nombre,' ', empleado.apellido)"),'LIKE' ,"%".$nombre."%")  
+      ->get();
+}
+ 
+ return $empleado;
 }
 
    

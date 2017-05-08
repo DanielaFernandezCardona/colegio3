@@ -175,7 +175,7 @@ $estudiantes = DB::table('Estudiante')
       ->select('grado.grado')
       ->Where(DB::raw("CONCAT(estudiante.nombre,' ', estudiante.apellido)"),'LIKE' ,"%".$nombre."%")  
       ->get();
-            }
+   }
 
             
 return $estudiantes;

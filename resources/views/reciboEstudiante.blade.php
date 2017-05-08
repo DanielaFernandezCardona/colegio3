@@ -34,7 +34,7 @@ function sumar (valor) {
     var total = 0;  
     valor = parseInt(valor); // Convertir el valor a un entero (número).
   
-    total = document.getElementById('spTotal').innerHTML;
+    total = document.getElementById('total').value;
   
     // Aquí valido si hay un valor previo, si no hay datos, le pongo un cero "0".
     total = (total == null || total == undefined || total == "") ? 0 : total;
@@ -43,8 +43,10 @@ function sumar (valor) {
     total = (parseInt(total) + parseInt(valor));
   
     // Colocar el resultado de la suma en el control "span".
-    document.getElementById('spTotal').innerHTML = total;
+    document.getElementById('total').value = total;
 }
+
+
 
 function activar(){
 document.getElementById('mitext').readOnly=true;
@@ -52,6 +54,16 @@ document.getElementById('mitext').readOnly=true;
 function desactivar(){
 document.getElementById('mitext').readOnly=false;
 }
+
+//envio datos al controller de pdf
+function envia(pag){ 
+    document.form.setAttribute("target", "_blank");
+    document.form.action= pag 
+    document.form.submit() 
+
+  } 
+
+
 </script>
 
 
@@ -72,7 +84,6 @@ document.getElementById('mitext').readOnly=false;
                     <li class="dropdown pull-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            
                             <li><a href="/salir"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Salir</a></li>
                         </ul>
                     </li>
@@ -83,11 +94,7 @@ document.getElementById('mitext').readOnly=false;
     </nav>
         
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-            </div>
-        </form>
+        
         <ul class="nav menu">
             <li class="active"><a href="/menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
 
@@ -130,30 +137,21 @@ document.getElementById('mitext').readOnly=false;
         <div class="row">
                   <div class="col-lg-12">
                         <div class="panel panel-default">
-                 <!--          @if(Session::has('success'))
-                   <div class="row">
-                <div class="col-md-12">
-                  <div class="alert alert-success">
-                    {{ Session::get('success') }}
-                  </div>
-                  </div> 
-                         </div> 
-                        @endif
-                   -->
+               
                               <div class="panel-heading" >Generar Recibo</div>
                               <div class="panel-body">
                                     <div class="col-md-6">
 
-  <form role="search" method="post" action="/buscarEstudianteRecibo">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-             <div class="form-group">
-                  <label>Nombre Estudiante</label>
-                 <input class="form-control" name="nomEstudiante" placeholder="nombre Estudiante" required>
-            <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
-                     </form>
+                                      <form role="search" method="post" action="/buscarEstudianteRecibo">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <div class="form-group">
+                                          <label>Nombre Estudiante</label>
+                                          <input class="form-control" name="nomEstudiante" placeholder="nombre Estudiante" required>
+                                          <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
+                                        </form>
 
 
-                                          <form role="form"  action="/registrarReciboEstudiante" method="post">
+                                          <form role="form" name="form"  action="/registrarReciboEstudiante" method="post">
               
                                                 <div class="form-group" style="border:1px;">
                                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -165,39 +163,21 @@ document.getElementById('mitext').readOnly=false;
                                                   {!! Form::label('Fecha') !!}
                                                     {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
-                                                      <div class="form-group" required>
-                                                        <label>Tipo Recibo</label>
-                                                        <div class="checkbox">
-                                                          <label>
-                                                            <input type="checkbox" value="matricula" name="matricula "  placeholder="matricula" > Matrícula
-                                                          </label>
-                                                        </div>
-                                                          <div class="checkbox">
-                                                          <label>
-                                                            <input type="checkbox" value="mensualidad" name="mensualidad"  placeholder="mensualidad"> Mensualidad
-                                                          </label>
-                                                        </div>
+                                                      <div class="form-group">
+                                                        <label>Tipo a pagar</label>
+                                                        <select name="tipo" class="form-control">
+                                                          <option value="matricula">Matricula</option>
+                                                          <option value="mensualidad">Mensualidad</option>
+                                                          </select>
                                                       </div>
 
-
-       
-<!--
-
-                                                      <label>Nombre Estudiante</label>
-                                                      <input class="form-control" name="nomEstudiante" placeholder="nombre Estudiante" required>
-
-                                                      <label>Apellido</label>
-                                                      <input class="form-control" type="text" name="apellido"   placeholder="Apellido" required>
-
-                                                      <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
--->
 
 
                                                       <div class="form-group">
                                         
                                                     
                                                   {!! Form::label('Nombre Estudiante') !!}
-                                                    {!! Form::text('nomEstudiante',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+                                                    {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
 
 
                                                   {!! Form::label('Grado') !!}
@@ -209,46 +189,34 @@ document.getElementById('mitext').readOnly=false;
                                                       
                                                       <div class="form-group">
                                                         <label>Mes a pagar</label>
-                                                        <select class="form-control">
-                                                          <option>Enero</option>
-                                                          <option>Febrero</option>
-                                                          <option>Marzo</option>
-                                                          <option>Abril</option>
-                                                          <option>Mayo</option>
-                                                          <option>Junio</option>
-                                                          <option>Julio</option>
-                                                          <option>Agosto</option>
-                                                          <option>Septiembre</option>
-                                                          <option>Octubre</option>
-                                                          <option>Noviembre</option>
-                                                          <option>Diciembre</option>
+                                                        <select name="mes" class="form-control">
+                                                          <option value="1">Enero</option>
+                                                          <option value="2">Febrero</option>
+                                                          <option value="3">Marzo</option>
+                                                          <option value="4">Abril</option>
+                                                          <option value="5">Mayo</option>
+                                                          <option value="6">Junio</option>
+                                                          <option value="7">Julio</option>
+                                                          <option value="8">Agosto</option>
+                                                          <option value="9">Septiembre</option>
+                                                          <option value="10">Octubre</option>
+                                                          <option value="11">Noviembre</option>
+                                                          <option value="12" >Diciembre</option>
                                                         </select>
                                                       </div>
 
 
-                                                        <div class="form-group" required>
-                                                        <label>Tipo Pago</label>
-                                                        <div class="checkbox">
-                                                          <label>
-                                                            <input type="checkbox" value="1" name="credito"  placeholder="credito" > Credito
-                                                          </label>
-                                                        </div>
-                                                          <div class="checkbox">
-                                                          <label>
-                                                            <input type="checkbox" value="2" name="contado"  placeholder="contado"> Contado
-                                                          </label>
-                                                        </div>
-                                                      </div>
+                      
 
 
                                                       <div class="form-group">
                                                         <label>Observaciones</label>
-                                                        <input class="form-control" type="text" name="Observaciones"  placeholder="Observaciones"  >
+                                                        <input class="form-control" type="text" name="Observaciones"  placeholder="Observaciones" value="vacio"  >
                                                       </div>
 
                                                       <div class="form-group has-success">
                                                         <label>Valor a Pagar Mensualidad $</label>
-                                                        <input class="form-control" name="valorMensualidad" placeholder="Valor a Pagar Mensualidad" onkeypress="return valida(event);"  onchange="sumar(this.value);" required>
+                                                        <input class="form-control" name="valorMens" placeholder="Valor a Pagar Mensualidad" onkeypress="return valida(event);"  onchange="sumar(this.value);" value="0" required>
                                                       </div>
 
 
@@ -256,7 +224,7 @@ document.getElementById('mitext').readOnly=false;
 
                                                         <div class="form-group has-success"> 
                                                          <label>Valor a Pagar Extraordinario $</label>
-                                                          <input type="text"onkeypress="return valida(event);"  onchange="sumar(this.value);" id="mitext" readonly="readonly" name="valorExtraordinario" />
+                                                          <input type="text"onkeypress="return valida(event);"  onchange="sumar(this.value);" id="mitext" readonly="readonly" name="valorExtraordinario"  value="0"/>
 
                                                         </div>
 
@@ -264,16 +232,18 @@ document.getElementById('mitext').readOnly=false;
 
                                                       <div class="form-group has-success">
                                                         <label>Total a pagar</label>
-                                                       <span>$: </span> <span id="spTotal" name="total"></span>
+                                                     <input type="text" onkeypress="return valida(event);"    id="total" name="total" value="0" readonly />
+                                                     
                                                       </div>
 
                                                   
                                                 </div>
                                                                                                 
                                                 
-                                                <button type="submit" value="vistaPrevia" class="btn btn-primary">Vista Previa</button>
-
-                                                <button type="submit" value="generarRecibo" class="btn btn-default">Generar Recibo</button>
+                                             <input type="button" onClick="envia('vistaEstudiante/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
+                                                <input type="button" onClick="envia('vistaEstudiante/2')" class="btn btn-primary btn-xs" value="Descargar"> 
+                                       
+                                                <button type="submit" value="generarRecibo" class="btn btn-default">Registrar Pago</button>
 
                                                 
                                           </div>

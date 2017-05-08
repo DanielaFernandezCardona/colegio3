@@ -3,8 +3,37 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DateTime;
+use DB;
 
 class totalAnio extends Model
 {
-    //
+
+protected $table = 'totalanio';
+   
+protected $primaryKey = 'idtotalAnio';
+
+
+
+    public static function registrarDatos($datos)
+    {  
+
+
+//convertimos  a tipo date
+$date = new DateTime($datos->fecha);
+
+$anio=explode('-',$datos->fecha);
+
+   
+    	DB::table('totalanio')->insert(array(
+            'anio' => $anio[2],
+            'fechaGeneracion'=> $date->format('Y-m-d'),
+         	'idAdministrador' => 1,
+            'totalAniocol'=> $datos->total
+        )); 
+	
+    }
+
+
+
 }
