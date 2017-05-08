@@ -71,6 +71,7 @@ return Redirect::to('registroEmpleado')->with('success','Registro Exitoso');
 
 }
 
+<<<<<<< HEAD
 /**
 *Elimina datos en la bd del empleado
 *@param object $idEmpleado a eliminar
@@ -80,6 +81,12 @@ return Redirect::to('registroEmpleado')->with('success','Registro Exitoso');
 public function destroy($idEmpleado)
 {
   Empleado::destroyEmpleado($idEmpleado);
+=======
+// para eliminar un empleado
+public function destroy($idEmple)
+{
+  Empleado::destroyEmpleado($idEmple);
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 
                 return redirect('listadoEmpleado');
  
@@ -92,6 +99,7 @@ public function search()
 {
 Empleado::nameRecibo($nombre);
 
+<<<<<<< HEAD
 }
 */
 
@@ -102,12 +110,19 @@ Empleado::nameRecibo($nombre);
 *
 */
  public function edit($idEmpleado)
+=======
+ public function edit($idEmple)
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
  {
 
 $empleado=DB::table('Empleado')
 ->join('grado', 'grado.idGrado', '=', 'empleado.Grado_idGrado')
 ->select('empleado.idEmpleado','empleado.documento','empleado.nombre','empleado.apellido', 'empleado.nacionalidad', 'empleado.telefono','empleado.correo','empleado.direccion','empleado.fechaNacimiento','empleado.estudiosRealizados','empleado.nivel','empleado.cargo','empleado.lugarEstudios','empleado.tiempoTrabajo','empleado.fechaIngresoTrabajo','empleado.valorNomina','empleado.estadoCivil','empleado.fechaNacimiento','grado.grado','grado.idGrado')
+<<<<<<< HEAD
 ->where('idEmpleado',$idEmpleado)
+=======
+->where('idEmpleado',$idEmple)
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 ->first();
 
 

@@ -88,6 +88,7 @@ Estudiante::crearEstudiante($userdata,$acudientedata);
 return Redirect::to('registroEstudiante')->with('success','Registro Exitoso');
 }
 
+<<<<<<< HEAD
 /**
 *Edita datos en la bd del estudiante
 *@param integer $idEstudiante a edita
@@ -95,24 +96,37 @@ return Redirect::to('registroEstudiante')->with('success','Registro Exitoso');
 *
 */
 public function edit($idEstudiante)
+=======
+//edit estudiante
+public function edit($idEstu)
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 {
 
 $estudiante=DB::table('estudiante')
 ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
 ->join('acudiente', 'idAcudiente', '=', 'estudiante.Acudiente_idAcudiente')
 ->select('estudiante.idEstudiante','estudiante.nombre','estudiante.apellido','estudiante.fechaNac', 'estudiante.documento', 'estudiante.expedicion','estudiante.telefono','estudiante.celular','estudiante.direccion','estudiante.peso','estudiante.tipoSangre','estudiante.anioActual','estudiante.condicion','estudiante.religion','grado.grado','acudiente.idAcudiente','acudiente.documentoPadre','acudiente.nombrePadre','acudiente.nombremadre','acudiente.apellidoMadre','acudiente.apellidoPadre','acudiente.documentoMadre','acudiente.ocupacionPadre','acudiente.ocupacionMadre','acudiente.celularPadre','acudiente.celularMadre','acudiente.correoMadre','acudiente.correoPadre','acudiente.estadoCivil','acudiente.nombreAcu','acudiente.documentoAcu','acudiente.celularAcu','acudiente.ocupacion','acudiente.correoAcu','acudiente.parentesco')
+<<<<<<< HEAD
 ->where('idEstudiante',$idEstudiante)
+=======
+->where('idEstudiante',$idEstu)
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 ->first();
 
                 return \View::make('updateEstudiante',compact('estudiante'));
 
 }
+<<<<<<< HEAD
 /**
 *Actualiza datos en la bd del estudiante
 *@param  object $request datos del estudiante
 *@return string redirecciona a la vista listadoGrado 
 *
 */
+=======
+
+//update estudiante
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 public function update(Request $request)
 {
 
@@ -120,6 +134,7 @@ public function update(Request $request)
 
              return redirect('listadoGrado');
 }
+<<<<<<< HEAD
 
 
 /**
@@ -130,6 +145,12 @@ public function update(Request $request)
 public function destroy($idEstudiante)
 {
 Estudiante::destroyEstudiante($idEstudiante);
+=======
+//elimina registro de estudiante
+public function destroy($idEstu)
+{
+Estudiante::destroyEstudiante($idEstu);
+>>>>>>> 644c878e3a2b5f601fa77d4ca5083c119bc93f83
 
                 return redirect('listadoGrado');
 }

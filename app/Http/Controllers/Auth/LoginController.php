@@ -76,7 +76,7 @@ $contrasena=Input::get('contrasena');
 $users = DB::table('Administrador')->get();
 
 foreach ($users as $user) {    
-    if($user->nombre==$nombre and  $user->contrasena==$contrasena)
+    if($user->nombre==$nombre &&  $user->contrasena==$contrasena)
          return Redirect::to('/menu');
 }
 

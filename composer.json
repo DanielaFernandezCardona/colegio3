@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=5.6.17",
         "barryvdh/laravel-dompdf": "^0.8.0",
         "dompdf/dompdf": "^0.8.0",
         "fzaninotto/faker": "~1.4",
@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7.19"
     },
     "autoload": {
         "classmap": [

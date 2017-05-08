@@ -18,13 +18,16 @@ class AlertasController extends Controller
     
 
 // para enviar email 
-public function post()
+public function post(Request $request)
 {
-	
+/*	
 $email=Input::get('email');
 $mensaje=Input::get('mensaje');
 $asunto=Input::get('asunto');
-
+*/
+$email=$request->email;
+$mensaje=$request->mensaje;
+$asunto=$request->asunto;
 
 
  $data_toview = array();
@@ -84,7 +87,7 @@ return Redirect::to('alertas')->with('success','Envio  Exitoso');
 
 
 //  funcion
-
+/*
 public  function basic_email()
 {
     $data=['name'=>'Colegio Bello Horizonte'];
@@ -95,6 +98,6 @@ public  function basic_email()
     echo 'email enviado';
 
 }
-
+*/
 
 }
