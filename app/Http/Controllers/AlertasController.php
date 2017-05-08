@@ -18,17 +18,17 @@ class AlertasController extends Controller
     
 
 // para enviar email 
-public function post(Request $request)
+public function post()
 {
-/*	
+	
 $email=Input::get('email');
 $mensaje=Input::get('mensaje');
 $asunto=Input::get('asunto');
-*/
+/*
 $email=$request->email;
 $mensaje=$request->mensaje;
 $asunto=$request->asunto;
-
+*/
 
  $data_toview = array();
             $data_toview['name'] = $mensaje;

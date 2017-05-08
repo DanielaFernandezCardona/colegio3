@@ -65,7 +65,7 @@
        
           </table>
 
- <table style="margin-top:-283px;margin-left:330px;">
+ <table style="margin-top:-250px;margin-left:330px;">
         <tr>
             <th  style="padding: 7px 3px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;">{{$user->nombre}}</th>
         </tr>
