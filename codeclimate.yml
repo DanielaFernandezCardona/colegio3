@@ -3,5 +3,7 @@ JavaScript: false
 Python: false
 Ruby: false
 
-
+exclude_paths:
+- test/**/*
+- vendor/**/*s
 
