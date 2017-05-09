@@ -12,23 +12,25 @@ use Swift_Message;
 use Swift_Mailer;
 
 
-
+/**
+*clase Alertascontroller
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class AlertasController extends Controller
 {
     
 
-// para enviar email 
+/**
+*devuelve datos a la vista alertas blade
+*@return  string direccion lista
+*
+*/
 public function post()
 {
 	
 $email=Input::get('email');
 $mensaje=Input::get('mensaje');
 $asunto=Input::get('asunto');
-/*
-$email=$request->email;
-$mensaje=$request->mensaje;
-$asunto=$request->asunto;
-*/
 
  $data_toview = array();
             $data_toview['name'] = $mensaje;
@@ -37,27 +39,21 @@ $asunto=$request->asunto;
             $email_pass     = 'llanitos3012';
             $email_to    = $email;
  
-            // Backup your default mailer
             $backup = \Mail::getSwiftMailer();
  
             try{
             
-                        //https://accounts.google.com/DisplayUnlockCaptcha
-                        // Setup your gmail mailer
                         $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 587, 'tls');
                         $transport->setUsername($email_sender);
                         $transport->setPassword($email_pass);
  
-                        // Any other mailer configuration stuff needed...
                         $gmail = new Swift_Mailer($transport);
  
-                        // Set the mailer as gmail
                         \Mail::setSwiftMailer($gmail);
  
                         $data['emailto'] =$email_to;  
                         $data['sender'] = $email_sender;
                         $data['asunto']=$asunto;
-                        //Sender dan Reply harus sama
  
                         Mail::send('emails.html', $data_toview, function($message) use ($data)
                         {
@@ -77,7 +73,6 @@ $asunto=$request->asunto;
             }
  
  
-            // Restore your original mailer
             Mail::setSwiftMailer($backup);
  
 
@@ -86,18 +81,6 @@ return Redirect::to('alertas')->with('success','Envio  Exitoso');
 }
 
 
-//  funcion
-/*
-public  function basic_email()
-{
-    $data=['name'=>'Colegio Bello Horizonte'];
-    Mail::send(['text'=>'emails.html'],$data,function($message){
-        $message->to('92ramirescortes@gmail.com','Colegio Bello horizonte')->subject('envio correo laravel');
-        $message->from('92ramirescortes@gmail.com','Colegio Bello Horizonte');       
-    });
-    echo 'email enviado';
 
-}
-*/
 
 }

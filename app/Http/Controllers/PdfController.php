@@ -44,22 +44,13 @@ $user=DB::table('Empleado')
 ->where('idEmpleado',$idEmple)
 ->first();
 
-//var_dump($user);
-
-
- //$user = Empleado::where('idEmpleado',$id)->first();
- // var_dump($user);
   $headers = array(
               'Content-Type: application/pdf',
             );
 
      $pdf = PDF::loadView('pdfvista',['user' => $user]);
-//$paper_size = array(0,0,450,450);
 
 $pdf->setPaper('A4', 'portrait');
-//$pdf->render();
-
-//$pdf->stream();
 
 return $pdf->download('ResumenInformacion.pdf',$headers);
 
@@ -97,19 +88,6 @@ return $pdf->download('ResumenInformacionEstudiante.pdf',$headers);
 public function crear_reporte($tipo,Request $request)
 {
 
-/*
-var_dump($tipo);  
-var_dump($request->recibo); 
-var_dump($request->fecha); 
-var_dump($request->nombre);  
-var_dump($request->grado);
-var_dump($request->mes);
-var_dump($request->valorMens);
-var_dump($request->Observaciones);
-var_dump($request->valorAdicional);
-var_dump($request->valorDescuento);
-var_dump($request->total);
-*/
 
   $headers = array(
               'Content-Type: application/pdf',
@@ -137,17 +115,6 @@ return $pdf->download('Recibo.pdf',$headers);
 */
 public function crear_reporteEstudiante($tipo,Request $request)
 {
-/*
-var_dump($tipo);  
-var_dump($request->recibo); 
-var_dump($request->fecha); 
-var_dump($request->nombre);  
-var_dump($request->tipo);
-var_dump($request->valorMens);
-var_dump($request->Observaciones);
-var_dump($request->valorExtraordinario);
-var_dump($request->total);
-*/
 
 
  $headers = array(

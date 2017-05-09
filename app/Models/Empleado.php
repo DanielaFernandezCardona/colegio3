@@ -16,7 +16,7 @@ use DB;
 class Empleado extends Model
 {
 
-// consulta tabla empleado para traer los valores
+
  protected $table = 'empleado';
  protected $primaryKey='idEmpleado';
 

@@ -1,5 +1,5 @@
 projectKey=testproject
 serverUrl=https://sonarqube.com
 dashboardUrl=https://sonarqube.com/dashboard/index/testproject
-ceTaskId=AVvqe8BOZK7Z_25N1EB8
-ceTaskUrl=https://sonarqube.com/api/ce/task?id=AVvqe8BOZK7Z_25N1EB8
+ceTaskId=AVvqx3zn81vQG3nQ5egi
+ceTaskUrl=https://sonarqube.com/api/ce/task?id=AVvqx3zn81vQG3nQ5egi

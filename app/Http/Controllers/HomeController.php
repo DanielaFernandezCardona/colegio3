@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+*clase Homecontroller
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class HomeController extends Controller
 {
     /**

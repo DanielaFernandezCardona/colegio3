@@ -49,8 +49,8 @@ return View::make('reciboEstudiante')
 
 
 
-     // return view('reciboEstudiante',['sistemas' => $sistemas]);
-}//funcion index
+   
+}
 
 
 
@@ -98,11 +98,10 @@ $sistemas['recibo']=$suma;
 return View::make('reciboEstudiante')
           ->with('sistemas',$sistemas);
 
-     // return view('reciboEstudiante',['sistemas' => $sistemas]);
+    
 
 
-
-}//buscar
+}
 
 
 /**
@@ -153,7 +152,6 @@ $sistemas['nombre']="registrado";
 return View::make('reciboEstudiante')
           ->with('sistemas',$sistemas);
 
-//return view('/reciboEstudiante',['sistemas' => $sistemas]);
 
 }
 

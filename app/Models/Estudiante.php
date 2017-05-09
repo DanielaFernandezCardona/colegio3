@@ -24,7 +24,6 @@ protected $primaryKey = 'idEstudiante';
  *get estudiante
  *
  */
-
 public function estudiante()
       {
         return $this->hasOne('App\Models\Estudiante');
@@ -73,7 +72,7 @@ foreach ($acudientes as $acu) {
 }
 
 
-//convertimos  a tipo date
+
 $date = new DateTime($data['fechaNac']);
 
 
@@ -158,21 +157,6 @@ public static function  name($userdata)
 $nombre=$userdata['nombre'];
 $grado=(int)$userdata['documento']+1;
 
-/*
-//add
- $estudiantes=DB::table('Estudiante')
-            ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
-            ->join('reciboestudiante', 'reciboestudiante.idEstudiante', '=', 'estudiante.idEstudiante')
-            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','reciboestudiante.mes_a_pagar')
-            ->get();
-//add
-$array = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
-//add
-foreach ($estudiantes as $valor)
-{
-$valor->mes_a_pagar=$array[$valor->mes_a_pagar];
-}
-*/
 
   if(trim($nombre)!="")
 {
@@ -202,9 +186,9 @@ if($estudiantes->isEmpty())
             ->get();
 }
 
-//add
+
 $array = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
-//add
+
 foreach ($estudiantes as $valor)
 {
 $valor->mes_a_pagar=$array[$valor->mes_a_pagar];

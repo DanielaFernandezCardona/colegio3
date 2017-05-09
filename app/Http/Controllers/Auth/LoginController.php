@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 use Input;
 use Auth;
-
+/**
+*clase Logincontroller
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class LoginController extends Controller
 {
     /*
@@ -47,12 +50,15 @@ class LoginController extends Controller
     
 
 
-    /*muestra despues de login*/
-
+/**
+*devuelve datos showlogin blade
+*@return  string direccion lista
+*
+*/
     public function showLoginForm()
     {
 
-// Verificamos que el usuario no esté autenticado
+
         if (Auth::check())
         {
             // Si está autenticado lo mandamos a la raíz donde estara el mensaje de bienvenida.
@@ -65,8 +71,10 @@ class LoginController extends Controller
 
 
 /**
-     * Valida los datos del usuario.
-     */
+*devuelve datos a la vista login blade
+*@return  string direccion lista
+*
+*/
 public function postLogin()
 {
 
@@ -89,7 +97,11 @@ foreach ($users as $user) {
 
 
 
-//cerrar sesion
+/**
+*cierra logout
+*@return  string direccion login
+*
+*/
 public function logout(){
  //   Session::flush();
      return Redirect::to('/login');

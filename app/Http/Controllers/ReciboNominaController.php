@@ -41,7 +41,7 @@ $suma=$recibo+1;
 $sistemas['recibo']=$suma;
  
       return view('reciboEmpleado',['sistemas' => $sistemas]);
-}//funcion index
+}
 
 
 /**
@@ -85,7 +85,7 @@ $sistemas['recibo']=$suma;
 
 return view('reciboEmpleado',['sistemas' => $sistemas]);
 
-}//buscar
+}
 
 
 
@@ -133,6 +133,6 @@ $sistemas['nombre']="registrado";
 return view('/reciboEmpleado',['sistemas' => $sistemas]);
 
 
-}//funcion
+}
 
 }

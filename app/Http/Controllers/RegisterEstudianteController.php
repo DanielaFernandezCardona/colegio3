@@ -24,21 +24,16 @@ class RegisterEstudianteController extends Controller
 function index()
     {
 
-/*
- $estudiantes=DB::table('Estudiante')
-            ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
-            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado')
-            ->get();
-*/
-            //add
+
+           
  $estudiantes=DB::table('Estudiante')
             ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
             ->join('reciboestudiante', 'reciboestudiante.idEstudiante', '=', 'estudiante.idEstudiante')
             ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','reciboestudiante.mes_a_pagar')
             ->get();
-//add
+
 $array = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
-//add
+
 foreach ($estudiantes as $valor)
 {
 $valor->mes_a_pagar=$array[$valor->mes_a_pagar];

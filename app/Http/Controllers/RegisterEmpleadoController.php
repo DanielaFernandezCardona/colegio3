@@ -89,16 +89,7 @@ public function destroy($idEmple)
  
 }
 
-/*
 
-
-public function search()
-{
-Empleado::nameRecibo($nombre);
-
-<<<<<<< HEAD
-}
-*/
 
 /**
 *Edita datos en la bd del empleado
@@ -116,7 +107,6 @@ $empleado=DB::table('Empleado')
 ->first();
 
 
- //$empleado = Empleado::find(['idEmpleado' => $id]);
                 return \View::make('updateEmpleado',compact('empleado'));
  }
 

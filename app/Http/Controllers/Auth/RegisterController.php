@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Redirect;
 use Input;
-
+/**
+*clase Registercontroller
+*@autor jhon jaime ramirez cortes -lucerito Alarcon
+*/
 class RegisterController extends Controller
 {
     /*
@@ -41,7 +44,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-//toma los datos del formulario   
+/**
+*registrar datos del admin
+*@return  string direccion registroDireccion
+*
+*/   
 public function postRegistrar()
 {
 
