@@ -5,6 +5,6 @@ Ruby: false
 
 exclude_paths:
 - bootstrap/**
-- public/**
+- public/**/*
 
 
