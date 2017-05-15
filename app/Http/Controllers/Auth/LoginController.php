@@ -55,7 +55,7 @@ class LoginController extends Controller
 *@return  string direccion lista
 *
 */
-    public function showLoginForm()
+    public function showLogin()
     {
 
 
@@ -77,22 +77,16 @@ class LoginController extends Controller
 */
 public function postLogin()
 {
-
-$nombre=Input::get('nombre');
+$username=Input::get('nombre');
 $contrasena=Input::get('contrasena');
+$remember=Input::get('remember');
 
-$users = DB::table('Administrador')->get();
-
-foreach ($users as $user) {    
-    if($user->nombre==$nombre &&  $user->contrasena==$contrasena)
-         return Redirect::to('/menu');
+if(Auth::attempt(['username'=>$username,'password'=>$password],$remember))
+{
+    return redirect()->intended('/menu');
 }
 
- return Redirect::to('/login')
-    ->with('mensaje_error', 'Tus datos son incorrectos')
-    ->withInput();
-
-
+return Redirect::back()->with('error_message','datos Invalidos')->withInput();
 }
 
 
@@ -103,7 +97,7 @@ foreach ($users as $user) {
 *
 */
 public function logout(){
- //   Session::flush();
+Auth::logout();
      return Redirect::to('/login');
 } 
 
