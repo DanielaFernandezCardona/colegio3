@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DateTime;
 use DB;
+use Auth;
 
 
 /**
@@ -38,7 +39,7 @@ $anio=explode('-',$datos->fecha);
     	DB::table('totalanio')->insert(array(
             'anio' => $anio[2],
             'fechaGeneracion'=> $date->format('Y-m-d'),
-         	'idAdministrador' => 1,
+         	'idAdministrador' => Auth::idAdministrador(),
             'totalAniocol'=> $datos->total
         )); 
 	

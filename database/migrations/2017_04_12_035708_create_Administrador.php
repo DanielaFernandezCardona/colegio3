@@ -20,14 +20,14 @@ Schema::create('Administrador', function(Blueprint $table) {
             $table->increments('idAdministrador');
             $table->string('nombre', 45)->nullable();
             $table->string('apellidos', 45)->nullable();
-            $table->integer('contrasena')->nullable();
+            $table->integer('password')->nullable();
             $table->string('telefono', 45)->nullable();
             $table->string('correo', 45)->nullable();
-            $table->string('nombreUsuario', 45)->nullable();
+            $table->string('username', 45)->nullable();
             $table->string('direccion', 100)->nullable();
             $table->string('documento', 45)->nullable();
             
-           
+            $table->rememberToken();
             $table->timestamps();
         
         });

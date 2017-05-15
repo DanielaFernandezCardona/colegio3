@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DateTime;
 use DB;
-
+use Auth;
 
 /**
 *clase totalMes
@@ -38,7 +38,7 @@ $anio=explode('-',$datos->fecha);
             'mes' => $anio[1],
             'idAdministrador'=>1,
             'fechaGenercion'=> $date->format('Y-m-d'),
-         	'idAdministrador' => 1,
+         	'idAdministrador' => Auth::idAdministrador(),
             'totalMescol'=> $datos->total
         )); 
 	

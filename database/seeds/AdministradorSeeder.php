@@ -18,10 +18,10 @@ DB::table('Administrador')->insert(array(
           'documento'=>'12345',
           'nombre'=> 'elmer',
             'apellidos'=> 'alarcon',
-            'contrasena'=> '12345',
+            'password'=> \Hash::make('12345'),
             'telefono' => '3103661957',
             'correo' => 'elmer.47@hotmail.com',
-			'nombreUsuario' => 'elmer41',
+			'username' => 'elmer41',
 			'direccion'=>'carrera 52 # 49- 61 Sevilla (Valle del Cauca)'			
         )); 
 

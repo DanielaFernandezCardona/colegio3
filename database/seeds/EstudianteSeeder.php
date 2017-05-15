@@ -22,7 +22,7 @@ class EstudianteSeeder extends Seeder
 
       $faker = Faker::create();
 
-/*
+
       for ($i=0; $i < 5; $i++) {
 
 
@@ -51,7 +51,7 @@ class EstudianteSeeder extends Seeder
           ));
 
 }
-*/
+
   for ($i=0; $i < 5; $i++) {
 //insertamos datos en la tabla estudiante
         DB::table('Estudiante')->insert(array(
@@ -65,7 +65,7 @@ class EstudianteSeeder extends Seeder
           'direccion'=>$faker->randomElement(['a 44-81.Cl. 56 #4443, Sevilla','Cra. 49 #5273, Sevilla, Valle del Cauca','#50-43 a, Cra. 50 #50107, Sevilla, Valle del Cauca','Kr 48 50, Sevilla, Valle del Cauca','Cra. 49 #53 - 51, Sevilla, Valle del Cauca']),
           'peso'=>32.4,
           'tipoSangre'=>$faker->randomElement(['A+','B+','O-','A-']),
-          'anioActual'=>$date,
+          'anioActual'=>'2017',
           'condicion'=>'ninguna',
           'religion'=>$faker->randomElement(['catolico','cristiano']),
           'idGrado'=>$i+2,

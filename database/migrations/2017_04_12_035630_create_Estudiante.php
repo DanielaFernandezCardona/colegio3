@@ -29,7 +29,7 @@ Schema::create('Estudiante', function(Blueprint $table) {
             $table->string('direccion', 100)->nullable();
             $table->double('peso',5,3)->nullable();
             $table->string('tipoSangre', 45)->nullable();
-            $table->date('anioActual')->nullable();
+            $table->string('anioActual',45)->nullable();
             $table->string('condicion', 45)->nullable();
             $table->string('religion', 45)->nullable();
             $table->string('foto', 100)->nullable();

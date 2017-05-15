@@ -45,9 +45,9 @@ public static function crearAdministrador($data)
 $documento=$data['documento'];
 $nombre=$data['nombre'];
 $apellido=$data['apellido'];
-$contrasena=$data['contrasena'];
+$contrasena=$data['password'];
 $telefono=$data['telefono'];
-$usuario=$data['usuario'];
+$usuario=$data['username'];
 $direccion=$data['direccion'];
 $correo=$data['correo'];
 
@@ -55,10 +55,10 @@ DB::table('Administrador')->insert(array(
            'documento'=>$documento, 
           'nombre'=> $nombre,
             'apellidos'=> $apellido,
-            'contrasena'=> $contrasena,
+            'password'=> \Hash::make($contrasena),
             'telefono' => $telefono,
             'correo' => $correo,
-            'nombreUsuario' => $usuario,
+            'username' => $usuario,
             'direccion'=>$direccion            
         )); 
 

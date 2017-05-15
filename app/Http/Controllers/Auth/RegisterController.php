@@ -56,9 +56,9 @@ public function postRegistrar()
             'documento' => Input::get('documento'),
             'nombre'=> Input::get('nombre'),
          'apellido' => Input::get('apellido'),
-            'contrasena'=> Input::get('contrasena'),
+            'password'=> Input::get('contrasena'),
         'telefono' => Input::get('telefono'),
-            'usuario'=> Input::get('usuario'),
+            'username'=> Input::get('usuario'),
         'direccion' => Input::get('direccion'),
             'correo'=> Input::get('correo')       
         );
