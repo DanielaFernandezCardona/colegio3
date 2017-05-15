@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 use Input;
 use Auth;
+use View;
 /**
 *clase Logincontroller
 *@autor jhon jaime ramirez cortes -lucerito Alarcon
