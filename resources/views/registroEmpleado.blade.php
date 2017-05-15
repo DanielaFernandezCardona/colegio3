@@ -11,7 +11,64 @@
 
 <!--Icons-->
 <script src="./js/lumino.glyphs.js"></script>
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
 
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+        
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+function pruebaemail (){
+    re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+   var valor=document.getElementById('email').value;
+    if(!re.exec(valor))
+    {
+        alert('correo no valido');
+        return false;
+    }else{
+          return true;
+    }
+  
+
+    }
+     function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+ function validar(obj) {
+  patron = /^\d{4}\-\d{2}\-\d{2}$/
+ 
+  if(patron.test(obj.value)==false){
+    alert('fecha no valida');
+  return false;
+  }
+  else{
+    return true;
+  }
+}
+</script>
 
 </head>
 
@@ -101,44 +158,45 @@
                               <div class="panel-heading">Datos Empleado</div>
                               <div class="panel-body">
                                     <div class="col-md-6">
-                                          <form role="form"  action="/registrarEmpleado" method="post">
+                                          <form role="form"  action="/registrarEmpleado" method="post" onsubmit="return pruebaemail()">
                                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
-                                                <div class="form-group">
+                                                <div class="form-group" onsubmit="return pruebaemail()">
                                                       <label>Documento </label>
-                                                      <input class="form-control" type="text" name="documento"  placeholder="documento" required>
+                                                      <input class="form-control" type="text" name="documento"  placeholder="documento" onkeypress="return valida(event);" required>
                                                       <label>Nombre</label>
-                                                      <input class="form-control" name="nombre" placeholder="Nombre">
+                                                      <input class="form-control" name="nombre" placeholder="Nombre"  onkeypress="return soloLetras(event)" required>
                                                       <label>Apellido</label>
-                                                      <input class="form-control" type="text" name="apellido"   placeholder="apellido" required>
+                                                      <input class="form-control" type="text" name="apellido"   placeholder="apellido"  onkeypress="return soloLetras(event)" required>
                                                       <label>Nacionalidad</label>
-                                                      <input class="form-control" type="text" name="nacionalidad"   placeholder="Nacionalidad" required>
+                                                      <input class="form-control" type="text" name="nacionalidad"   placeholder="Nacionalidad"  onkeypress="return soloLetras(event)" required>
+
                                                       <label>Celular</label>
-                                                      <input class="form-control" type="text" name="telefono"  placeholder="celular" required>
+                                                      <input class="form-control" type="text" name="telefono"  placeholder="celular"  onkeypress="return valida(event);" required>
                                                  
                                                 
                                                       <label>Correo</label>
-                                                      <input class="form-control" type="text" name="correo"  placeholder="Correo" required>
+                                                      <input id="email" class="form-control" type="text" name="correo"  placeholder="Correo" required>
                                                                                         
                 
                                                       <label>Dirección</label>
                                                       <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
 
                                                       <label>Fecha Nacimiento</label>
-                                                      <input class="form-control" type="text" name="fechaNacimiento"   placeholder="AAAA/MM/DD" required>
+                                                      <input class="form-control" type="text" name="fechaNacimiento"   placeholder="AAAA-MM-DD" onblur="return validar(this)" required>
 
                                                       <label>Estudios Universitarios</label>
-                                                      <input class="form-control" type="text" name="estudiosRealizados"   placeholder="Estudios" required>
+                                                      <input class="form-control" type="text" name="estudiosRealizados"   placeholder="Estudios" onkeypress="return soloLetras(event)" required>
 
                                                       <label>Nivel Estudios </label>
                                                       <input class="form-control" type="text" name="nivel"   placeholder="nivel" required>
                                                       
                                                      
                                                       <label>Lugar Estudios </label>
-                                                      <input class="form-control" type="text" name="lugarEstudios"  placeholder="lugar Estudios" required>
+                                                      <input class="form-control" type="text" name="lugarEstudios"  placeholder="lugar Estudios" onkeypress="return soloLetras(event)"  required>
 
                                                       <label>Cargo</label>
-                                                      <input class="form-control" type="text" name="cargo"  placeholder="cargo" required>
+                                                      <input class="form-control" type="text" name="cargo"  placeholder="cargo" onkeypress="return soloLetras(event)" required>
                                                       
 
                                                    
@@ -183,37 +241,31 @@
                                                       <input class="form-control" type="text" name="fechaIngresoTrabajo"  placeholder="AAAA/MM/DD" required>
 
                                                       <label>Valor Nomina</label>
-                                                      <input class="form-control" type="text" name="valorNomina"  placeholder="Valor Nomina" required>
+                                                      <input class="form-control" type="text" name="valorNomina"  placeholder="Valor Nomina"  onkeypress="return valida(event);" required>
 
                                                        <div class="form-group">
                                                         <label>Estado Civil </label>
                                                         <div class="radio">
                                                             <label>
-                                                             <input type="radio" name="estadoCivil" id="optionsRadios1" value="madre_soltera" checked>Madre Soltera
+                                                             <input type="radio" name="estadoCivil" id="optionsRadios1" value="madre_soltera" checked>Soltera/o
                                                            </label>
                                                         </div>
                                                         <div class="radio">
                                                           <label>
-                                                           <input type="radio" name="estadoCivil" id="optionsRadios2" value="Divorciado">Divorciado
+                                                           <input type="radio" name="estadoCivil" id="optionsRadios2" value="Divorciado">Divorciada/o
                                                          </label>
                                                         </div>
                                                         <div class="radio">
                                                           <label>
-                                                            <input type="radio" name="estadoCivil" id="optionsRadios3" value="casado">Casado
+                                                            <input type="radio" name="estadoCivil" id="optionsRadios3" value="casado">Casada/o
                                                           </label>
                                                         </div>
                                                         <div class="radio">
                                                           <label>
-                                                            <input type="radio" name="estadoCivil" id="optionsRadios4" value="viudo">Viudo
+                                                            <input type="radio" name="estadoCivil" id="optionsRadios4" value="viudo">Viuda/o
                                                           </label>
                                                         </div>
-                                                      <div class="radio">
-                                                          <label>
-                                                            <input type="radio" name="estadoCivil" id="optionsRadios5" value="soltero">Solter@
-                                                          </label>
-                                                        </div>
-                                                      </div>
-                                                      
+                                                    
 
 
                                                 </div>

@@ -185,6 +185,7 @@ return true;
                                         <div class="form-group">
                                           <label>Nombre Estudiante</label>
                                           <input class="form-control" name="nomEstudiante" placeholder="nombre Estudiante" required>
+                                          
                                           <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
                                         </form>
 

@@ -11,7 +11,26 @@
 
 <!--Icons-->
 <script src="./js/lumino.glyphs.js"></script>
+<script> 
+function soloLetras(e){
+  key = e.keyCode || e.which;
+  tecla = String.fromCharCode(key).toLowerCase();
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  especiales = "8-37-39-46";
 
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>
 
 </head>
 
@@ -90,7 +109,7 @@
                     <div class="panel-heading">Listas por Grados</div>
                     <div class="panel-body">
                      <form role="search" method="post" action="/buscarEstudiante">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" onkeypress="return soloLetras(event)" >
              <div class="form-group">
                     <input  name="nombre" type="text" class="form-control" style="width:30%" placeholder="Nombre Alumno">
                  {{ Form::select('grado', ['PREJARDIN','JARDIN','TRANSICION','1A','1B','1C','2A','2B','2C','3A','3B','3C','4A','4B','4C','5A','5B','5C'],null, ['id' => 'grado','class' => 'form-control','style'=>'width:40%;margin-top:-35px;margin-left:320px']) }}

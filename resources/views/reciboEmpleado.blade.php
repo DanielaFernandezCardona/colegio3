@@ -16,6 +16,24 @@
 <script src="./js/lumino.glyphs.js"></script>
 <script>
 // valida que solo se registren numeros y no letras
+function soloLetras(e){
+  key = e.keyCode || e.which;
+  tecla = String.fromCharCode(key).toLowerCase();
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
   function valida(e){
     tecla = (document.all) ? e.keyCode : e.which;
 
@@ -214,7 +232,7 @@ return true;
                                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                       <div class="form-group">
                                         <label>Nombre Empleado</label>
-                                        <input class="form-control" name="nomEmpleado" placeholder="nombre Empleado" required>
+                                        <input class="form-control" name="nomEmpleado" placeholder="nombre Empleado" onkeypress="return soloLetras(event);" required>
                                         <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
                                       </form>
    
@@ -232,11 +250,11 @@ return true;
                                                      {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                                      {!! Form::label('Nombre Empleado') !!}
-                                                     {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado')) !!}
+                                                     {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','onkeypress'=>'return soloLetras(event)')) !!}
 
 
                                                      {!! Form::label('Grado') !!}
-                                                     {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','id'=>'grado')) !!}
+                                                     {!! Form::text('grado',$sistemas['grado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','id'=>'grado','onkeypress'=>'return soloLetras(event)')) !!}
 
 
                                                       
@@ -266,7 +284,7 @@ return true;
 
                                                       <div class="form-group">
                                                         <label>Observaciones</label>
-                                                        <input class="form-control" type="text" name="Observaciones" id="Observaciones" placeholder="Observaciones" value="vacio" >
+                                                        <input class="form-control" type="text" name="Observaciones" id="Observaciones" placeholder="Observaciones" value="vacio" onkeypress="return soloLetras(event);">
                                                       </div>
 
                                                       <input type="button" value="Activar pago Adicionales" onclick="desactivar()" class="btn btn-primary"/>

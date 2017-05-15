@@ -46,8 +46,11 @@
                     <input type="text" placeholder="usuario" name="nombre" id="nombre" required>
                     <p>Contraseña</p>
                     <input type="password" placeholder="Ingresa contraseña" name="contrasena" id="contrasena" required>
+            
+            <!--
                     <div class="g-recaptcha" data-sitekey="6LddhSAUAAAAAPxEhmsVzDy7-hmZZ3rJjJyYdeiQ" data-theme="dark"></div>
-                   
+                -->
+                {{Form::checkbox('remember',true)}} Remember me  
             
                     <input type="submit" value="Ingresar" id="submit" name="submit" class="boton">
                 </form>

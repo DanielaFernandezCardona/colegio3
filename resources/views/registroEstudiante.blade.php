@@ -11,6 +11,103 @@
 
 <!--Icons-->
 <script src="./js/lumino.glyphs.js"></script>
+<script>
+function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+        
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+function pruebaemail (){
+    re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+   var valor1=document.getElementById('email1').value;
+   var valor2=document.getElementById('email2').value;
+   var valor3=document.getElementById('email3').value;
+
+    if(!re.exec(valor1))
+    {
+        alert('correo no valido');
+        return false;
+    }
+   
+  if(!re.exec(valor2)){
+        alert('correo no valido');
+        return false;
+    
+  }
+  if(!re.exec(valor3)){
+    alert('correo no valido');
+        return false;
+
+  }
+  else{
+         
+if(validar()==true){
+          return true;
+        }
+        else {return false;}
+  }
+
+}
+function soloLetras(e){
+  key = e.keyCode || e.which;
+  tecla = String.fromCharCode(key).toLowerCase();
+  letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+  especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
+function validar() {
+  patron = /^\d{4}\-\d{2}\-\d{2}$/
+  var valor11=document.getElementById('fecha1').value;
+  var valor22=document.getElementById('fecha2').value;
+
+
+
+  
+  if((patron.test(valor11)==false)&&(patron.test(valor22)==false)){
+    alert('fecha no valida');
+  return false;
+  }
+   
+  if((patron.test(valor22)==true)&&(patron.test(valor11)==true)){
+  return true;
+  }
+ 
+
+
+}
+
+function anActual(valor) {
+  patron = /^\d{4}$/
+  if(patron.test(valor.value)==false){
+    alert('fecha no valida solo 4 digitos');
+  return false;
+  }
+  else{
+    return true;
+  }
+  }
+</script>
 
 
 </head>
@@ -99,26 +196,35 @@
                               <div class="panel-heading">Registro Estudiante</div>
                               <div class="panel-body">
                                     <div class="col-md-6">
-                                          <form role="form" action="/registrarEstudiante" method="post">
+                                          <form role="form" action="/registrarEstudiante" method="post" onsubmit="return pruebaemail()">
+
                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
                                                 <div class="form-group">
                                                       <label>DATOS ESTUDIANTE</label>
-                                                      <input class="form-control" type="text" name="nombre" placeholder="Nombre">
+                                                      <input class="form-control" type="text" name="nombre" placeholder="Nombre"  onkeypress="return soloLetras(event)"  required>
+
                                                       <label>Apellido</label>
-                                                      <input class="form-control" type="text" name="apellido"   placeholder="apellido" required>
+                                                      <input class="form-control" type="text" name="apellido"   placeholder="apellido" onkeypress="return soloLetras(event)" required>
+
                                                       <label>Fecha Nacimiento</label>
-                                                      <input class="form-control" type="text" name="fechaNac"   placeholder="AAAA/MM/DD" required>
+                                                      <input id="fecha1" class="form-control" type="text" name="fechaNac"   placeholder="AAAA-MM-DD" required>
+
                                                       <label>Documento</label>
-                                                      <input class="form-control" type="text" name="documento"  placeholder="documento" required>
+                                                      <input class="form-control" type="text" name="documento"  placeholder="documento" onkeypress="return valida(event);"  required>
+
                                                       <label>FechaExpedicón</label>
-                                                      <input class="form-control" type="text" name="expedicion"   placeholder="AAAA/MM/DD">
+                                                      <input id="fecha2" class="form-control" type="text" name="expedicion"   placeholder="AAAA-MM-DD">
+
                                                       <label>celular</label>
-                                                      <input class="form-control" type="text" name="celular"    placeholder="Celular" required>
+                                                      <input class="form-control" type="text" name="celular"    placeholder="Celular" onkeypress="return valida(event);" required>
+
                                                       <label>telefono</label>
-                                                      <input class="form-control" type="text" name="telefono"   placeholder="telefono" required>
+                                                      <input class="form-control" type="text" name="telefono"   placeholder="telefono" onkeypress="return valida(event);" required>
+
                                                       <label>Dirección</label>
                                                       <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
+
                                                       <label>Grado</label>
                                                       <div class="form-group">
                                                       <select class="form-control" id="grado" name="grado" >
@@ -144,54 +250,70 @@
                                                          </div> 
 
 
-                                                      <label>Peso Estudiante</label>
-                                                      <input class="form-control" type="text" name="peso"   placeholder="Peso Estudiante" required>
+                                                      <label>Peso Estudiante en Kg</label>
+                                                      <input class="form-control" type="text" name="peso"   placeholder="Peso Estudiante" onkeypress="return valida(event);" required>
+
                                                       <label>Tipo sangre</label>
-                                                      <input class="form-control" type="text" name="tipoSangre" placeholder="tipo Sangre" required>
+                                                     
+                                                      <div class="form-group">
+                                                      <select class="form-control" id="tipoSangre" name="tipoSangres" >
+                                                          <option value="1" >O-</option>
+                                                          <option value="2" >O+</option>
+                                                          <option value="3" >A-</option>
+                                                          <option value="4" >A+</option>
+                                                          <option value="5" >B-</option>
+                                                          <option value="6" >B+</option>
+                                                          <option value="7" >AB-</option>
+                                                          <option value="8" >AB+</option>
+                                                        </select> 
+                                                        </div>
+                                                         
+
                                                       <label>Año Actual</label>
-                                                      <input class="form-control" type="text" name="anioActual"  placeholder="anioActual" required>
+                                                      <input class="form-control" type="text" name="anioActual"  placeholder="aÑO Actual" onkeypress="return valida(event);" onblur="return anActual(this)" required>
 
                                                       <label>Condición</label>
-                                                      <input class="form-control" type="text" name="condicion"  placeholder="Condición" required>
+                                                      <input class="form-control" type="text" name="condicion"  placeholder="Condición" onkeypress="return soloLetras(event)" required>
 
                                                       <label>Religión</label>
-                                                      <input class="form-control" type="text" name="religion"   placeholder="Religión" required>
+                                                      <input class="form-control" type="text" name="religion"   placeholder="Religión" onkeypress="return soloLetras(event)" required>
 
                                                       <label>DATOS DEL PADRE</label>
                                                       
-                                                      <input class="form-control" type="text" name="documentoPadre"   placeholder="Documento Padre" required>
+                                                      <input class="form-control" type="text" name="documentoPadre"   placeholder="Documento Padre" onkeypress="return valida(event);" required>
+
                                                       <label>Nombre </label>
-                                                      <input class="form-control" type="text" name="nombrePadre"   placeholder=" Nombre Padre" required>
+                                                      <input class="form-control" type="text" name="nombrePadre"   placeholder=" Nombre Padre" onkeypress="return soloLetras(event)" required>
 
                                                       <label>Apellidos </label>
-                                                      <input class="form-control" type="text" name="apellidoPadre"   placeholder="Apellidos Padre" required>
+                                                      <input class="form-control" type="text" name="apellidoPadre"   placeholder="Apellidos Padre" onkeypress="return soloLetras(event)" required>
 
                                                       <label>Ocupación </label>
-                                                      <input class="form-control" type="text" name="ocupacionPadre"   placeholder="Ocupación Padre" required>
+                                                      <input class="form-control" type="text" name="ocupacionPadre"   placeholder="Ocupación Padre" onkeypress="return soloLetras(event)" required>
 
                                                       <label>celular</label>
-                                                      <input class="form-control" type="text" name="celularPadre"   placeholder="celular" required>
+                                                      <input class="form-control" type="text" name="celularPadre"   placeholder="celular" onkeypress="return valida(event);" required>
 
                                                       <label>correo</label>
-                                                      <input class="form-control" type="text" name="correoPadre"  placeholder=" Correo Padre" required>
+                                                      <input id="email1" class="form-control" type="text" name="correoPadre"  placeholder=" Correo Padre" required>
 
                                                       <label>DATOS DE LA MADRE</label>
-                                                      <input class="form-control" type="text" name="documentoMadre"   placeholder=" Documento Madre" required>
+                                                      <input class="form-control" type="text" name="documentoMadre"   placeholder=" Documento Madre" onkeypress="return valida(event);" required>
 
                                                       <label>Nombre</label>
-                                                      <input class="form-control" type="text" name="nombremadre"   placeholder="Nombre madre" required>
+                                                      <input class="form-control" type="text" name="nombremadre"   placeholder="Nombre madre" onkeypress="return soloLetras(event)" required>
 
                                                       <label>Apellido</label>
-                                                      <input class="form-control" type="text" name="apellidoMadre"   placeholder="Apellidos Madre" required>
+                                                      <input class="form-control" type="text" name="apellidoMadre"   placeholder="Apellidos Madre" onkeypress="return soloLetras(event)" required>
 
                                                       <label>Ocupación</label>
-                                                      <input class="form-control" type="text" name="ocupacionMadre"   placeholder="Ocupación Madre" required>
+                                                      <input class="form-control" type="text" name="ocupacionMadre"   placeholder="Ocupación Madre" onkeypress="return soloLetras(event)" required>
 
                                                       <label>celular</label>
-                                                      <input class="form-control" type="text" name= "celularMadre"   placeholder="celular Madre" required>
+                                                      <input class="form-control" type="text" name= "celularMadre"   placeholder="celular Madre" onkeypress="return valida(event);" required>
 
                                                       <label>correo</label>
-                                                      <input class="form-control" type="text" name="correoMadre"  placeholder=" Correo Madre" required>
+                                                      <input id="email2" class="form-control" type="text" name="correoMadre"  placeholder=" Correo Madre" required>
 
                                                       
 
@@ -225,22 +347,22 @@
                                                       </div>
 
                                                       <label>DATOS ACUDIENTE</label>
-                                                      <input class="form-control" type="text" name="documentoAcudiente" placeholder="Documento Acudiente" required>
+                                                      <input class="form-control" type="text" name="documentoAcudiente" placeholder="Documento Acudiente" onkeypress="return valida(event);" required>
 
                                                       <label>nombre</label>
-                                                      <input class="form-control" type="text" name="nombreAcudiente" placeholder=" Nombre Acudiente" required>
+                                                      <input class="form-control" type="text" name="nombreAcudiente" placeholder=" Nombre Acudiente" onkeypress="return soloLetras(event)" required>
 
                                                       <label>celular</label>
-                                                      <input class="form-control" type="text" name="celuAcudiente" placeholder=" celular Acudiente" required>
+                                                      <input class="form-control" type="text" name="celuAcudiente" placeholder=" celular Acudiente" onkeypress="return valida(event);" required>
 
                                                       <label>correo</label>
-                                                      <input class="form-control" type="text" name="correoAcudiente"  placeholder="Correo Acudiente" required>
+                                                      <input id="email3" class="form-control" type="text" name="correoAcudiente"  placeholder="Correo Acudiente" required>
 
                                                       <label>Ocupacion</label>
-                                                      <input class="form-control" type="text" name="ocupacion"  placeholder="Ocupacion Acudiente" required>
+                                                      <input class="form-control" type="text" name="ocupacion"  placeholder="Ocupacion Acudiente" onkeypress="return soloLetras(event)" required>
 
                                                      <label>Parentesco</label>
-                                                      <input class="form-control" type="text" name="parentesco"  placeholder="Parentesco Acudiente" required>
+                                                      <input class="form-control" type="text" name="parentesco"  placeholder="Parentesco Acudiente" onkeypress="return soloLetras(event)" required>
 
                                                 </div>
                                                                                                 

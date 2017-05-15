@@ -11,6 +11,22 @@
 
 <!--Icons-->
 <script src="./js/lumino.glyphs.js"></script>
+<script >
+function pruebaemail (){
+    re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+
+   var valor=document.getElementById('email').value;
+    if(!re.exec(valor))
+    {
+        alert('email no valido');
+        return false;
+    }else{
+          return true;
+    }
+  
+
+    }
+</script>
 
 
 </head>
@@ -102,7 +118,7 @@
                   </div> 
                          </div> 
                         @endif
-                        <form class="form-horizontal" action="/correo" method="post">
+                        <form class="form-horizontal" action="/correo" method="post" onsubmit="return pruebaemail()">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
                             <fieldset>
@@ -110,7 +126,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="name">Asunto</label>
                                     <div class="col-md-9">
-                                    <input id="name" name="asunto" type="text" placeholder="Asunto" class="form-control">
+                                    <input id="name" name="asunto" type="text" placeholder="Asunto" class="form-control" required>
                                     </div>
                                 </div>
                             
@@ -118,7 +134,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="email">Correo</label>
                                     <div class="col-md-9">
-                                        <input id="email" name="email" type="text" placeholder="correo" class="form-control">
+                                        <input id="email" name="email" type="text" placeholder="correo" class="form-control"onchange="validateMail(email.value);" required >
                                     </div>
                                 </div>
                                 
@@ -126,14 +142,14 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="message">Mensaje</label>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" id="message" name="mensaje" placeholder="Escriba su mensaje por favor" rows="5"></textarea>
+                                        <textarea class="form-control" id="message" name="mensaje" placeholder="Escriba su mensaje por favor" rows="5" required ></textarea>
                                     </div>
                                 </div>
                                 
                                 <!-- Form actions -->
                                 <div class="form-group">
                                     <div class="col-md-12 widget-right">
-                                        <button type="submit" class="btn btn-default btn-md pull-right">Enviar</button>
+                                        <button type="submit" class="btn btn-default btn-md pull-right" >Enviar</button>
                                     </div>
                                 </div>
                             </fieldset>
