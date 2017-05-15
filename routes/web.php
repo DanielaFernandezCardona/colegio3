@@ -24,6 +24,9 @@ Route::get('/login', function () {
 });
 */
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 //para poder ver el login
 Route::get('/','Auth\LoginController@showLogin');
 Route::get('/login','Auth\LoginController@showLogin');
