@@ -18,8 +18,8 @@ class ListarAlumnosGradoTest extends TestCase
     {
        // $this->assertTrue(true);
 
-         $response = $this->get('/listadoGrado');
+        // $response = $this->get('/listadoGrado');
 
-       // $response->assertStatus(200);
+        $response->assertStatus(200);
     }
 }
