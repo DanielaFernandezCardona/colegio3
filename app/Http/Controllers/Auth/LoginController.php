@@ -79,7 +79,7 @@ class LoginController extends Controller
 public function postLogin()
 {
 $username=Input::get('nombre');
-$contrasena=Input::get('contrasena');
+$password=Input::get('contrasena');
 $remember=Input::get('remember');
 
 if(Auth::attempt(['username'=>$username,'password'=>$password],$remember))
