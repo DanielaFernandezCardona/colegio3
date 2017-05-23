@@ -145,7 +145,7 @@ function soloLetras(e){
     
        <td>
                         <a class="btn btn-primary btn-xs" href="{{ route('estudiante/edit',['id' =>$estudiante->idEstudiante ] )}}" >Edit</a> 
-                        <a class="btn btn-danger btn-xs" href="{{ route('estudiante/destroy',['id' =>$estudiante->idEstudiante] )}}" >Delete</a>
+                        <a class="btn btn-danger btn-xs" href="{{ route('estudiante/destroy',['id' =>$estudiante->idEstudiante] )}}" onclick="return confirm('¿Seguro desea eliminarlo?')" >Delete</a>
                     </td>   
 
 

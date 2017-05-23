@@ -116,7 +116,7 @@
     
      <td>
                         <a class="btn btn-primary btn-xs" href="{{ route('empleado/edit',['id' =>$empleado->idEmpleado ] )}}" >Edit</a> 
-                        <a class="btn btn-danger btn-xs" href="{{ route('empleado/destroy',['id' =>$empleado->idEmpleado] )}}" >Delete</a>
+                        <a class="btn btn-danger btn-xs" href="{{ route('empleado/destroy',['id' =>$empleado->idEmpleado] )}}" onclick="return confirm('¿Seguro desea eliminarlo?')" >Delete</a>
                     </td>   
 
 
