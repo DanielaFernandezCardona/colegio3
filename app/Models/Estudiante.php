@@ -73,7 +73,7 @@ foreach ($acudientes as $acu) {
 
 
 
-$date = new DateTime($data['fechaNac']);
+//$date = new DateTime($data['fechaNac']);
 
 
 
@@ -81,7 +81,7 @@ DB::table('Estudiante')->insert(array(
            'documento' => $data['documento'],
             'nombre'=> $data['nombre'],
          	'apellido' => $data['apellido'],
-            'fechaNac'=> $date,
+            'fechaNac'=> $data['fechaNac'],
         	'expedicion' => $data['expedicion'],
             'telefono'=> $data['telefono'],
         	'celular' => $data['celular'],
