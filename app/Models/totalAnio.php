@@ -39,7 +39,7 @@ $anio=explode('-',$datos->fecha);
     	DB::table('totalanio')->insert(array(
             'anio' => $anio[2],
             'fechaGeneracion'=> $date->format('Y-m-d'),
-         	'idAdministrador' => Auth::user()->idAdministrador(),
+         	'idAdministrador' => Auth::user()->idAdministrador,
             'totalAniocol'=> $datos->total
         )); 
 	

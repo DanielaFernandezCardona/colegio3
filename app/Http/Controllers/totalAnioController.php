@@ -64,6 +64,10 @@ $sumapagoEmpleado+=$valor2->totalPago;
 
 
 $resultado=$sumapagoEstudiante-$sumapagoEmpleado;
+if($resultado<0)
+{
+  $resultado=0;
+}
 
 $now = new\DateTime();
 

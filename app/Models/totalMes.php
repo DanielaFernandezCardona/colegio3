@@ -38,7 +38,7 @@ $anio=explode('-',$datos->fecha);
             'mes' => $anio[1],
             'idAdministrador'=>1,
             'fechaGenercion'=> $date->format('Y-m-d'),
-         	'idAdministrador' => Auth::user()->idAdministrador(),
+         	'idAdministrador' => Auth::user()->idAdministrador,
             'totalMescol'=> $datos->total
         )); 
 	
