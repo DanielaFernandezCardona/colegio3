@@ -582,6 +582,7 @@ button.mfp-arrow {
     font: normal 18px sans-serif;
     padding: 45px;
     margin-top: 65px;
+     position: fixed;
 }
 
 
@@ -593,9 +594,12 @@ button.mfp-arrow {
 
 
 
-@media (max-height: 800px)
+@media (max-height: 800px){
+
 footer {
-    position: static;
+    position: fixed;
+    bottom: 0;
+}
 }
 
 
