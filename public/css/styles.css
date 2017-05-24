@@ -7,7 +7,7 @@ Version 1.0
 /*Global Styles*/
 
 body {
-	background: #f1f4f7;
+	background: #fbfdff;
 	padding-top: 50px;
 	color: #5f6468;
 }
@@ -17,7 +17,7 @@ p {
 }
 
 a, a:hover, a:focus {
-	color:  #1c2fb1;
+	color:  #00149b;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,7 +95,7 @@ h3, h4 {
 }
 
 .navbar-header .navbar-brand span {
-	color: #f8f8f8;
+	color: #5f6468;
 }
 
 /*Buttons*/
@@ -516,7 +516,7 @@ a.bg-danger:hover {
 }
 
 .user-menu a {
-	color: #fff;
+	color: #423cb5;
 }
 
 .user-menu a:hover, .user-menu a:focus {
@@ -568,8 +568,8 @@ a.bg-danger:hover {
 .sidebar ul.nav .active a, .sidebar ul.nav li.parent a.active,
 .sidebar ul.nav .active > a:hover, .sidebar ul.nav li.parent a.active:hover,
 .sidebar ul.nav .active > a:focus, .sidebar ul.nav li.parent a.active:focus {
-	color: #fff;
-	background-color: #1065a7;
+	color: #423cb5;
+	background-color: #fff;
 }*/
 
 .sidebar ul.nav ul,
@@ -588,7 +588,7 @@ a.bg-danger:hover {
 .sidebar ul.nav ul.children li a {
 	height: 40px;
 	background: #f9f9f9;
-	color: #30a5ff!important;
+	color: #334bb7!important;
 }
 
 .sidebar ul.nav li.current a {
@@ -628,7 +628,7 @@ a.bg-danger:hover {
 .breadcrumb {
 	border-radius: 0;
 	padding: 10px 15px;
-	background: #e9ecf2;
+	background: rgb(64, 119, 222);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 	margin: 0 ;
 }

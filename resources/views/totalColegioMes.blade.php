@@ -35,12 +35,12 @@ document.form.action= pag
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><IMG style="position:absolute; left:0px; top:0px" SRC="./images/RECIBO2.png"  ><span>.......  Colegio Bello Horizonte...</span>..
+                <a class="navbar-brand" href="#"><IMG style="position:absolute; left:0px; top:0px" SRC="./images/RECIBO2.png"  >    <span>       &#160   &#160 Colegio Bello <p> &#160 &#160 &#160 &#160 Horizonte</p></span>
+
                 </a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>{{Auth::user()->nombre}} <span class="caret"></span></a>
-                      
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>{{Auth::user()->nombre}} <span class="caret"></span></a> 
                         <ul class="dropdown-menu" role="menu">
                            
                             
@@ -54,28 +54,100 @@ document.form.action= pag
     </nav>
         
     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-       
+        
         <ul class="nav menu">
+            <li role="presentation" class="divider"></li>
             <li class="active"><a href="./menu"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-home"></use></svg> Inicio</a></li>
 
             <li><a href="./alertas"><svg class="glyph stroked calendar"><use xlink:href="#stroked-sound-on"></use></svg> Alertas</a></li>
 
-            <li><a href="./registroEstudiante"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registro Estudiante</a></li>
-            <li><a href="./registroEmpleado"><svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>Registro Empleados</a></li>
+            <li class="parent ">
+                <a href="#">
+                    <span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Registros 
+                </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li>
+                        <a class="" href="./registroEstudiante">
+                            <svg class="glyph stroked line-graph"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registrar Estudiante
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="./registroEmpleado">
+                            <svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registrar Empleado
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="./registroUsuario">
+                            <svg class="glyph stroked app-window"><use xlink:href="#stroked-clipboard-with-paper"></use></svg> Registrar Administrador
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
 
-            <li><a href="./listadoGrado"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listas por Grados</a></li>
+            <li class="parent ">
+                <a href="#">
+                    <span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> 
+                    Listados 
+                </a>
+                <ul class="children collapse" id="sub-item-2">
+                    <li>
+                        <a class="" href="./listadoGrado">
+                            <svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listado de Pagos Estudiantes
+                        </a>
+                    </li>
+                     <li>
+                        <a class="" href="./listadoEstudiantes">
+                            <svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listado de Estudiantes
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="./listadoEmpleado">
+                            <svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listado de empleados
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
+            <li class="parent ">
+                <a href="#">
+                    <span data-toggle="collapse" href="#sub-item-3"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> 
+                    Generar Recibos 
+                </a>
+                <ul class="children collapse" id="sub-item-3">
+                    <li>
+                        <a class="" href="./reciboEstudiante">
+                            <svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Estudiante
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="./reciboEmpleado">
+                            <svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo empleado
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
+            <li class="parent ">
+                <a href="#">
+                    <span data-toggle="collapse" href="#sub-item-4"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> 
+                    Caja 
+                </a>
+                <ul class="children collapse" id="sub-item-4">
+                    <li>
+                        <a class="" href="./totalColegio">
+                            <svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Ingresos y Egresos Año
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="./totalColegioMes">
+                            <svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Ingresos y Egresos Mes
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
 
-            <li><a href="./listadoEmpleado"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Listas de Empleados</a></li>
-
-            <li><a href="./reciboEstudiante"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Estudiante</a></li>
-
-            <li><a href="./reciboEmpleado"><svg class="glyph stroked star"><use xlink:href="#stroked-printer"></use></svg> Recibo Empleado</a></li>
- <li><a href="./totalColegio"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio</a></li>
-   <li><a href="./totalColegioMes"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Total Colegio Mes</a></li>
- 
-
-            <li><a href="./registroUsuario"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Registro Usuarios</a></li>
-          
             <li role="presentation" class="divider"></li>
            
         </ul>
@@ -85,14 +157,13 @@ document.form.action= pag
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">           
         <div class="row">
             <ol class="breadcrumb">
-                <li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-                <li class="active">Inicio</li>
+                <li><a href="#"><svg class="glyph stroked home"><use xlink:href=""></use></a></li>
+                
             </ol>
         </div><!--/.row-->
-        
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">TOTAL DURANTE EL MES</h1>
+                <h1 class="page-header">INGRESOS Y EGRESOS POR MES</h1>
             </div>
         </div><!--/.row-->
 

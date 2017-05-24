@@ -32,10 +32,10 @@
 </head>
 <body>
     <!-- login starts here -->
-    <div class="login agile">
+    <div class="login agile" >
         <div class="w3agile-border">
             <h2></h2>
-            <div class="login-main login-agileits"> 
+            <div class="login-main login-agileits" > 
                 <h1><IMG  SRC="./images/logo1.png"  ></h1> 
                    @if(Session::has('mensaje_error'))
                     {{ Session::get('mensaje_error') }}
@@ -50,7 +50,7 @@
             <!--
                     <div class="g-recaptcha" data-sitekey="6LddhSAUAAAAAPxEhmsVzDy7-hmZZ3rJjJyYdeiQ" data-theme="dark"></div>
                 -->
-                {{Form::checkbox('remember',true)}} Remember me  
+                {{Form::checkbox('remember',true)}} Recordar  
             
                     <input type="submit" value="Ingresar" id="submit" name="submit" class="boton">
                 </form>
@@ -68,22 +68,19 @@
     <!-- //copyright -->
     <script src="./js/jquery.magnific-popup.js" type="text/javascript"></script>
   
-  
+ 
+<footer class="footer-basic-centered">
+           
+  <p class="footer-company-motto">Ubicado en la carrera 52 # 49- 61 Sevilla (Valle del Cauca) | Telefono: (2)219-6787  </p>
 
+</footer>
 
 
 </body>
          
      
 
-<footer class="copy-rights wthree">
-           
-  
-        <p>Ubicado en la carrera 52 # 49- 61 Sevilla (Valle del Cauca) | Telefono: (2)219-6787  </p>     
 
-    
-
-</footer>
 
 
     

@@ -45,22 +45,22 @@ return [
             'prefix' => '',
         ],
         
-        
+        /*
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'mysql1'),
-            'username' => env('DB_USERNAME', 'root'),
+            'username' => env('DB_USERNAME', 'root' ),
             'password' => env('DB_PASSWORD', '12345'),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
             'prefix' => '',
             'strict' => true,
             'engine' => null,
         ],
-    
-         /*   
+
+         */  
         'mysql' => [
            'driver'    => 'mysql',
             'host'      =>'us-cdbr-iron-east-03.cleardb.net',
@@ -87,7 +87,7 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-   */
+
     ],
    
     /*

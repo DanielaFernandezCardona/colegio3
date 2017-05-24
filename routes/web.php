@@ -39,7 +39,7 @@ Route::post('/logear','Auth\LoginController@postLogin');
 Route::get('/salir','Auth\LoginController@logout');
 
 //grupo privado
-//Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth'],function(){
 
 Route::get('/pdf', function () {
     return view('probarPDf');
@@ -157,4 +157,4 @@ Route::post('calcularMesColegio', 'totalMesController@calcularTotalMes');
 
 
 
-//});//cierra grupo
+});//cierra grupo
