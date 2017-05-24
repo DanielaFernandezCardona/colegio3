@@ -11,8 +11,12 @@
 <!-- //Custom Theme files -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
+<link rel="stylesheet" href="./css/footer-basic-centered.css">
+
 <!-- pop-up-box -->
 <script src="./js/jquery-2.2.3.min.js"></script> 
+
+
 <script>
     $(document).ready(function() {
         $('.popup-top-anim').magnificPopup({
@@ -75,12 +79,14 @@
 
 </footer>
 
+<!-- Demo ads. Please ignore and remove. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdn.tutorialzine.com/misc/enhance/v2.js" async></script>
+
 
 </body>
          
      
-
-
 
 
     
