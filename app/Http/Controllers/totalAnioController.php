@@ -25,10 +25,11 @@ protected $primaryKey = 'idtotalAnio';
 $now = new \DateTime();
 
 
+
 $sistemas['fecha']= $now->format('d-m-Y');
-$sistemas['totalAnio']='vacio';
-$sistemas['totalEstudiante']='vacio';
-$sistemas['totalEmpleado']='vacio';
+$sistemas['totalAnio']='ninguno';
+$sistemas['totalEstudiante']='ninguno';
+$sistemas['totalEmpleado']='ninguno';
                                 
       return view('totalColegio',['sistemas' => $sistemas]);
     }

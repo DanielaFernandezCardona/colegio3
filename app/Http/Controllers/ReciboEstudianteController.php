@@ -31,8 +31,8 @@ $recibo=DB::table('reciboEstudiante')
 
 
 $sistemas['fecha']= $now->format('d-m-Y');
-$sistemas['grado']='vacio';
-$sistemas['nombre']='vacio';
+$sistemas['grado']='ninguno';
+$sistemas['nombre']='ninguno';
 
 $suma=1;
 

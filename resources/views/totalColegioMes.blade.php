@@ -32,7 +32,7 @@ var grado=document.getElementById('totalEmpleado').value;
 var  valorMes=document.getElementById('totalEstudiante').value; 
 
 
-if(nombre=='vacio'||grado=='vacio'||grado=='registrado'||nombre=='registrado')
+if(nombre=='ninguno'||grado=='ninguno'||grado=='registrado'||nombre=='registrado')
 {
 
     alert("no se puede calcular el total no son valores numericos "+grado)

@@ -27,9 +27,9 @@ protected $primaryKey = 'idtotalMes';
     {
 $now = new \DateTime();
 $sistemas['fecha']= $now->format('d-m-Y');
-$sistemas['totalMes']='vacio';
-$sistemas['totalEstudiante']='vacio';
-$sistemas['totalEmpleado']='vacio';
+$sistemas['totalMes']='ninguno';
+$sistemas['totalEstudiante']='ninguno';
+$sistemas['totalEmpleado']='ninguno';
 
                                 
       return view('totalColegioMes',['sistemas' => $sistemas]);
@@ -108,5 +108,6 @@ $sistemas['totalEmpleado']="registrado";
       return view('totalColegioMes',['sistemas' => $sistemas]);
 
     }
+
 
 }
