@@ -168,6 +168,7 @@ Route::get('/buscarEmpleadoRecibo',['as'=>'reciboEmpleado','uses'=>'ReciboNomina
 
 
 
+
 /*rutas para calcular el total en el anio*/
 Route::get('/totalColegio',['as'=>'totalColegio','uses'=>'totalAnioController@index']);
 Route::post('/registarTotalAnioColegio', 'totalAnioController@registrarAnioTotal');

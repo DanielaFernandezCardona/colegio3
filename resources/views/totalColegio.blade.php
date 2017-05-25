@@ -15,6 +15,7 @@
         
 function envio(pag)
 {
+    /*
 var nombre=document.getElementById("total").value;
 var grado=document.getElementById("totalEmpleado").value;
 var  valorMes=document.getElementById("totalEstudiante").value; 
@@ -30,6 +31,10 @@ else
 document.form.action= pag 
     document.form.submit() 
 }
+*/
+document.form.action= pag 
+    document.form.submit() 
+
 }
 
 </script>
