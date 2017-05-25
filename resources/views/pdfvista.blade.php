@@ -170,10 +170,12 @@ table td.grand {
             <th>Valor Nomina</th>
             <th class="hola">{{$user->valorNomina}}</th>
         </tr>
+        <!--
         <tr>
             <th>Estado Civil</th>
             <th class="hola">{{$user->estadoCivil}}</th>
         </tr>
+      -->
         <tr>
             <th>Grado</th>
             <th class="hola">{{$user->grado}}</th>

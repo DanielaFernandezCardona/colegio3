@@ -206,12 +206,12 @@ table td.grand {
             <th>Ocupación Padre</th>
             <th class="hola">{{$user->ocupacionPadre}}</th>
         </tr>
-
+<!--
 <tr>
             <th>Ocupación Madre</th>
             <th class="hola">{{$user->ocupacionMadre}}</th>
         </tr>
-
+-->
 <tr>
             <th>Celular Padre</th>
             <th class="hola">{{$user->celularPadre}}</th>
@@ -231,12 +231,12 @@ table td.grand {
             <th>Correo Padre</th>
             <th class="hola">{{$user->correoPadre}}</th>
         </tr>
-
+<!--
 <tr>
             <th>Estado Civil</th>
             <th class="hola">{{$user->estadoCivil}}</th>
         </tr>
-
+-->
 <tr>
             <th>Nombre Acudiente</th>
             <th class="hola">{{$user->nombreAcu}}</th>
