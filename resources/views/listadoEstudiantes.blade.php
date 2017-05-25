@@ -180,9 +180,10 @@
                              <tr>
     @foreach($estudiantes as $estudiante)
      <td>{{$estudiante->documento}}</td>
-    <!--<td>{{$estudiante->nombre}}</td>
+    <td>{{$estudiante->nombre}}</td>
     <td>{{$estudiante->apellido}}</td>
-    <td>{{$estudiante->grado}}</td>    
+    <td>{{$estudiante->grado}}</td> 
+    <!--   
     <td>{{$estudiante->telefono}}</td>
     <td>{{$estudiante->celular}}</td>
  -->

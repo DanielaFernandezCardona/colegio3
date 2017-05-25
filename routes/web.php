@@ -118,9 +118,11 @@ Route::get('empleado/edit/{id}', ['as' => 'empleado/edit', 'uses'=>'RegisterEmpl
 Route::get('empleado/destroy/{id}', ['as' => 'empleado/destroy', 'uses'=>'RegisterEmpleadoController@destroy']);
 Route::post('empleado/search', ['as' => 'empleado/search', 'uses'=>'RegisterEmpleadoController@search']);
 
-Route::get('/empleado/search',function(){
-	 return view('listadoEmpleado');
-});
+
+
+//lista empleado por si meten buscar
+Route::get('/empleado/search', ['as' => 'listadoEmpleado', 'uses' => 'RegisterEmpleadoController@index']);
+
 
 /*rutas que permitiran el manejo de gestion de los estudiantes*/
 Route::get('/hojaEstudiante/{id}','PdfController@pdf_estudiante');
@@ -130,9 +132,10 @@ Route::get('estudiante/destroy/{id}', ['as' => 'estudiante/destroy', 'uses'=>'Re
 //para buscar un estudiante
 Route::post('/buscarEstudiante','RegisterEstudianteController@search');
 
-Route::get('/buscarEstudiante',function(){
-	 return view('listadoGrado');
-});
+//lista Grado por si meten buscar
+Route::get('/buscarEstudiante', ['as' => 'listadoGrado', 'uses' => 'RegisterEstudianteController@index']);
+
+
 
 /*rutas para manejas la gestion de recibo del estudiante*/
 Route::post('/registrarReciboEstudiante','ReciboEstudianteController@registrar');
@@ -140,9 +143,9 @@ Route::get('/reciboEstudiante',['as'=>'ReciboEstudiante','uses'=>'ReciboEstudian
 //para buscar un estudiante para el recibo
 Route::post('/buscarEstudianteRecibo','ReciboEstudianteController@search');
 
-Route::get('/buscarEstudianteRecibo',function(){
-	 return view('reciboEstudiante');
-});
+Route::get('/buscarEstudianteRecibo',['as'=>'ReciboEstudiante','uses'=>'ReciboEstudianteController@index']);
+
+
 
 
 
@@ -159,9 +162,9 @@ Route::post('/buscarEmpleadoRecibo','ReciboNominaController@search');
 //para el pdf del empleado via online o descargar
 Route::post('vista/{tipo}', 'PdfController@crear_reporte');
 
-Route::get('/buscarEmpleadoRecibo',function(){
-	 return view('reciboEmpleado');
-});
+//por si meten buscar Empleado
+Route::get('/buscarEmpleadoRecibo',['as'=>'reciboEmpleado','uses'=>'ReciboNominaController@index']);
+
 
 
 
