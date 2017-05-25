@@ -16,9 +16,23 @@
         
 function envio(pag)
 {
+var nombre=document.getElementById("total").value;
+var grado=document.getElementById("totalEmpleado").value;
+var  valorMes=document.getElementById("totalEstudiante").value; 
+
+if(nombre=='vacio'||grado=='vacio'||grado=='registrado'||nombre=='registrado')
+{
+
+    alert("no se puede calcular el total no son valores numericos "+grado)
+  
+}
+else
+{
 
 document.form.action= pag 
     document.form.submit() 
+}
+
 }
 
 </script>
@@ -170,7 +184,6 @@ document.form.action= pag
 
         <div class="col-md-8">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><svg class="glyph stroked email"></svg> TOTAL MES</div>
                     <div class="panel-body">
                 
                         <form name="form" class="form-horizontal" action="/registarTotalMesColegio" method="post">
@@ -199,15 +212,15 @@ document.form.action= pag
                                  {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                   {!! Form::label('Entrada Estudiante:') !!}
-                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('id'=>'totalEstudiante','class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                   {!! Form::label('Salida Empleado:') !!}
-                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('id'=>'totalEmpleado','class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
 
                                 
                                   {!! Form::label('Total Mes:') !!}
-                                  {!! Form::text('total',$sistemas['totalMes'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('total',$sistemas['totalMes'], array('id'=>'total',class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                 
 

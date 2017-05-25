@@ -173,11 +173,17 @@ Route::get('/totalColegio',['as'=>'totalColegio','uses'=>'totalAnioController@in
 Route::post('/registarTotalAnioColegio', 'totalAnioController@registrarAnioTotal');
 Route::post('calcularAnioColegio', 'totalAnioController@calcularTotalAnio');
 
+Route::get('/registarTotalAnioColegio',['as'=>'totalColegio','uses'=>'totalAnioController@index']);
+Route::get('calcularAnioColegio',['as'=>'totalColegio','uses'=>'totalAnioController@index']);
+
 
 /*rutas para calcular el total en el mes*/
 Route::get('/totalColegioMes',['as'=>'totalColegioMes','uses'=>'totalMesController@index']);
 Route::post('/registarTotalMesColegio', 'totalMesController@registrarMesTotal');
 Route::post('calcularMesColegio', 'totalMesController@calcularTotalMes');
+
+Route::get('/calcularMesColegio',['as'=>'totalColegioMes','uses'=>'totalMesController@index']);
+Route::get('/registarTotalMesColegio',['as'=>'totalColegioMes','uses'=>'totalMesController@index']);
 
 
 
