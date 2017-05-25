@@ -110,8 +110,21 @@ if(pag=="vista/1")
 
     document.form.setAttribute("target", "_blank");
  }
+
+
+var nombre=document.getElementById("nombre").value;
+var grado=document.getElementById("grado").value;
+var  valorMes=document.getElementById("valorMens").value; 
+
+if(nombre=='vacio'||grado=='vacio'||valorMes=='0')
+{
+  alert("los campos nombre grado no pueden estar vacios")
+}
+else
+{
     document.form.action= pag 
     document.form.submit() 
+}
 
   } 
  
@@ -143,7 +156,7 @@ else
 {
 document.form.action= "/registrarNominaEmpleado" 
 document.form.submit() 
-document.getElementById('descarga').style.display='inline';
+//document.getElementById('descarga').style.display='inline';
 return true;
 
 }
@@ -329,7 +342,7 @@ return true;
                                                      {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                                      {!! Form::label('Nombre Empleado') !!}
-                                                     {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','onkeypress'=>'return soloLetras(event)')) !!}
+                                                     {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Grado','onkeypress'=>'return soloLetras(event)','id'=>'nombre')) !!}
 
 
                                                      {!! Form::label('Grado') !!}
@@ -363,7 +376,7 @@ return true;
 
                                                       <div class="form-group">
                                                         <label>Observaciones</label>
-                                                        <input class="form-control" type="text" name="Observaciones" id="Observaciones" placeholder="Observaciones" value="vacio" onkeypress="return soloLetras(event);">
+                                                        <input class="form-control" type="text" name="Observaciones" id="Observaciones" placeholder="Observaciones" value="ninguna" onkeypress="return soloLetras(event);">
                                                       </div>
 
                                                       <input type="button" value="Activar pago Adicionales" onclick="desactivar()" class="btn btn-primary"/>
@@ -400,7 +413,7 @@ return true;
                                     </form>
                                        
                                                 <input type="button" onClick="envio('vista/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
-                                      <input type="button" onClick="envio('vista/2')" class="btn btn-primary btn-xs"  style="display:none" value="Descargar" id="descarga"> 
+                                      <input type="button" onClick="envio('vista/2')" class="btn btn-primary btn-xs"   value="Descargar" id="descarga"> 
                             
                               </div>
                         </div>
