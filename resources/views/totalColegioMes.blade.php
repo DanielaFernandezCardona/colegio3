@@ -99,6 +99,7 @@ document.form.action= pag
                 </ul>
             </li>
 
+
             <li class="parent ">
                 <a href="#">
                     <span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> 
@@ -212,15 +213,15 @@ document.form.action= pag
                                  {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                   {!! Form::label('Entrada Estudiante:') !!}
-                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('id'=>'totalEstudiante','class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'totalEstudiante')) !!}
 
                                   {!! Form::label('Salida Empleado:') !!}
-                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('id'=>'totalEmpleado','class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'totalEmpleado')) !!}
 
 
                                 
                                   {!! Form::label('Total Mes:') !!}
-                                  {!! Form::text('total',$sistemas['totalMes'], array('id'=>'total',class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('total',$sistemas['totalMes'], array(class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'total')) !!}
 
                                 
 
