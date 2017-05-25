@@ -105,7 +105,11 @@ document.getElementById('mitext').readOnly=false;
 
 //envio datos al controller de pdf
 function envio(pag){ 
+if(pag=="vista/1")
+{
+
     document.form.setAttribute("target", "_blank");
+ }
     document.form.action= pag 
     document.form.submit() 
 
@@ -139,7 +143,7 @@ else
 {
 document.form.action= "/registrarNominaEmpleado" 
 document.form.submit() 
-document.getElementById('descarga').style=display:inline;
+document.getElementById('descarga').style.display='inline';
 return true;
 
 }
