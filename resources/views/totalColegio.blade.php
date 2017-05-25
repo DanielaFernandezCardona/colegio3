@@ -201,14 +201,14 @@ document.form.action= pag
                                  {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                   {!! Form::label('Entrada Estudiante:') !!}
-                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('id'=>'totalEstudiante','class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                   {!! Form::label('Salida Empleado:') !!}
-                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('id'=>'totalEmpleado','class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                 
                                   {!! Form::label('Total Año:') !!}
-                                  {!! Form::text('total',$sistemas['totalAnio'], array('id'=>'total',class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('total',$sistemas['totalAnio'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
 
 

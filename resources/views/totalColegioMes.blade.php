@@ -213,15 +213,16 @@ document.form.action= pag
                                  {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                   {!! Form::label('Entrada Estudiante:') !!}
-                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'totalEstudiante')) !!}
+                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                   {!! Form::label('Salida Empleado:') !!}
-                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'totalEmpleado')) !!}
+                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
 
                                 
+                            
                                   {!! Form::label('Total Mes:') !!}
-                                  {!! Form::text('total',$sistemas['totalMes'], array(class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'total')) !!}
+                                  {!! Form::text('total',$sistemas['totalMes'], array(class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                 
 
