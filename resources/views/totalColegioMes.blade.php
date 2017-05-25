@@ -16,9 +16,13 @@
         
 function envio(pag)
 {
-var nombre=document.getElementsByName("total")[0].value;
-var grado=document.getElementsByName("totalEmpleado")[0].value;
-var  valorMes=document.getElementsByName("totalEstudiante")[0].value; 
+    
+var nombre=document.getElementById('total').value;
+var grado=document.getElementById('totalEmpleado').value;
+var  valorMes=document.getElementById('totalEstudiante').value; 
+console.log(nombre);
+console.log(grado);
+console.log(valorMes);
 
 
 if(nombre=='vacio'||grado=='vacio'||grado=='registrado'||nombre=='registrado')
@@ -214,16 +218,16 @@ document.form.action= pag
                                  {!! Form::text('fecha',$sistemas['fecha'], array('class' => 'form-control','readonly'=>'readonly')) !!}
 
                                   {!! Form::label('Entrada Estudiante:') !!}
-                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEstudiante',$sistemas['totalEstudiante'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'totalEstudiante')) !!}
 
                                   {!! Form::label('Salida Empleado:') !!}
-                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'totalEmpleado')) !!}
 
 
                                 
 
                                   {!! Form::label('Total Mes:') !!}
-                                  {!! Form::text('total',$sistemas['totalMes'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('total',$sistemas['totalMes'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total','id'=>'total')) !!}
 
                                 
 
