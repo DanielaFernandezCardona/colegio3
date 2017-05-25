@@ -189,8 +189,8 @@
   <td><a href="/hojavida/{{$empleado->idEmpleado}}"><button style="border-radius: 5px;" id="{{$empleado->idEmpleado}}">Ver</button></a></td>
     
      <td>
-                        <a class="btn btn-primary btn-xs" href="{{ route('empleado/edit',['id' =>$empleado->idEmpleado ] )}}" >Edit</a> 
-                        <a class="btn btn-danger btn-xs" href="{{ route('empleado/destroy',['id' =>$empleado->idEmpleado] )}}" onclick="return confirm('¿Seguro desea eliminarlo?')" >Delete</a>
+                        <a class="btn btn-primary btn-xs" href="{{ route('empleado/edit',['id' =>$empleado->idEmpleado ] )}}" >Editar</a> 
+                        <a class="btn btn-danger btn-xs" href="{{ route('empleado/destroy',['id' =>$empleado->idEmpleado] )}}" onclick="return confirm('¿Seguro desea eliminarlo?')" >Eliminar</a>
                     </td>   
 
 

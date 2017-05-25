@@ -217,8 +217,8 @@ function soloLetras(e){
       <td><a href="/hojaEstudiante/{{$estudiante->idEstudiante}}"><button style="border-radius: 5px;" id="{{$estudiante->idEstudiante}}">Ver</button></a></td>
     
        <td>
-                        <a class="btn btn-primary btn-xs" href="{{ route('estudiante/edit',['id' =>$estudiante->idEstudiante ] )}}" >Edit</a> 
-                        <a class="btn btn-danger btn-xs" href="{{ route('estudiante/destroy',['id' =>$estudiante->idEstudiante] )}}" onclick="return confirm('¿Seguro desea eliminarlo?')" >Delete</a>
+                        <a class="btn btn-primary btn-xs" href="{{ route('estudiante/edit',['id' =>$estudiante->idEstudiante ] )}}" >Editar</a> 
+                        <a class="btn btn-danger btn-xs" href="{{ route('estudiante/destroy',['id' =>$estudiante->idEstudiante] )}}" onclick="return confirm('¿Seguro desea eliminarlo?')" >Eliminar</a>
                     </td>   
 
 

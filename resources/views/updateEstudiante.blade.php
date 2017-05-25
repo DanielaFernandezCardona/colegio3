@@ -137,29 +137,6 @@
     </div>
 
 
-    <div class="form-group">
-      {!! Form::label('EstadoCivil', 'Estado Civil') !!}
-      <div class="radio">
-        {!! Form::label('madre_soltera', 'Madre Soltera') !!}
-         {{ Form::radio('estadoCivil', 'madre_soltera' , true) }}
-     </div>
-     <div class="radio">
-        {!! Form::label('divorciado', 'Divorciado') !!}
-          {{ Form::radio('estadoCivil', 'divorciado' , true) }}   
-   </div>
-   <div class="radio">
-      {!! Form::label('casado', 'Casado') !!}
-     {{ Form::radio('estadoCivil', 'casado' , true) }}
-  </div>
-  <div class="radio">
-    {!! Form::label('viudo', 'Viudo') !!}  
- {{ Form::radio('estadoCivil', 'viudo' , true) }}
-  </div>
-  <div class="radio">
-    {!! Form::label('solter@', 'Solter@') !!}    
-   {{ Form::radio('estadoCivil', 'solter@' , true) }}
-  </div>
-</div>
 
 <div class="form-group">
       {!! Form::label('nombreAcu', 'Nombre Acudiente') !!}
