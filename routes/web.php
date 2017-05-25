@@ -66,6 +66,9 @@ Route::get('/listadoEmpleado', ['as' => 'listadoEmpleado', 'uses' => 'RegisterEm
 //lista Grado
 Route::get('/listadoGrado', ['as' => 'listadoGrado', 'uses' => 'RegisterEstudianteController@index']);
 
+//lista ESTUDIANTES
+Route::get('/listadoEstudiantes', ['as' => 'listadoEstudiantes', 'uses' => 'RegisterEstudianteController@index2']);
+
 
 
 Route::get('/envioEmail','AlertasController@basic_email');

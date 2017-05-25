@@ -36,13 +36,32 @@ $array = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO"
 
 foreach ($estudiantes as $valor)
 {
-$valor->mes_a_pagar=$array[$valor->mes_a_pagar];
+$valor->mes_a_pagar=$array[$valor->mes_a_pagar+1];
 }
 
 
 
         return view('listadoGrado',['estudiantes' => $estudiantes]);
     }
+
+
+/**
+*devuelve datos a la vista listadoEstudiantes
+*@return  object $estudiante lista de grado 
+*
+*/
+function index2()
+    {
+
+ $estudiantes=DB::table('Estudiante')
+            ->join('grado', 'grado.idGrado', '=', 'estudiante.idGrado')
+            ->select('estudiante.idEstudiante','estudiante.documento','estudiante.nombre', 'estudiante.apellido','estudiante.celular','grado.grado','estudiante.telefono')
+            ->get();
+           
+
+ return view('listadoEstudiantes',['estudiantes' => $estudiantes]);
+      }
+
 
 
 /**

@@ -139,6 +139,7 @@ else
 {
 document.form.action= "/registrarNominaEmpleado" 
 document.form.submit() 
+document.getElementById('descarga').style=display:inline;
 return true;
 
 }
@@ -395,7 +396,7 @@ return true;
                                     </form>
                                        
                                                 <input type="button" onClick="envio('vista/1')" class="btn btn-primary btn-xs" value="Vista Previa"> 
-                                      <input type="button" onClick="envio('vista/2')" class="btn btn-primary btn-xs" value="Descargar"> 
+                                      <input type="button" onClick="envio('vista/2')" class="btn btn-primary btn-xs"  style="display:none" value="Descargar" id="descarga"> 
                             
                               </div>
                         </div>
