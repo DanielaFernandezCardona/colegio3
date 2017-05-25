@@ -17,27 +17,31 @@
 function envio(pag)
 {
     
+document.form.action= pag 
+    document.form.submit() 
+
+
+}
+
+
+function myFunction()
+{
+
 var nombre=document.getElementById('total').value;
 var grado=document.getElementById('totalEmpleado').value;
 var  valorMes=document.getElementById('totalEstudiante').value; 
-console.log(nombre);
-console.log(grado);
-console.log(valorMes);
 
 
 if(nombre=='vacio'||grado=='vacio'||grado=='registrado'||nombre=='registrado')
 {
 
     alert("no se puede calcular el total no son valores numericos "+grado)
-  
+return false;  
 }
 else
 {
 
-document.form.action= pag 
-    document.form.submit() 
-}
-
+return true;
 }
 
 </script>
@@ -192,7 +196,7 @@ document.form.action= pag
                 <div class="panel panel-default">
                     <div class="panel-body">
                 
-                        <form name="form" class="form-horizontal" action="/registarTotalMesColegio" method="post">
+                        <form name="form" class="form-horizontal" action="/registarTotalMesColegio" method="post" onsubmit="return myFunction()">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
                                                 <div class="form-group">
