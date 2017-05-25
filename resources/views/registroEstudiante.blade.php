@@ -281,20 +281,20 @@ function anActual(valor) {
                                                       <label>Apellido</label>
                                                       <input class="form-control" type="text" name="apellido"   placeholder="apellido" onkeypress="return soloLetras(event)" required>
 
-                                                      <label>Fecha Nacimiento</label>
+                                                      <label>Fecha de Nacimiento</label>
                                                       <input id="fecha1" class="form-control" type="text" name="fechaNac"   placeholder="AAAA-MM-DD" required>
 
-                                                      <label>Documento</label>
+                                                      <label>Número de Documento</label>
                                                       <input class="form-control" type="text" name="documento"  placeholder="documento" onkeypress="return valida(event);"  required>
 
-                                                      <label>FechaExpedicón</label>
+                                                      <label>Fecha de Expedición</label>
                                                       <input id="fecha2" class="form-control" type="text" name="expedicion"   placeholder="AAAA-MM-DD">
 
                                                       <label>celular</label>
                                                       <input class="form-control" type="text" name="celular"    placeholder="Celular" onkeypress="return valida(event);" required>
 
-                                                      <label>telefono</label>
-                                                      <input class="form-control" type="text" name="telefono"   placeholder="telefono" onkeypress="return valida(event);" required>
+                                                      <label>teléfono</label>
+                                                      <input class="form-control" type="text" name="telefono"   placeholder="teléfono" onkeypress="return valida(event);" required>
 
                                                       <label>Dirección</label>
                                                       <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
@@ -344,7 +344,7 @@ function anActual(valor) {
                                                          
 
                                                       <label>Año Actual</label>
-                                                      <input class="form-control" type="text" name="anioActual"  placeholder="aÑO Actual" onkeypress="return valida(event);" onblur="return anActual(this)" required>
+                                                      <input class="form-control" type="text" name="anioActual"  placeholder="Año Actual" onkeypress="return valida(event);" onblur="return anActual(this)" required>
 
                                                       <label>Condición</label>
                                                       <input class="form-control" type="text" name="condicion"  placeholder="Condición" onkeypress="return soloLetras(event)" required>
@@ -423,17 +423,17 @@ function anActual(valor) {
                                                       <label>DATOS ACUDIENTE</label>
                                                       <input class="form-control" type="text" name="documentoAcudiente" placeholder="Documento Acudiente" onkeypress="return valida(event);" required>
 
-                                                      <label>nombre</label>
+                                                      <label>Nombre</label>
                                                       <input class="form-control" type="text" name="nombreAcudiente" placeholder=" Nombre Acudiente" onkeypress="return soloLetras(event)" required>
 
-                                                      <label>celular</label>
+                                                      <label>Celular</label>
                                                       <input class="form-control" type="text" name="celuAcudiente" placeholder=" celular Acudiente" onkeypress="return valida(event);" required>
 
-                                                      <label>correo</label>
+                                                      <label>Correo</label>
                                                       <input id="email3" class="form-control" type="text" name="correoAcudiente"  placeholder="Correo Acudiente" required>
 
-                                                      <label>Ocupacion</label>
-                                                      <input class="form-control" type="text" name="ocupacion"  placeholder="Ocupacion Acudiente" onkeypress="return soloLetras(event)" required>
+                                                      <label>Ocupación</label>
+                                                      <input class="form-control" type="text" name="ocupacion"  placeholder="Ocupación Acudiente" onkeypress="return soloLetras(event)" required>
 
                                                      <label>Parentesco</label>
                                                       <input class="form-control" type="text" name="parentesco"  placeholder="Parentesco Acudiente" onkeypress="return soloLetras(event)" required>

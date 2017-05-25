@@ -234,7 +234,7 @@ function pruebaemail (){
                                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   
                                                 <div class="form-group" onsubmit="return pruebaemail()">
-                                                      <label>Documento </label>
+                                                      <label>Número de Documento </label>
                                                       <input class="form-control" type="text" name="documento"  placeholder="documento" onkeypress="return valida(event);" required>
                                                       <label>Nombre</label>
                                                       <input class="form-control" name="nombre" placeholder="Nombre"  onkeypress="return soloLetras(event)" required>
@@ -254,7 +254,7 @@ function pruebaemail (){
                                                       <label>Dirección</label>
                                                       <input class="form-control" type="text" name="direccion"  placeholder="Dirección" required>
 
-                                                      <label>Fecha Nacimiento</label>
+                                                      <label>Fecha de Nacimiento</label>
                                                       <input class="form-control" type="text" name="fechaNacimiento"   placeholder="AAAA-MM-DD" onblur="return validar(this)" required>
 
                                                       <label>Estudios Universitarios</label>
@@ -305,15 +305,15 @@ function pruebaemail (){
                                                       <div class="form-group">
   
 
-                                                      <label>Tiempo trabajo</label>
-                                                      <input class="form-control" type="text" name="tiempoTrabajo"  placeholder="tiempoTrabajo" required>
+                                                      <label>Tiempo de Experiencia</label>
+                                                      <input class="form-control" type="text" name="tiempoTrabajo"  placeholder="Tiempo de Experiencia" required>
 
 
-                                                      <label>Fecha Ingreso</label>
+                                                      <label>Fecha de Ingreso</label>
                                                       <input class="form-control" type="text" name="fechaIngresoTrabajo"  placeholder="AAAA/MM/DD" required>
 
-                                                      <label>Valor Nomina</label>
-                                                      <input class="form-control" type="text" name="valorNomina"  placeholder="Valor Nomina"  onkeypress="return valida(event);" required>
+                                                      <label>Valor a Pagar</label>
+                                                      <input class="form-control" type="text" name="valorNomina"  placeholder="Valor a Pagar"  onkeypress="return valida(event);" required>
 
                                                        <div class="form-group">
                                                         <label>Estado Civil </label>

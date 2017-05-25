@@ -209,12 +209,14 @@ document.form.action= pag
                                   {!! Form::label('Total Mes:') !!}
                                   {!! Form::text('total',$sistemas['totalMes'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
-                                 <input type="button" onClick="envio('calcularMesColegio')" class="btn btn-primary btn-xs" value="Calcular"> 
-                                       
+                                
 
                                 <!-- Form actions -->
                                 <div class="form-group">
                                     <div class="col-md-12 widget-right">
+
+                                        <input type="button" onClick="envio('calcularMesColegio')" class="btn btn-primary" value="Calcular">
+
                                         <button type="submit" class="btn btn-default btn-md pull-right">Registrar</button>
                                     </div>
                                 </div>

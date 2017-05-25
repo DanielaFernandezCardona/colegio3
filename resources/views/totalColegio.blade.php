@@ -161,7 +161,7 @@ document.form.action= pag
         </div><!--/.row-->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">INGRESOS Y EGRESOS AÑO ESCOLAR</h1>
+                <h1 class="page-header">INGRESOS Y EGRESOS DEL AÑO ESCOLAR</h1>
             </div>
         </div><!--/.row-->
 
@@ -191,16 +191,19 @@ document.form.action= pag
                                   {!! Form::text('totalEmpleado',$sistemas['totalEmpleado'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                 
-                                  {!! Form::label('Total Anio:') !!}
+                                  {!! Form::label('Total Año:') !!}
                                   {!! Form::text('total',$sistemas['totalAnio'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
 
-                                 <input type="button" onClick="envio('calcularAnioColegio')" class="btn btn-primary btn-xs" value="Calcular"> 
-                                            
 
                                 <!-- Form actions -->
                                 <div class="form-group">
                                     <div class="col-md-12 widget-right">
+
+                                     <input type="button" onClick="envio('calcularAnioColegio')" class="btn btn-primary" value="Calcular"> 
+
+
+                                      
                                         <button type="submit" class="btn btn-default btn-md pull-right">Registrar</button>
                                     </div>
                                 </div>
