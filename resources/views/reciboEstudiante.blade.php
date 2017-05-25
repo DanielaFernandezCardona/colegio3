@@ -69,7 +69,7 @@ var  valorMes=document.getElementById("valorMens").value;
 
 if(nombre=='ninguno'||grado=='ninguno'||valorMes=='0'||grado=='registrado'||nombre=='registrado')
 {
-  alert("los campos nombre grado o valorMes no pueden estar vacios")
+  alert("los campos nombre estudiante ,grado o valor Mensualidad del mes a pagar no pueden estar vacios")
 }
 else
 {
