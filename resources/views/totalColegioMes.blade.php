@@ -43,6 +43,8 @@ else
 
 return true;
 }
+}
+
 
 </script>
 

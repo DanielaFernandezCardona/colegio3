@@ -40,8 +40,8 @@ return false;
 }
 else
 {
-
 return true;
+}
 }
 
 </script>
