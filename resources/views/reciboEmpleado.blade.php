@@ -119,7 +119,7 @@ var  valorMes=document.getElementById("valorMens").value;
 if(nombre=='vacio'||grado=='vacio'||valorMes=='0'||grado=='registrado'||nombre=='registrado')
 {
 
-    alert("los campos nombre grado o valorMes no pueden estar vacios "+grado)
+    alert("los campos nombre grado o valorMes no pueden estar vacios ")
   
 }
 else
