@@ -161,7 +161,6 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Listado de empleados</div>
                     <div class="panel-body">
                         <table data-toggle="table" >
                             <thead>

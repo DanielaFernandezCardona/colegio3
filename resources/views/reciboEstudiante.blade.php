@@ -62,8 +62,21 @@ function envia(pag){
     document.form.setAttribute("target", "_blank");
   
    }
+
+var nombre=document.getElementById("nombre").value;
+var grado=document.getElementById("grado").value;
+var  valorMes=document.getElementById("valorMens").value; 
+
+if(nombre=='vacio'||grado=='vacio'||valorMes=='0')
+{
+  alert("los campos nombre grado no pueden estar vacios")
+}
+else
+{
     document.form.action= pag 
     document.form.submit() 
+}
+
 
   }
 
@@ -291,7 +304,7 @@ return true;
                                         
                                                     
                                                   {!! Form::label('Nombre Estudiante') !!}
-                                                    {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Nombre')) !!}
+                                                    {!! Form::text('nombre',$sistemas['nombre'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Nombre','id'=>'nombre')) !!}
 
 
                                                   {!! Form::label('Grado') !!}
@@ -325,7 +338,7 @@ return true;
 
                                                       <div class="form-group">
                                                         <label>Observaciones</label>
-                                                        <input class="form-control" type="text" name="Observaciones"  placeholder="Observaciones" value="vacio"  >
+                                                        <input class="form-control" type="text" name="Observaciones"  placeholder="Observaciones" value="ninguna"  >
                                                       </div>
 
                                                       <div class="form-group has-success">

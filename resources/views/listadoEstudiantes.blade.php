@@ -161,7 +161,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">LISTADO DE ESTUDIANTES</div>
+                    
                     <div class="panel-body">
                         <table data-toggle="table" >
                             <thead>
@@ -182,11 +182,10 @@
      <td>{{$estudiante->documento}}</td>
     <td>{{$estudiante->nombre}}</td>
     <td>{{$estudiante->apellido}}</td>
-    <td>{{$estudiante->grado}}</td> 
-    <!--   
+    <td>{{$estudiante->grado}}</td>        
     <td>{{$estudiante->telefono}}</td>
     <td>{{$estudiante->celular}}</td>
- -->
+
 
 <td><a href="/hojaEstudiante/{{$estudiante->idEstudiante}}"><button style="border-radius: 5px;" id="{{$estudiante->idEstudiante}}">Ver</button></a></td>
     

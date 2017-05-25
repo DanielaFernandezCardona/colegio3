@@ -180,7 +180,6 @@ function soloLetras(e){
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Listas por Grados</div>
                     <div class="panel-body">
                      <form role="search" method="post" action="/buscarEstudiante">
             <input type="hidden" name="_token" value="{{ csrf_token() }}" onkeypress="return soloLetras(event)" >
