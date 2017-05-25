@@ -30,7 +30,7 @@
         </tr>
 </table>
 
-  <table style="margin-top:-150px;margin-left:300px; height:64px;width:383px;">
+  <table style="margin-top:-150px;margin-left:320px; height:64px;width:383px;"><!--x-->
         <tr>
             <th style="padding: 7px 3px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->recibo}}</th>
             <th style="padding: 7px 150px;color: #5D6975;width:50%;white-space: nowrap;font-weight: normal;"> {{$user->fecha}}</th>
