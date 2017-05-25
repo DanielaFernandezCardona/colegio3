@@ -180,12 +180,12 @@
                              <tr>
     @foreach($estudiantes as $estudiante)
      <td>{{$estudiante->documento}}</td>
-    <td>{{$estudiante->nombre}}</td>
+    <!--<td>{{$estudiante->nombre}}</td>
     <td>{{$estudiante->apellido}}</td>
     <td>{{$estudiante->grado}}</td>    
     <td>{{$estudiante->telefono}}</td>
     <td>{{$estudiante->celular}}</td>
-  <!--  <td><button style="border-radius: 5px;" id="{{$empleado->idEmpleado}}">Ver</button></td>-->
+ -->
 
 <td><a href="/hojaEstudiante/{{$estudiante->idEstudiante}}"><button style="border-radius: 5px;" id="{{$estudiante->idEstudiante}}">Ver</button></a></td>
     
