@@ -16,9 +16,10 @@
         
 function envio(pag)
 {
-var nombre=document.getElementById("total").value;
-var grado=document.getElementById("totalEmpleado").value;
-var  valorMes=document.getElementById("totalEstudiante").value; 
+var nombre=document.getElementsByName("total")[0].value;
+var grado=document.getElementsByName("totalEmpleado")[0].value;
+var  valorMes=document.getElementsByName("totalEstudiante")[0].value; 
+
 
 if(nombre=='vacio'||grado=='vacio'||grado=='registrado'||nombre=='registrado')
 {
@@ -220,7 +221,7 @@ document.form.action= pag
 
 
                                 
-                            
+
                                   {!! Form::label('Total Mes:') !!}
                                   {!! Form::text('total',$sistemas['totalMes'], array(class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
