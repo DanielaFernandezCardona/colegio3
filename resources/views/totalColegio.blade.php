@@ -32,8 +32,7 @@ document.form.action= pag
     document.form.submit() 
 }
 
-document.form.action= pag 
-    document.form.submit() 
+
 
 }
 

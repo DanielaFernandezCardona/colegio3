@@ -223,7 +223,7 @@ document.form.action= pag
                                 
 
                                   {!! Form::label('Total Mes:') !!}
-                                  {!! Form::text('total',$sistemas['totalMes'], array(class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
+                                  {!! Form::text('total',$sistemas['totalMes'], array('class' => 'form-control','readonly'=>'readonly','placeholder'=>'Total')) !!}
 
                                 
 
